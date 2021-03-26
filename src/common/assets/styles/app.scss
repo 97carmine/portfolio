@@ -1,0 +1,32 @@
+// Bulma
+
+@import "./bulma";
+
+// Custom
+
+main {
+	margin-top: 3rem !important;
+	margin-bottom: 3rem !important;
+}
+
+.fade-enter {
+	opacity: 0;
+}
+.fade-enter-active {
+	opacity: 1;
+	transition: opacity 300ms ease-in;
+}
+.fade-exit {
+	display: none;
+	opacity: 0;
+}
+.fade-exit-active {
+	transition: opacity 300ms ease-out;
+}
+
+.noJS {
+	color: $white-bis;
+	text-align: center;
+	padding: 0.5rem;
+	background-color: $danger-dark;
+}

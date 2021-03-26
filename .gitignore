@@ -1,0 +1,24 @@
+# dotenv
+
+*.env
+
+# Node
+node_modules
+.pnp
+.pnp.js
+.yarn/*
+!.yarn/releases
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# production
+build
+src/common/languages/messages/**.json
+
+# IDE
+.vscode
+
+# misc
+.directory
+*.bak

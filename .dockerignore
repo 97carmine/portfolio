@@ -1,0 +1,28 @@
+# Docker
+docker
+docker-compose.yml
+
+# Node
+node_modules
+.pnp
+.pnp.js
+.yarn/*
+!.yarn/releases
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production
+build
+
+# IDE
+.vscode
+
+# Git
+.git
+.gitignore
+
+# Misc
+
+.directory
+*.bak

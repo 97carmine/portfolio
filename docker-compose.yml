@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  web:
+    container_name: web
+    build:
+      context: ./
+      dockerfile: ./.docker/web/Dockerfile
+    env_file:
+      - .web.env
+    ports:
+      - "127.0.0.1:3000:3000"
+    restart: unless-stopped
