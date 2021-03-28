@@ -209,8 +209,8 @@
 	"b47bc": {
 		"defaultMessage": "The owner reserves the right to deny or withdraw access to the website and the services offered without prior notice, temporarily or indefinitely, at its own request or by a third party, to those users who breach any of the conditions of this Legal Warning and/or hostile action is taken against the website and the services offered."
 	},
-	"b7a2a": {
-		"defaultMessage": "I have read and accept the <Link>privacy policy</Link>."
+	"642f0": {
+		"defaultMessage": "I have read and accept the <a>privacy policy</a>."
 	},
 	"bb691": {
 		"defaultMessage": "Legal warning"

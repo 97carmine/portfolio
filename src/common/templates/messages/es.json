@@ -51,7 +51,7 @@
 		"defaultMessage": "Información personal"
 	},
 	"28f0e": {
-		"defaultMessage": "¿Leer? No me apasiona la lectura, pero hay libros o novelas gráficas como {book_1}, Los viajes de Gulliver o la saga Injustice: Gods Among Us que me han dado mucho en qué pensar."
+		"defaultMessage": "¿Leer? No me apasiona la lectura, pero hay libros o novelas gráficas como {book_1}, Los viajes de Gulliver o la saga Injustice: Dioses entre nosotros que me han dado mucho en qué pensar."
 	},
 	"2a7cc": {
 		"defaultMessage": "Atención al cliente, gestión de inventarios de equipos pertenecientes a Orange y gestión de documentación."
@@ -78,7 +78,7 @@
 		"defaultMessage": "Todos los logotipos, marcas comerciales y marcas comerciales registradas son propiedad de sus respectivos dueños."
 	},
 	"414cf": {
-		"defaultMessage": "Siéntete libre de mandarme un correo electronico"
+		"defaultMessage": "Siéntete libre de mandarme un correo electrónico"
 	},
 	"43108": {
 		"defaultMessage": "Versión PDF disponible <a>aquí</a>."
@@ -117,7 +117,7 @@
 		"defaultMessage": "En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 sobre la protección de las personas físicas (RGPD) y la LSSI-CE, Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y el comercio electrónico, el titular expone sus datos identificativos."
 	},
 	"6132b": {
-		"defaultMessage": "Pastilla azul: volver"
+		"defaultMessage": "Pastilla azul: Volver"
 	},
 	"6832a": {
 		"defaultMessage": "Ingrese su dirección de correo electrónico"
@@ -209,8 +209,8 @@
 	"b47bc": {
 		"defaultMessage": "El titular se reserva el derecho a denegar o retirar el acceso al sitio web y a los servicios ofrecidos sin necesidad de preaviso, de forma temporal o indefinida, a instancia propia o de un tercero, a aquellos usuarios que incumplan alguna de las condiciones de este Aviso Legal y/o se toman acciones hostiles contra el sitio web y los servicios ofrecidos."
 	},
-	"b7a2a": {
-		"defaultMessage": "He leído y acepto la <Link>política de privacidad</Link>."
+	"642f0": {
+		"defaultMessage": "He leído y acepto la <a>política de privacidad</a>."
 	},
 	"bb691": {
 		"defaultMessage": "Aviso legal"
@@ -279,7 +279,7 @@
 		"defaultMessage": "Jugar videojuegos, los juegos actuales rara vez me fascinan, siempre que pueda jugar juegos como la saga {game_1} o {game_2}, tendré disfrute garantizado."
 	},
 	"fd2f8": {
-		"defaultMessage": "Ingresa tu nombre"
+		"defaultMessage": "Ingrese su nombre"
 	},
 	"fdab8": {
 		"defaultMessage": "Con el objetivo de salvaguardar la seguridad de sus datos personales, le informamos que se han adoptado todas las medidas de carácter técnico y organizativo para garantizar la seguridad de los datos personales facilitados. Todo ello para evitar su alteración, pérdida, y/o tratamientos o accesos no autorizados, como exige la normativa, aunque no existe la seguridad absoluta."
