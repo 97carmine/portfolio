@@ -882,6 +882,20 @@
   dependencies:
     tslib "^2.1.0"
 
+"@formatjs/icu-messageformat-parser@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-1.1.0.tgz#a32464ad414979f4150e9789e9885c8ecc69669e"
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.6.4"
+    "@formatjs/icu-skeleton-parser" "1.1.0"
+    tslib "^2.1.0"
+
+"@formatjs/icu-skeleton-parser@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-skeleton-parser/-/icu-skeleton-parser-1.1.0.tgz#4d63c14b785c43f616fbee3ba766bc8f654c8193"
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.6.4"
+
 "@formatjs/intl-displaynames@4.0.12":
   version "4.0.12"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-displaynames/-/intl-displaynames-4.0.12.tgz#9af9992e544aa96b32c3a4994d6fef878e0376c9"
@@ -913,6 +927,14 @@
   resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-3.2.2.tgz#edc179804acb50c83bfe3f8a8e18b07c21c17eb7"
   dependencies:
     intl-messageformat-parser "6.4.4"
+    tslib "^2.1.0"
+    typescript "^4.0"
+
+"@formatjs/ts-transformer@3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-3.3.2.tgz#f656e5c16a1e6e35a5c83688097acb77ca3560f3"
+  dependencies:
+    "@formatjs/icu-messageformat-parser" "1.1.0"
     tslib "^2.1.0"
     typescript "^4.0"
 
@@ -1850,19 +1872,19 @@ babel-plugin-dynamic-import-node@^2.3.3:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-formatjs@^10.0.0:
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-formatjs/-/babel-plugin-formatjs-10.1.0.tgz#0a4ceb3c1ca3200ee37257b685fe8a2f8f2a2aa4"
+babel-plugin-formatjs@^10.2.2:
+  version "10.2.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-formatjs/-/babel-plugin-formatjs-10.2.2.tgz#bf284099cf03ae7a6d978466e3e129be977a9844"
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/plugin-syntax-jsx" "7"
     "@babel/traverse" "7"
     "@babel/types" "^7.9.5"
-    "@formatjs/ts-transformer" "3.2.2"
+    "@formatjs/icu-messageformat-parser" "1.1.0"
+    "@formatjs/ts-transformer" "3.3.2"
     "@types/babel__core" "^7.1.7"
     "@types/babel__helper-plugin-utils" "7"
-    intl-messageformat-parser "6.4.4"
     tslib "^2.1.0"
 
 babel-plugin-polyfill-corejs2@^0.1.4:
