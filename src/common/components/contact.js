@@ -116,11 +116,11 @@ const Contact = () => {
 							/>
 							{` `}
 							<FormattedMessage
-								id="b7a2a"
-								defaultMessage="I have read and accept the <Link>privacy policy</Link>."
+								id="642f0"
+								defaultMessage="I have read and accept the <a>privacy policy</a>"
 								values={{
 									// eslint-disable-next-line react/display-name
-									Link: (chunks) => <Link to="/privacy_policy">{chunks}</Link>,
+									a: (chunks) => <Link to="/privacy_policy">{chunks}</Link>,
 								}}
 							/>
 						</label>
