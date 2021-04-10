@@ -40,6 +40,7 @@ const commonPlugins = (client) => [
 ];
 
 const commonConfig = {
+	mode: "production",
 	optimization: {
 		minimize: true,
 		minimizer: [
