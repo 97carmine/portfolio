@@ -40,7 +40,6 @@ const commonPlugins = (client) => [
 ];
 
 const commonConfig = {
-	mode: process.env.NODE_ENV,
 	optimization: {
 		minimize: true,
 		minimizer: [

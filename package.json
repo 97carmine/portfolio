@@ -18,8 +18,8 @@
 		"extract:en": "formatjs extract './src/**/*.{js,jsx}' --out-file ./src/common/templates/messages/en.json",
 		"compile:es": "formatjs compile ./src/common/templates/messages/es.json --ast --out-file ./src/common/languages/messages/es.json",
 		"compile:en": "formatjs compile ./src/common/templates/messages/en.json --ast --out-file ./src/common/languages/messages/en.json",
-		"build:prod": "rm -rf build && NODE_ENV=production webpack --config webpack.prod.js",
-		"build:dev": "rm -rf build && NODE_ENV=development webpack --config webpack.dev.js",
+		"build:prod": "rm -rf build && webpack --config webpack.prod.js",
+		"build:dev": "rm -rf build && webpack --config webpack.dev.js",
 		"start:prod": "node build/server.js",
 		"start:dev": "nodemon build/server.js"
 	},

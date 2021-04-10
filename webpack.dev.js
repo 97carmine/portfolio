@@ -40,7 +40,7 @@ const commonPlugins = (client) => [
 	}),
 ];
 
-const commonConfig = { mode: process.env.NODE_ENV, watch: true, devtool: "eval-cheap-module-source-map" };
+const commonConfig = { mode: "development", watch: true, devtool: "eval-cheap-module-source-map" };
 
 const config = [
 	// Server
