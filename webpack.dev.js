@@ -12,14 +12,8 @@ const commonRules = (client) => [
 	},
 	{
 		test: /\.(pdf|png|webp)$/i,
-		use: {
-			loader: "file-loader",
-			options: {
-				name: "[name].[ext]",
-				outputPath: client ? "assets/" : "static/assets/",
-				publicPath: "/assets/",
-			},
-		},
+		type: "asset/resource",
+		generator: { filename: "assets/[name][ext]", emit: client },
 	},
 	{
 		test: /\.(s[ac]|c)ss$/i,
