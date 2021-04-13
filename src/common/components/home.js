@@ -10,7 +10,7 @@ const Home = () => (
 							width="600"
 							height="450"
 							loading="lazy"
-							src={require("../assets/images/personal.webp").default}
+							src={require("../assets/images/personal.webp")}
 							alt="Axel Gabriel Calle Granda"
 						/>
 					</figure>

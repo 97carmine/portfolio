@@ -93,7 +93,7 @@ const Resume = () => (
 					values={{
 						// eslint-disable-next-line react/display-name
 						a: (chunks) => (
-							<a href={require("../assets/documents/CV.pdf").default} target="blank">
+							<a href={require("../assets/documents/CV.pdf")} target="blank">
 								{chunks}
 							</a>
 						),
