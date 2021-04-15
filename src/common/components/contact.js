@@ -74,7 +74,7 @@ const Contact = () => {
 					</div>
 				</div>
 				<div className="field">
-					<label className="label is-required" htmlFor="surname">
+					<label className="label" htmlFor="surname">
 						<FormattedMessage id="8e555" defaultMessage="Surname" />
 					</label>
 					<div className="control">
