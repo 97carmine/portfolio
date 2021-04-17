@@ -5857,10 +5857,10 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"helmet@npm:4.4.1":
-  version: 4.4.1
-  resolution: "helmet@npm:4.4.1"
-  checksum: 32f5ca0517368244198355bd289765c663e80a4a23795277043d87349e46d91a1d9e42ba8dcbd66debb866fbf73ca7fc14d5980f6647dea3ea87d3c6eb0040a5
+"helmet@npm:4.5.0":
+  version: 4.5.0
+  resolution: "helmet@npm:4.5.0"
+  checksum: e7245be78a024bc4536d9f9f81a02ff856a671f300a3865f625942b73a0f9ef161660cd9c7eb7f380de174fdfb1067af05ca5c4af2682d4ac9c068f5bdb6695f
   languageName: node
   linkType: hard
 
@@ -8482,7 +8482,7 @@ fsevents@~2.3.1:
     express: 4.17.1
     favicons: 6.2.1
     favicons-webpack-plugin: 5.0.2
-    helmet: 4.4.1
+    helmet: 4.5.0
     html-minifier-terser: 5.1.1
     html-webpack-plugin: 5.3.1
     mini-css-extract-plugin: 1.4.1
