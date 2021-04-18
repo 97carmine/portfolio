@@ -62,11 +62,7 @@ const Footer = () => {
 							</a>
 						</div>
 						<div className="icon is-medium">
-							<a
-								href="https://www.linkedin.com/in/axel-gabriel-calle-granda-817610209/"
-								target="blank"
-								aria-label="LinkedIn"
-							>
+							<a href="https://www.linkedin.com/in/axelcalle/" target="blank" aria-label="LinkedIn">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="22"
