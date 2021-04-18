@@ -1,5 +1,6 @@
 # Docker
-docker
+.docker/*
+!.docker/web/healthcheck.mjs
 docker-compose.yml
 
 # Node
@@ -23,6 +24,7 @@ build
 .gitignore
 
 # Misc
-
 .directory
 *.bak
+*.md
+*.env
