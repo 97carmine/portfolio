@@ -4,19 +4,17 @@ import web from "./web";
 import logger from "./logger";
 import "../common/utils/dotenv";
 
-//Main
+// Main
 const app = express();
 
 // Proxy
-app.set("trust proxy", "loopback");
+app.enable("trust proxy");
 
 app.use("/api/v1", api_v1);
 app.use("/", web);
 
-const server = app.listen(
-	3000,
-	/*"localhost",*/ async (error) =>
-		error
-			? logger.error(`Error starting ExpressJS: ${error}`)
-			: logger.info(`Listening to the port http://${server.address().address}:${server.address().port}`)
+const server = app.listen(3000, async (error) =>
+	error
+		? logger.error(`Error starting ExpressJS: ${error}`)
+		: logger.info(`Listening to the port http://${server.address().address}:${server.address().port}`)
 );
