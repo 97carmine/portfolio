@@ -36,8 +36,8 @@ server {
         listen 443 default_server ssl http2;
         listen [::]:443 default_server ssl http2;
         server_name www.${NGINX_HOSTNAME};
-        ssl_certificate /etc/letsencrypt/live/www.${NGINX_HOSTNAME}/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/www.${NGINX_HOSTNAME}/privkey.pem;
+        ssl_certificate /etc/letsencrypt/live/${NGINX_HOSTNAME}/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/${NGINX_HOSTNAME}/privkey.pem;
 
         modsecurity on;
         modsecurity_rules_file /etc/nginx/modsec/main.conf;
