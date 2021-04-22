@@ -52,6 +52,7 @@ const config = [
 		entry: { server: resolve(__dirname, "src/server/index.js") },
 		output: {
 			path: resolve(__dirname, "build"),
+			publicPath: "/",
 			filename: "[name].js",
 			chunkFilename: "[name].[chunkhash].chunk.js",
 		},
