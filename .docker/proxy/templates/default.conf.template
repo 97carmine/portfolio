@@ -6,7 +6,7 @@ server {
         modsecurity on;
         modsecurity_rules_file /etc/nginx/modsec/main.conf;
 
-        if ( $host !~* ^(${NGINX_HOSTNAME}||www.${NGINX_HOSTNAME})$ ) {
+        if ( $host !~ ^((|www.)${NGINX_HOSTNAME})$ ) {
                 return 444;
         }
 
@@ -23,11 +23,11 @@ server {
         modsecurity on;
         modsecurity_rules_file /etc/nginx/modsec/main.conf;
 
-        if ( $host !~* ^(${NGINX_HOSTNAME})$ ) {
+        if ( $host != ${NGINX_HOSTNAME} ) {
                 return 444;
         }
 
-        return 301 https://www.$host$request_uri;
+        return 301 $scheme://www.$host$request_uri;
 
         add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
 }
@@ -46,7 +46,7 @@ server {
         add_header Access-Control-Allow-Methods "GET, HEAD, POST" always;
         add_header Allow "GET, HEAD, POST" always;
 
-        if ( $host !~* ^(www.${NGINX_HOSTNAME})$ ) {
+        if ( $host != www.${NGINX_HOSTNAME} ) {
                 return 444;
         }
 
