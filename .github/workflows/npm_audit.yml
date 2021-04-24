@@ -25,4 +25,4 @@ jobs:
         run: yarn install --immutable
 
       - name: Audit packages
-        run: yarn npm audit -R -A --json
+        run: yarn npm audit -R -A
