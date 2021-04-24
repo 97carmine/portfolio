@@ -21,5 +21,8 @@ jobs:
           node-version: '14.x'
           check-latest: true
 
+      - name: Install packages
+        run: yarn install --immutable
+
       - name: Audit packages
-        run: yarn npm audit -R -A
+        run: yarn npm audit -R -A --json
