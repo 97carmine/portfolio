@@ -1,0 +1,25 @@
+name: Audit npm packages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  audit:
+    name: Audit npm packages
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Setup node environment
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: '14.x'
+          check-latest: true
+
+      - name: Audit packages
+        run: yarn npm audit -R -A
