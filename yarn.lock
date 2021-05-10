@@ -4479,10 +4479,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:8.2.0":
-  version: 8.2.0
-  resolution: "dotenv@npm:8.2.0"
-  checksum: 16cb89cbd7b98b053899b8aba8c5044c8fb61a2db8a81fe70360b75035fce5fed53bd7a34d772be717d0880c0321122a4c09423f518025e1b52d96791521b1a7
+"dotenv@npm:9.0.2":
+  version: 9.0.2
+  resolution: "dotenv@npm:9.0.2"
+  checksum: bd37dd7934f3ae3ecd99951a6bcd8568eda65919a2c9b5221bfb90cd50e90f86380d55f5645c4cdc0f09ca6b5a33b5ed2c53625b70a3f5723feeaee29800c399
   languageName: node
   linkType: hard
 
@@ -8471,7 +8471,7 @@ fsevents@~2.3.1:
     bulma: 0.9.2
     css-loader: 5.2.4
     css-minimizer-webpack-plugin: 2.0.0
-    dotenv: 8.2.0
+    dotenv: 9.0.2
     eslint: 7.24.0
     eslint-config-prettier: 8.2.0
     eslint-plugin-formatjs: 2.14.5
