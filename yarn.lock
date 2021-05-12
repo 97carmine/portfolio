@@ -8501,7 +8501,7 @@ fsevents@~2.3.1:
     stylelint-config-prettier: 8.0.2
     stylelint-prettier: 1.2.0
     stylelint-webpack-plugin: 2.1.1
-    terser-webpack-plugin: 5.1.1
+    terser-webpack-plugin: 5.1.2
     webpack: 5.31.2
     webpack-cli: 4.6.0
     webpack-subresource-integrity: next
@@ -10829,7 +10829,23 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"terser-webpack-plugin@npm:5.1.1, terser-webpack-plugin@npm:^5.1.1":
+"terser-webpack-plugin@npm:5.1.2":
+  version: 5.1.2
+  resolution: "terser-webpack-plugin@npm:5.1.2"
+  dependencies:
+    jest-worker: ^26.6.2
+    p-limit: ^3.1.0
+    schema-utils: ^3.0.0
+    serialize-javascript: ^5.0.1
+    source-map: ^0.6.1
+    terser: ^5.7.0
+  peerDependencies:
+    webpack: ^5.1.0
+  checksum: f65229fc603a23b550283da3344adf23a81526e55c830ff437c8e8769fc64f4d48dbc6a7845b3aa85b5ce37eb00834829341d00cad9fa4a65186ebeda6ce61de
+  languageName: node
+  linkType: hard
+
+"terser-webpack-plugin@npm:^5.1.1":
   version: 5.1.1
   resolution: "terser-webpack-plugin@npm:5.1.1"
   dependencies:
@@ -10868,6 +10884,19 @@ resolve@^2.0.0-next.3:
   bin:
     terser: bin/terser
   checksum: bb72a1f534d07f2d59ac85cf1ca0181cc8ff8d11d6ffcab6111a6ba68bf3e43392364842cb668d9da70637430ef12a553ded95e854753832508099718b26fed1
+  languageName: node
+  linkType: hard
+
+"terser@npm:^5.7.0":
+  version: 5.7.0
+  resolution: "terser@npm:5.7.0"
+  dependencies:
+    commander: ^2.20.0
+    source-map: ~0.7.2
+    source-map-support: ~0.5.19
+  bin:
+    terser: bin/terser
+  checksum: 208fc8a02ea345d3977ff070a889eb65082377b55dac67577b87b4e76cb85e3fbd93b06f3d29cb4001471cd16d238988d0b2a7c9d6d908a170fecfa62732b294
   languageName: node
   linkType: hard
 
