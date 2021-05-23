@@ -2823,13 +2823,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"array-flatten@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "array-flatten@npm:3.0.0"
-  checksum: c6272c74c550ada3a577ea78413e82dde387287f7c79fa6a4e9a20bbcf2c151b5f1b87900dfb46c4ac0945b46204a00800b5e4b9e41d12177175b974d7ff77d6
-  languageName: node
-  linkType: hard
-
 "array-includes@npm:^3.1.2, array-includes@npm:^3.1.3":
   version: 3.1.3
   resolution: "array-includes@npm:3.1.3"
@@ -4222,15 +4215,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decompress-response@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "decompress-response@npm:6.0.0"
-  dependencies:
-    mimic-response: ^3.1.0
-  checksum: bb8b8c42be7767994764d27f91a3949e3dc9008da82f1aaeab1de40f1ebb50d7abf17b31b2e4000f8d267a1e75f76052efd58d4419124c04bf430e184c164fad
-  languageName: node
-  linkType: hard
-
 "deep-extend@npm:^0.6.0":
   version: 0.6.0
   resolution: "deep-extend@npm:0.6.0"
@@ -5185,9 +5169,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"favicons@npm:6.2.1":
-  version: 6.2.1
-  resolution: "favicons@npm:6.2.1"
+"favicons@npm:6.2.2":
+  version: 6.2.2
+  resolution: "favicons@npm:6.2.2"
   dependencies:
     clone: ^2.1.2
     colors: ^1.4.0
@@ -5196,13 +5180,13 @@ __metadata:
     jsontoxml: ^1.0.1
     lodash.defaultsdeep: ^4.6.1
     require-directory: ^2.1.1
-    sharp: ^0.27.1
+    sharp: ^0.28.2
     through2: ^4.0.2
     tinycolor2: ^1.4.2
     to-ico: ^1.1.5
     vinyl: ^2.2.1
     xml2js: ^0.4.23
-  checksum: 6b799fcc11f31b175acabf336e886450564f3dc69d33f217d558466afde6634910a9e971e5a078d27e8a02ba36560cfd722c9a36a26c0189ba56c8b171f06f5f
+  checksum: 0858822c3bd4b42f2c970d8a5861fb0db7adb65d397483e510e58f1cd73b67084a3704616f7efe10709497afd8a6e6f6157f270d78331c15fb0e72973dc332c7
   languageName: node
   linkType: hard
 
@@ -7507,13 +7491,6 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"mimic-response@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "mimic-response@npm:3.1.0"
-  checksum: cfbf19f66de6ad46df7481d9e8c1a7f30b6fa77dd771ad4a72a0443265041a39768182bde6d1de39001c2774168635bc74f42902e401c8ba33db55d69b773004
-  languageName: node
-  linkType: hard
-
 "min-document@npm:^2.19.0":
   version: 2.19.0
   resolution: "min-document@npm:2.19.0"
@@ -7751,12 +7728,12 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"node-abi@npm:^2.7.0":
-  version: 2.21.0
-  resolution: "node-abi@npm:2.21.0"
+"node-abi@npm:^2.21.0":
+  version: 2.26.0
+  resolution: "node-abi@npm:2.26.0"
   dependencies:
     semver: ^5.4.1
-  checksum: c4932878cb278a029982434bcb9ec393f177cc9356086f013e5f4a8226dc925852a4fea897fbfa0cad60470a117841c18ca2e7b550380322adaecb0a326c5c36
+  checksum: 29c7ee7486635ab6f49227a74e37cf07560fbc2bed14b8a64a91f831a76da3ed8e7a3b80ebfa07f0e3a3b53287f1b30b736e01809799d71239c47c5249c407bd
   languageName: node
   linkType: hard
 
@@ -8479,7 +8456,7 @@ fsevents@~2.3.1:
     eslint-plugin-react: 7.23.2
     eslint-webpack-plugin: 2.5.3
     express: 4.17.1
-    favicons: 6.2.1
+    favicons: 6.2.2
     favicons-webpack-plugin: 5.0.2
     helmet: 4.6.0
     html-minifier-terser: 5.1.1
@@ -9039,9 +9016,9 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"prebuild-install@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "prebuild-install@npm:6.0.1"
+"prebuild-install@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "prebuild-install@npm:6.1.2"
   dependencies:
     detect-libc: ^1.0.3
     expand-template: ^2.0.3
@@ -9049,7 +9026,7 @@ fsevents@~2.3.1:
     minimist: ^1.2.3
     mkdirp-classic: ^0.5.3
     napi-build-utils: ^1.0.1
-    node-abi: ^2.7.0
+    node-abi: ^2.21.0
     noop-logger: ^0.1.1
     npmlog: ^4.0.1
     pump: ^3.0.0
@@ -9057,10 +9034,9 @@ fsevents@~2.3.1:
     simple-get: ^3.0.3
     tar-fs: ^2.0.0
     tunnel-agent: ^0.6.0
-    which-pm-runs: ^1.0.0
   bin:
-    prebuild-install: bin.js
-  checksum: b23d88a27e4a672f5c59ca69733b27ce3ad133fd58d61e352bc1ccf61b5211b55b793ea8b21a81e63260bb10837c74c3f3cb5cfee47815aeaa729b0991e13751
+    prebuild-install: ./bin.js
+  checksum: 680fe93dc913134022a355da3181dc7e65ea1df16f15d0c956f3fb5327c9ae3d307de9a715bc4c3d9f5fd8044d4b02d368b7ba57e5197baca8f10acf0532f403
   languageName: node
   linkType: hard
 
@@ -10076,22 +10052,20 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.27.1":
-  version: 0.27.2
-  resolution: "sharp@npm:0.27.2"
+"sharp@npm:^0.28.2":
+  version: 0.28.2
+  resolution: "sharp@npm:0.28.2"
   dependencies:
-    array-flatten: ^3.0.0
     color: ^3.1.3
     detect-libc: ^1.0.3
     node-addon-api: ^3.1.0
     node-gyp: latest
-    npmlog: ^4.1.2
-    prebuild-install: ^6.0.1
-    semver: ^7.3.4
-    simple-get: ^4.0.0
+    prebuild-install: ^6.1.2
+    semver: ^7.3.5
+    simple-get: ^3.1.0
     tar-fs: ^2.1.1
     tunnel-agent: ^0.6.0
-  checksum: 9b8a7649c684053b07737cdb896581fe8d7e961408572dadbf37fea658e985a01e635a3b07de069727fafa0372f1bf7ad60206da4ea0a059418652ca8823fa73
+  checksum: 8a89b964c898a2027df51780c46d8a42460e820c9452771fec77c69de4651dd542ffaf093f7d7f1ab32d388a4b8f8e5e9ad76ad687301b997885128006d3e9cf
   languageName: node
   linkType: hard
 
@@ -10136,7 +10110,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"simple-get@npm:^3.0.3":
+"simple-get@npm:^3.0.3, simple-get@npm:^3.1.0":
   version: 3.1.0
   resolution: "simple-get@npm:3.1.0"
   dependencies:
@@ -10144,17 +10118,6 @@ resolve@^2.0.0-next.3:
     once: ^1.3.1
     simple-concat: ^1.0.0
   checksum: f56f08765eafde034b379d38d3dd1eb9b9ffb41d090d8216e71dce6ea3936499ee34b20942773a2605b08e8abce940691bd06e110ac12d08f83917493078831e
-  languageName: node
-  linkType: hard
-
-"simple-get@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "simple-get@npm:4.0.0"
-  dependencies:
-    decompress-response: ^6.0.0
-    once: ^1.3.1
-    simple-concat: ^1.0.0
-  checksum: 91c007260dd92480b8dcd78b4310561967532e1ef9b4ec332a1aac6990c9a71d7477a8d05c84bb0165e4eb0e205fa620e37f42652dceea46c713084ae935e873
   languageName: node
   linkType: hard
 
@@ -11677,13 +11640,6 @@ typescript@^4.0:
     is-string: ^1.0.5
     is-symbol: ^1.0.3
   checksum: eaa12a51e3294892fc570b1750398d10cfc8c8fa8ad5343ce0a18964782d0f7b8853f902156b9db7f194ae302acf1264b6e283612946303c86236d16e8f6b571
-  languageName: node
-  linkType: hard
-
-"which-pm-runs@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "which-pm-runs@npm:1.0.0"
-  checksum: 0bb79a782e98955afec8f35a3ae95c4711fdd3d0743772ee98211da67c2421fdd4c92c95c93532cc0b4dcc085d8e27f3ad2f8a9173cb632692379bd3d2818821
   languageName: node
   linkType: hard
 
