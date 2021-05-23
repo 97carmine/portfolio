@@ -4,7 +4,6 @@ import { StaticRouter, matchPath } from "react-router";
 import { minify } from "html-minifier-terser";
 import { StrictMode } from "react";
 import { readFile } from "fs";
-import url from "url";
 import App from "../../../common/components/app";
 import routes from "../../../common/routes";
 import logger from "../../logger";
@@ -54,15 +53,7 @@ publicRoute.get("/*", async (req, res) => {
 					{ name: "Axel Gabriel Calle Granda" }
 				)}" />`
 			);
-			data = data.replace(
-				`<link rel="canonical"/>`,
-				`<link rel="canonical" href="${url.format(req.fullURL, {
-					fragment: false,
-					unicode: true,
-					auth: false,
-					search: false,
-				})}" />`
-			);
+			data = data.replace(`<link rel="canonical"/>`, `<link rel="canonical" href="${req.fullURL}" />`);
 			data = data.replace(
 				`<div id="root"></div>`,
 				`<div id="root">${renderToString(
