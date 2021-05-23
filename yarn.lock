@@ -5,13 +5,13 @@ __metadata:
   version: 4
   cacheKey: 7c9
 
-"@axe-core/react@npm:4.1.1":
-  version: 4.1.1
-  resolution: "@axe-core/react@npm:4.1.1"
+"@axe-core/react@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@axe-core/react@npm:4.2.0"
   dependencies:
-    axe-core: ^4.1.1
+    axe-core: ^4.2.0
     requestidlecallback: ^0.3.0
-  checksum: 4326233647f046654b54ff80854209e8b2b19a079d179cfe84d94c73fcda9fe6f3ddff0a3dad946b20a3597ba90c6134ac69e9d66612cb82b266a8f5ebf6207b
+  checksum: 70f7b3b7d4299c5feeca0fc50805e984bb50f2f6c86f37b21bf5b8ce7827a5a057cf4fe9f7ab08b69da446a414e7f3306f1707a43f451f0401cf2d813a157043
   languageName: node
   linkType: hard
 
@@ -2988,10 +2988,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axe-core@npm:^4.1.1":
-  version: 4.1.3
-  resolution: "axe-core@npm:4.1.3"
-  checksum: f711c530fb6b25a02dfde4a0410063a50b4f7bf7e4ee649376a51dcaceac61743e0de7b282a2798ccdbc512d2de22a62662211278da78ee039e56be54d75f090
+"axe-core@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "axe-core@npm:4.2.0"
+  checksum: c8c4ec5aec2d4330ee4b5b2fef9f609c897a60c96ec095e599d0de6e56ea40e9f947bf83057c4eca1496ca38038b818d14f9d59275a1841ff70e940b9e8a7c63
   languageName: node
   linkType: hard
 
@@ -8455,7 +8455,7 @@ fsevents@~2.3.1:
   version: 0.0.0-use.local
   resolution: "portfolio@workspace:."
   dependencies:
-    "@axe-core/react": 4.1.1
+    "@axe-core/react": 4.2.0
     "@babel/cli": 7.13.14
     "@babel/core": 7.13.15
     "@babel/eslint-parser": 7.13.14
