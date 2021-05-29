@@ -8471,7 +8471,7 @@ fsevents@~2.3.1:
     react-intl: 5.15.7
     react-router: 5.2.0
     react-router-dom: 5.2.0
-    react-transition-group: 4.4.1
+    react-transition-group: 4.4.2
     sass: 1.32.8
     sass-loader: 11.0.1
     stylelint: 13.12.0
@@ -9323,9 +9323,9 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"react-transition-group@npm:4.4.1":
-  version: 4.4.1
-  resolution: "react-transition-group@npm:4.4.1"
+"react-transition-group@npm:4.4.2":
+  version: 4.4.2
+  resolution: "react-transition-group@npm:4.4.2"
   dependencies:
     "@babel/runtime": ^7.5.5
     dom-helpers: ^5.0.1
@@ -9334,7 +9334,7 @@ fsevents@~2.3.1:
   peerDependencies:
     react: ">=16.6.0"
     react-dom: ">=16.6.0"
-  checksum: 43a00cbce643cab77c388648ac104f2078b145cd89ccc0fc128722d2006a4f47c7e674e052e0c57a0c2dbacaa055c4553276599de1667cf71bff6d6cec2e05c1
+  checksum: 37b5c84118962f49d97cfde7ad733ad7c13c35cec763ad5c68e99dcf7af1e685bdaef582ffe417c7eaf4cbc54c30807a6333e0aa5f6f71c7fd23d9773da21453
   languageName: node
   linkType: hard
 
