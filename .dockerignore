@@ -7,8 +7,8 @@ docker-compose.yml
 node_modules
 .pnp
 .pnp.js
-.yarn/*
-!.yarn/releases
+.yarn
+yarn.lock
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -25,6 +25,7 @@ build
 
 # Misc
 .directory
+LICENSE
 *.bak
 *.md
 *.env
