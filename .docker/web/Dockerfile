@@ -27,8 +27,10 @@ COPY --chown=node:node --from=builder /opt/app/build ./build
 COPY --chown=node:node --from=builder /opt/app/package.json \
     /opt/app/.yarnrc.yml /opt/app/.docker/web/healthcheck.mjs ./
 
-RUN yarn plugin import workspace-tools \
-    && yarn workspaces focus --production
+RUN yarn plugin import @yarnpkg/plugin-workspace-tools \
+    && yarn workspaces focus --production \
+    && yarn plugin remove @yarnpkg/plugin-workspace-tools \
+    && rm -r .yarn/plugins
 
 EXPOSE 3000
 
