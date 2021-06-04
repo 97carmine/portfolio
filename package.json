@@ -42,7 +42,7 @@
 		"winston": "3.3.3"
 	},
 	"devDependencies": {
-		"@axe-core/react": "4.2.0",
+		"@axe-core/react": "4.2.1",
 		"@babel/cli": "7.13.14",
 		"@babel/core": "7.13.15",
 		"@babel/eslint-parser": "7.13.14",
