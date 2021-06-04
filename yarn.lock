@@ -7647,16 +7647,16 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:1.4.1":
-  version: 1.4.1
-  resolution: "mini-css-extract-plugin@npm:1.4.1"
+"mini-css-extract-plugin@npm:1.6.0":
+  version: 1.6.0
+  resolution: "mini-css-extract-plugin@npm:1.6.0"
   dependencies:
     loader-utils: ^2.0.0
     schema-utils: ^3.0.0
     webpack-sources: ^1.1.0
   peerDependencies:
     webpack: ^4.4.0 || ^5.0.0
-  checksum: 31819614c90892ec508df3bc0b8d12e9cb2b8f121def25919d4e45c04de7e3c95b4cbd6eb42b0ceedbbd5882cf4950f237a1920cb02deb54fe495892ea34b92d
+  checksum: 2aff517e04483d6b6879bf8bad5e5b67b889f4f9d0f0a549eb52cc472ece40572a708aa8837c5c91d4993a2cefb645622deb06d14f97e4a784f7223d1e0d8ab3
   languageName: node
   linkType: hard
 
@@ -8630,7 +8630,7 @@ fsevents@~2.3.1:
     helmet: 4.6.0
     html-minifier-terser: 5.1.1
     html-webpack-plugin: 5.3.1
-    mini-css-extract-plugin: 1.4.1
+    mini-css-extract-plugin: 1.6.0
     nodemailer: 6.5.0
     nodemon: 2.0.7
     prettier: 2.2.1
