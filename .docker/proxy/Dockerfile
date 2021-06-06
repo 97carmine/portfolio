@@ -66,7 +66,7 @@ RUN set -ex \
     && make \
     && make install \
     && echo "Adding OWASP rules in ModSecurity" \
-    && git clone --depth 1 -b v3.3/master --single-branch https://github.com/coreruleset/coreruleset.git /opt/coreruleset \
+    && git clone --depth 1 -b v3.3/master --single-branch https://github.com/coreruleset/coreruleset /opt/coreruleset \
     && mv /opt/coreruleset/crs-setup.conf.example /usr/local/modsecurity/crs-setup.conf \
     && mv /opt/coreruleset/rules /usr/local/modsecurity/rules \
     && echo "Cleaning" \
@@ -94,7 +94,7 @@ RUN set -ex \
     && printf '%s\n' 'Include "/etc/nginx/modsec/modsecurity.conf"' \
         'Include "/usr/local/modsecurity/crs-setup.conf"' \
         'Include "/usr/local/modsecurity/rules/*.conf"' > /etc/nginx/modsec/main.conf \
-    && rm -rf /tmp/packages
+    && rm -rf /tmp/packages /usr/share/nginx
 
 COPY certbot.sh /opt
 
