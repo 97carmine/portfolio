@@ -100,7 +100,7 @@ const Contact = () => {
 						<FormattedMessage id="4c2a8" defaultMessage="Message" />
 					</label>
 					<div className="control">
-						<input className="input" type="text" value={data} id="data" onChange={handleInputChange} required />
+						<textarea className="textarea" value={data} id="data" onChange={handleInputChange} required />
 						<p className="help">
 							<FormattedMessage id="68d39" defaultMessage="Enter your message" />
 						</p>

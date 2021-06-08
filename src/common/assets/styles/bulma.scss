@@ -31,23 +31,41 @@ $footer-padding: 2rem;
 // Custom
 
 .is-validated {
+	%invalid {
+		border-color: $danger;
+		box-shadow: $input-focus-box-shadow-size bulmaRgba($danger, 0.25);
+		~ .help {
+			color: $danger-dark;
+		}
+	}
+
+	%valid {
+		border-color: $success;
+		box-shadow: $input-focus-box-shadow-size bulmaRgba($success, 0.25);
+		~ .help {
+			color: $success-dark;
+		}
+	}
+
 	input {
-		&:required,
+		&:required:invalid,
 		&:invalid,
 		&:out-of-range {
-			border-color: $danger;
-			box-shadow: $input-focus-box-shadow-size bulmaRgba($danger, 0.25);
-			~ .help {
-				color: $danger-dark;
-			}
+			@extend %invalid;
 		}
+		&:required:valid,
 		&:valid,
 		&:in-range {
-			border-color: $success;
-			box-shadow: $input-focus-box-shadow-size bulmaRgba($success, 0.25);
-			~ .help {
-				color: $success-dark;
-			}
+			@extend %valid;
+		}
+	}
+
+	textarea {
+		&:required:invalid {
+			@extend %invalid;
+		}
+		&:required:valid {
+			@extend %valid;
 		}
 	}
 }
