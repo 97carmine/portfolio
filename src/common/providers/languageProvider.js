@@ -1,14 +1,14 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { RawIntlProvider, IntlProvider } from "react-intl";
-import messages from "../languages/messages";
+import languages from "../languages/messages";
 import { isRunningOnClientSide } from "../utils/checkClientServer";
 
 const LanguageProvider = ({ intl, children }) => {
 	const [language] = useState(isRunningOnClientSide && document.documentElement.lang);
 
 	return intl === undefined ? (
-		<IntlProvider locale={language} key={language} messages={messages[language]}>
+		<IntlProvider locale={language} key={language} messages={languages[language].messages}>
 			{children}
 		</IntlProvider>
 	) : (

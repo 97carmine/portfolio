@@ -1,6 +1,5 @@
 import { createIntl, createIntlCache } from "react-intl";
-import languages from ".";
-import messages from "./messages";
+import languages from "./messages";
 
 /**
  * @param {*} acceptedLangs Array of languages, example: [ "es-ES", "en-US" ]
@@ -17,7 +16,7 @@ const generateIntlObject = (language) =>
 	createIntl(
 		{
 			locale: language,
-			messages: messages[language],
+			messages: languages[language].messages,
 		},
 		createIntlCache()
 	);

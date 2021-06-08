@@ -1,6 +1,5 @@
 import { FormattedMessage } from "react-intl";
 import { Link, useLocation } from "react-router-dom";
-import languages from "../languages";
 
 const Footer = () => {
 	const { pathname } = useLocation();
@@ -114,12 +113,12 @@ const Footer = () => {
 							<FormattedMessage id="4994a" defaultMessage="Language" />
 						</p>
 						<p>
-							<a href={`${pathname}?language=${languages.en}`}>
+							<a href={`${pathname}?language=en`}>
 								<FormattedMessage id="78463" defaultMessage="English" />
 							</a>
 						</p>
 						<p>
-							<a href={`${pathname}?language=${languages.es}`}>
+							<a href={`${pathname}?language=es`}>
 								<FormattedMessage id="cb548" defaultMessage="Spanish" />
 							</a>
 						</p>

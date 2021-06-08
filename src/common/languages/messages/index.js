@@ -1,8 +1,13 @@
-import en from "./en.json";
-import es from "./es.json";
-import languages from "..";
+import messages_en from "./en.json";
+import messages_es from "./es.json";
 
 export default {
-	[languages.en]: en,
-	[languages.es]: es,
+	en: {
+		language: "English",
+		messages: messages_en,
+	},
+	es: {
+		language: "Spanish",
+		messages: messages_es,
+	},
 };
