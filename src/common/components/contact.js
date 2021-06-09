@@ -2,10 +2,10 @@ import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 
-const initialState = { name: "", surname: "", email: "", data: "" };
+const initialState = { full_name: "", email: "", data: "" };
 
 const Contact = () => {
-	const [{ name, surname, email, data }, setEmailData] = useState(initialState);
+	const [{ full_name, email, data }, setEmailData] = useState(initialState);
 	const [isLoading, setLoading] = useState(false);
 	const [isAccepted, setAccepted] = useState(false);
 	const [{ isShowing, alertStatus }, setShowAlert] = useState({ isShowing: false, alertStatus: false });
@@ -20,7 +20,7 @@ const Contact = () => {
 		const response = await fetch(`/api/v1/sendmail`, {
 			method: "POST",
 			headers: { Accept: "application/json", "Content-Type": "application/json" },
-			body: JSON.stringify({ name, surname, email, data }),
+			body: JSON.stringify({ full_name, email, data }),
 		})
 			.then((response) => response.ok)
 			.catch((error) => console.log(`There has been a problem with your fetch operation: ${error}`));
@@ -63,24 +63,20 @@ const Contact = () => {
 					<FormattedMessage id="414cf" defaultMessage="Feel free to send me an email" />
 				</h4>
 				<div className="field">
-					<label className="label" htmlFor="name">
-						<FormattedMessage id="49ee3" defaultMessage="Name" />
+					<label className="label" htmlFor="full_name">
+						<FormattedMessage id="f11b3" defaultMessage="Full name" />
 					</label>
 					<div className="control">
-						<input className="input" type="text" value={name} id="name" onChange={handleInputChange} required />
+						<input
+							className="input"
+							type="text"
+							value={full_name}
+							id="full_name"
+							onChange={handleInputChange}
+							required
+						/>
 						<p className="help">
-							<FormattedMessage id="fd2f8" defaultMessage="Enter your name" />
-						</p>
-					</div>
-				</div>
-				<div className="field">
-					<label className="label" htmlFor="surname">
-						<FormattedMessage id="8e555" defaultMessage="Surname" />
-					</label>
-					<div className="control">
-						<input className="input" type="text" value={surname} id="surname" onChange={handleInputChange} required />
-						<p className="help">
-							<FormattedMessage id="c9121" defaultMessage="Enter your surname" />
+							<FormattedMessage id="387af" defaultMessage="Enter your full name" />
 						</p>
 					</div>
 				</div>

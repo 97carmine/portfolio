@@ -19,10 +19,9 @@ const validator = async (req, res, next) => {
 	const schema = {
 		$async: true,
 		type: "object",
-		required: ["name", "surname", "email", "data"],
+		required: ["full_name", "email", "data"],
 		properties: {
-			name: { type: "string", isNotEmpty: true },
-			surname: { type: "string", isNotEmpty: true },
+			full_name: { type: "string", isNotEmpty: true },
 			email: { type: "string", isNotEmpty: true },
 			data: { type: "string", isNotEmpty: true },
 		},
@@ -40,7 +39,7 @@ const validator = async (req, res, next) => {
 
 emailRoute.post("/sendmail", validator, async (req, res) => {
 	if (req.accepts("application/json")) {
-		const { name, surname, email, data } = req.body;
+		const { full_name, email, data } = req.body;
 
 		const transporter = createTransport({
 			service: "gmail",
@@ -52,7 +51,7 @@ emailRoute.post("/sendmail", validator, async (req, res) => {
 			.then(() =>
 				transporter
 					.sendMail({
-						from: `${name} ${surname} <${email}>`,
+						from: `${full_name} <${email}>`,
 						to: `axel.c.granda@gmail.com`,
 						subject: `Email enviado desde la página web`,
 						text: `${data}`,

@@ -89,8 +89,8 @@
 	"4994a": {
 		"defaultMessage": "Idioma"
 	},
-	"49ee3": {
-		"defaultMessage": "Nombre"
+	"f11b3": {
+		"defaultMessage": "Nombre completo"
 	},
 	"4c2a8": {
 		"defaultMessage": "Mensaje"
@@ -158,9 +158,6 @@
 	"8bf5b": {
 		"defaultMessage": "Un desarrollador web y administrador de sistemas."
 	},
-	"8e555": {
-		"defaultMessage": "Apellido"
-	},
 	"90c44": {
 		"defaultMessage": "Propiedad intelectual e industrial"
 	},
@@ -224,9 +221,6 @@
 	"c5a2b": {
 		"defaultMessage": "Exactitud y veracidad de los datos personales"
 	},
-	"c9121": {
-		"defaultMessage": "Ingrese su apellido"
-	},
 	"cb548": {
 		"defaultMessage": "Español"
 	},
@@ -278,8 +272,8 @@
 	"49432": {
 		"defaultMessage": "Jugar videojuegos, los juegos actuales rara vez me fascinan, siempre que pueda jugar juegos como la saga {game_1} o {game_2}, tendré disfrute garantizado."
 	},
-	"fd2f8": {
-		"defaultMessage": "Ingrese su nombre"
+	"387af": {
+		"defaultMessage": "Ingrese su nombre completo"
 	},
 	"fdab8": {
 		"defaultMessage": "Con el objetivo de salvaguardar la seguridad de sus datos personales, le informamos que se han adoptado todas las medidas de carácter técnico y organizativo para garantizar la seguridad de los datos personales facilitados. Todo ello para evitar su alteración, pérdida, y/o tratamientos o accesos no autorizados, como exige la normativa, aunque no existe la seguridad absoluta."
