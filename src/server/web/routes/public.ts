@@ -15,7 +15,7 @@ publicRoute.get("/*", async (req: Request, res: Response): Promise<void> => {
 	res.render(
 		"public",
 		{
-			assets: JSON.parse(readFileSync(join(__dirname, "static/assets-manifest.json"), "utf-8")),
+			assets: JSON.parse(readFileSync(join(__dirname, "static/asset-manifest.json"), "utf-8")),
 			language: req.language.locale,
 			canonical_URL: req.fullURL.toString(),
 			component: renderToString(app(req.path, req.language)),
