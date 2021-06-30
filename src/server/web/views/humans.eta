@@ -1,0 +1,8 @@
+Developer: <%= `${it.developer}\n` %>
+contact: <%= `${it.contact}\n` %>
+Location: <%= `${it.location}\n` %>
+
+Last update: <%= `${it.last_update}\n` %>
+Standards: HTML5, CSS3, TypeScript
+Components: React
+Software: VSCodium

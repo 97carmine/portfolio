@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "ES2020",
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"alwaysStrict": true,
+		"strictNullChecks": true,
+		"lib": ["ES2020", "DOM"],
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"outDir": "build",
+		"jsx": "react-jsx",
+		"noImplicitAny": true
+	},
+	"include": ["src/"]
+}

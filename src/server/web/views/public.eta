@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="<%= it.language %>">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="<%= it.description %>" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Axel Gabriel Calle Granda</title>
+		<link rel="canonical" content="<%= it.canonical_URL %>" />
+		<link rel="shortcut icon" href="<%= it.assets["favicon.png"] %>">
+		<link type="text/plain" rel="author" href="<%= it.humans_URL %>" />
+		<link type="text/css" rel="stylesheet" href="<%= it.assets["client.css"] %>" />
+		<script type="text/javascript" defer src="<%= it.assets["client.js"] %>"></script>
+	</head>
+	<body>
+		<noscript><div class="noJS"><%= it.noJS %></div></noscript>
+		<div id="root"><%~ it.component %></div>
+	</body>
+</html>

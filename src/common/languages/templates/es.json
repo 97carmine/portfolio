@@ -1,0 +1,302 @@
+{
+	"0534e": {
+		"defaultMessage": "Existen otras finalidades por las que el titular trata sus datos personales:"
+	},
+	"06666": {
+		"defaultMessage": "Asimismo, el titular no se hace responsable de los enlaces ubicados en los sitios web enlazados a los que proporciona acceso."
+	},
+	"0d01b": {
+		"defaultMessage": "A través de una marca a la que apuntas una cámara (como un teléfono inteligente) puedes ver los datos que se te proporcionaron en realidad aumentada."
+	},
+	"124ad": {
+		"defaultMessage": "Enlaces de interés a otros sitios web"
+	},
+	"137ac": {
+		"defaultMessage": "Pastilla roja: Ir a la página de inicio"
+	},
+	"16f3f": {
+		"defaultMessage": "Estudios"
+	},
+	"17851": {
+		"defaultMessage": "Titular: {owner}"
+	},
+	"1a303": {
+		"defaultMessage": "Vaya, algo está roto, te recomiendo que vuelvas más tarde."
+	},
+	"1ad59": {
+		"defaultMessage": "Me gusta programar, me dedico a la programación web. Me encantan los sistemas {tool_1}, especialmente los basados en {tool_2}. He utilizado herramientas de virtualización como {tool_3} y {tool_4} y herramientas de contenedorización como {tool_5}."
+	},
+	"1c652": {
+		"defaultMessage": "Hola, soy {name}"
+	},
+	"1cd74": {
+		"defaultMessage": "Si accede a un sitio web externo desde un enlace que se encuentra en el sitio web, debe leer la política de privacidad del otro sitio web, que puede ser diferente a la de este sitio web."
+	},
+	"1cf05": {
+		"defaultMessage": "Portafolio de {name}"
+	},
+	"1d441": {
+		"defaultMessage": "{dateStart} - {dateEnd} | Desarrollo web en {company}."
+	},
+	"1d5a6": {
+		"defaultMessage": "Como usuario del sitio web te comprometes y eres el único responsable de que los datos facilitados al titular sean verdaderos, completos, exactos y vigentes exonerando al titular de cualquier responsabilidad al respecto."
+	},
+	"20492": {
+		"defaultMessage": "{dateStart} - {dateEnd} | Ensayos y análisis técnicos en {company}."
+	},
+	"20c75": {
+		"defaultMessage": "Identidad del responsable"
+	},
+	"2433d": {
+		"defaultMessage": "Información personal"
+	},
+	"28f0e": {
+		"defaultMessage": "¿Leer? No me apasiona la lectura, pero hay libros o novelas gráficas como {book_1}, Los viajes de Gulliver o la saga Injustice: Dioses entre nosotros que me han dado mucho en qué pensar."
+	},
+	"2a7cc": {
+		"defaultMessage": "Atención al cliente, gestión de inventarios de equipos pertenecientes a Orange y gestión de documentación."
+	},
+	"2a934": {
+		"defaultMessage": "El establecimiento del enlace no implica en ningún caso la existencia de relaciones entre el titular y el titular del sitio donde se establezca el enlace, ni la aceptación o aprobación por parte del titular de sus contenidos o servicios."
+	},
+	"2b011": {
+		"defaultMessage": "El titular declina cualquier responsabilidad en caso de interrupciones o mal funcionamiento de los Servicios o contenidos ofrecidos en Internet, cualquiera que sea su causa. Asimismo, el titular no se hace responsable por cortes de red, pérdidas comerciales como consecuencia de dichas caídas, cortes temporales de energía o cualquier otro tipo de daño indirecto que pueda ser ocasionado por causas ajenas al titular."
+	},
+	"2ce4c": {
+		"defaultMessage": "Necesita activar JavaScript para una funcionalidad completa"
+	},
+	"316c3": {
+		"defaultMessage": "El titular no declara ni garantiza que los servicios o contenidos estén interrumpidos o que estén libres de errores, que los defectos serán corregidos, o que el servicio o el servidor que lo pone a disposición estén libres de virus u otros componentes dañinos sin perjuicio al hecho de que El propietario hace todo lo posible para evitar este tipo de incidencias."
+	},
+	"346ff": {
+		"defaultMessage": "Garantizar el cumplimiento de las condiciones recogidas en el aviso legal y en la ley aplicable. Esto puede incluir el desarrollo de herramientas y algoritmos que ayuden a este sitio web a garantizar la confidencialidad de los datos personales que recopila."
+	},
+	"38ed2": {
+		"defaultMessage": "El código fuente del sitio web está bajo la {license} licencia y se puede encontrar <a>aquí</a>."
+	},
+	"3b757": {
+		"defaultMessage": "Todos los logotipos, marcas comerciales y marcas comerciales registradas son propiedad de sus respectivos dueños."
+	},
+	"414cf": {
+		"defaultMessage": "Siéntete libre de mandarme un correo electrónico"
+	},
+	"43108": {
+		"defaultMessage": "Versión PDF disponible <a>aquí</a>."
+	},
+	"49770": {
+		"defaultMessage": "Los datos no serán comunicados a ningún tercero, salvo obligación legal o nos facilite su consentimiento informado, libre, específico e inequívoco a tal efecto."
+	},
+	"4994a": {
+		"defaultMessage": "Idioma"
+	},
+	"f11b3": {
+		"defaultMessage": "Nombre completo"
+	},
+	"4c2a8": {
+		"defaultMessage": "Mensaje"
+	},
+	"511a3": {
+		"defaultMessage": "Empecé en el mundo de la informática gracias a un juego llamado 102 Dálmatas: Cachorros al rescate. Fue amor a primera vista. Me sentí involucrado con sus historias, personajes y banda sonora. Era como estar en otro mundo. Al principio todo eran botones, interfaces ... Quería conocer la 'magia' y poder crear mis propias ideas. Desde entonces he recorrido un largo camino."
+	},
+	"54e1d": {
+		"defaultMessage": "Proyectos"
+	},
+	"55528": {
+		"defaultMessage": "Gestionar redes sociales. El propietario tiene presencia en redes sociales. El titular tratará sus datos personales con la finalidad de gestionar correctamente su presencia en la red social, informarle de sus actividades, productos o servicios, así como para cualquier otra finalidad que permita la normativa de redes sociales. En ningún caso el titular utilizará los perfiles de seguidores en redes sociales para enviar publicidad."
+	},
+	"56c34": {
+		"defaultMessage": "Política de privacidad"
+	},
+	"5b05e": {
+		"defaultMessage": "El titular se reserva el derecho a realizar las modificaciones que considere oportunas en el sitio web y el aviso legal sin previo aviso, pudiendo cambiar, eliminar o añadir tanto los contenidos y servicios prestados a través del mismo como la forma en que estos aparecen."
+	},
+	"5e962": {
+		"defaultMessage": "Antes de tomar decisiones y/o acciones en base a la información incluida en el sitio web, el titular recomienda verificar y contrastar la información recibida con otras fuentes."
+	},
+	"5f55f": {
+		"defaultMessage": "En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 sobre la protección de las personas físicas (RGPD) y la LSSI-CE, Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y el comercio electrónico, el titular expone sus datos identificativos."
+	},
+	"6132b": {
+		"defaultMessage": "Pastilla azul: Volver"
+	},
+	"6832a": {
+		"defaultMessage": "Ingrese su dirección de correo electrónico"
+	},
+	"68d39": {
+		"defaultMessage": "Ingrese su mensaje"
+	},
+	"6a040": {
+		"defaultMessage": "Aficiones"
+	},
+	"6cdb1": {
+		"defaultMessage": "Este proyecto fue el trabajo de fin de carrera que presenté junto con mi socio. Es un servicio web con el objetivo de generar un currículum en realidad aumentada a través de un formulario web."
+	},
+	"6e9e6": {
+		"defaultMessage": "Afortunadamente, tiene una solución sencilla. Esta es tu oportunidad. Después de esto, no hay vuelta atrás."
+	},
+	"6eb38": {
+		"defaultMessage": "Domicilio: Calle {street_name}, 23, 28041, Comunidad de Madrid, España "
+	},
+	"7593e": {
+		"defaultMessage": "{dateStart} - {dateEnd} | Técnico Superior en Desarrollo de Aplicaciones Web en {center}."
+	},
+	"76772": {
+		"defaultMessage": "En caso de que tenga alguna duda sobre estas Condiciones Legales o desee realizar algún comentario sobre este sitio web, puede enviar un correo electrónico a la dirección {email}."
+	},
+	"78463": {
+		"defaultMessage": "Inglés"
+	},
+	"788e2": {
+		"defaultMessage": "Estos enlaces a otros sitios web no suponen en ningún caso una sugerencia o recomendación para que usted visite las páginas web de destino, las cuales están fuera del control del titular, por lo que el titular no se hace responsable del contenido de los sitios web enlazados o del resultado. obtienes siguiendo los enlaces."
+	},
+	"7a317": {
+		"defaultMessage": "Tus derechos"
+	},
+	"7b0fe": {
+		"defaultMessage": "Enviando..."
+	},
+	"8bf5b": {
+		"defaultMessage": "Un desarrollador web y administrador de sistemas."
+	},
+	"90c44": {
+		"defaultMessage": "Propiedad intelectual e industrial"
+	},
+	"93e49": {
+		"defaultMessage": "Mantenerse en contacto"
+	},
+	"94966": {
+		"defaultMessage": "Enviar"
+	},
+	"95082": {
+		"defaultMessage": "Aceptación y consentimiento"
+	},
+	"97fb0": {
+		"defaultMessage": "¿Quién soy?"
+	},
+	"99af1": {
+		"defaultMessage": "El titular puede facilitarle el acceso a sitios web de terceros a través de enlaces con el fin de informar sobre la existencia de otras fuentes de información en Internet en las que podrá ampliar los datos ofrecidos en el sitio web."
+	},
+	"9dbc2": {
+		"defaultMessage": "Limpiar formulario"
+	},
+	"a0cb0": {
+		"defaultMessage": "Como usuario del sitio web, ha sido informado de las condiciones sobre protección de datos personales, acepta y conoce el tratamiento de los mismos por parte del titular en la forma y para las finalidades indicadas en esta Política de Privacidad."
+	},
+	"a3ddf": {
+		"defaultMessage": "El contenido del sitio web está bajo la licencia {license}."
+	},
+	"a5362": {
+		"defaultMessage": "La información y los servicios incluidos o disponibles a través de este sitio web pueden incluir inexactitudes o errores tipográficos. Periódicamente, el titular incorpora mejoras y/o cambios a la información contenida y/o los Servicios que puede introducir en cualquier momento."
+	},
+	"ab066": {
+		"defaultMessage": "Más información"
+	},
+	"ac4b1": {
+		"defaultMessage": "Cuando te conectas al sitio web para enviar un correo electrónico al propietario o utilizas el formulario de contacto, estás facilitando información personal de la que el responsable es el propietario. Esta información puede incluir datos personales como su nombre y apellidos, dirección de correo electrónico y otros datos que no se pueden utilizar para identificarse como la dirección IP, la geolocalización, un registro de cómo se utilizan los servicios y los sitios. Al facilitar esta información, da su consentimiento para que su información sea recopilada, utilizada, administrada y almacenada por el propietario, solo como se describe en el Aviso Legal y en esta Política de Privacidad."
+	},
+	"ae2de": {
+		"defaultMessage": "Puede solicitar sus derechos ARCO (derecho de acceso, rectificación, cancelación y oposición de sus datos) en la información remitida a través del formulario. Puede enviar un correo electrónico con su solicitud a {email} junto con el justificante válido en Derecho como fotocopia del D.N.I. o el equivalente indicando el propósito de su solicitud."
+	},
+	"b321d": {
+		"defaultMessage": "La página que busca no existe."
+	},
+	"b357b": {
+		"defaultMessage": "Dirección de correo electrónico"
+	},
+	"b47bc": {
+		"defaultMessage": "El titular se reserva el derecho a denegar o retirar el acceso al sitio web y a los servicios ofrecidos sin necesidad de preaviso, de forma temporal o indefinida, a instancia propia o de un tercero, a aquellos usuarios que incumplan alguna de las condiciones de este Aviso Legal y/o se toman acciones hostiles contra el sitio web y los servicios ofrecidos."
+	},
+	"642f0": {
+		"defaultMessage": "He leído y acepto la <a>política de privacidad</a>."
+	},
+	"bb691": {
+		"defaultMessage": "Aviso legal"
+	},
+	"bbaff": {
+		"defaultMessage": "Contacto"
+	},
+	"c46bb": {
+		"defaultMessage": "Dirección de correo electrónico: {email}"
+	},
+	"c5a2b": {
+		"defaultMessage": "Exactitud y veracidad de los datos personales"
+	},
+	"cb548": {
+		"defaultMessage": "Español"
+	},
+	"cdbd4": {
+		"defaultMessage": "No se pudo enviar el correo electrónico"
+	},
+	"d4c77": {
+		"defaultMessage": "Limitación de responsabilidad"
+	},
+	"d8368": {
+		"defaultMessage": "Correo electrónico enviado"
+	},
+	"dad95": {
+		"defaultMessage": "Experiencia laboral"
+	},
+	"df06d": {
+		"defaultMessage": "Identificación y propiedad"
+	},
+	"e1ce9": {
+		"defaultMessage": "Desarrollo front-end con ReactJS y desarrollo back-end con Django, manteniendo también estos sistemas full-stack en producción."
+	},
+	"e868e": {
+		"defaultMessage": "Más información <a>aquí</a>."
+	},
+	"eb760": {
+		"defaultMessage": "{dateStart} - {dateEnd} | Técnico Superior en Sistemas Microinformáticos en Red en {center}."
+	},
+	"ed25e": {
+		"defaultMessage": "NIF: {identification}"
+	},
+	"ed443": {
+		"defaultMessage": "Escucho música, pero yo soy de los que escucha las mismas canciones durante una buena temporada."
+	},
+	"f1cef": {
+		"defaultMessage": "Currículo"
+	},
+	"f6e4a": {
+		"defaultMessage": "Obtener datos estadísticos, analizar la navegación, gestionar el sitio, los patrones de navegación del estudio, detectar y mitigar posibles acciones hostiles hacia el sitio web y los servicios ofrecidos y recopilar información demográfica."
+	},
+	"f7c82": {
+		"defaultMessage": "En cumplimiento de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y Garantía de los Derechos Digitales (LOPD GDD) y el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 sobre la protección de las personas físicas (RGPD). El titular expone sus datos identificativos."
+	},
+	"f8fa8": {
+		"defaultMessage": "Puede consultar toda la información relacionada con el tratamiento de datos personales que el titular recaba en la página <a>Política de privacidad</a>."
+	},
+	"fc09c": {
+		"defaultMessage": "Apoyar y mejorar los servicios ofrecidos por este sitio web."
+	},
+	"49432": {
+		"defaultMessage": "Jugar videojuegos, los juegos actuales rara vez me fascinan, siempre que pueda jugar juegos como la saga {game_1} o {game_2}, tendré disfrute garantizado."
+	},
+	"387af": {
+		"defaultMessage": "Ingrese su nombre completo"
+	},
+	"fdab8": {
+		"defaultMessage": "Con el objetivo de salvaguardar la seguridad de sus datos personales, le informamos que se han adoptado todas las medidas de carácter técnico y organizativo para garantizar la seguridad de los datos personales facilitados. Todo ello para evitar su alteración, pérdida, y/o tratamientos o accesos no autorizados, como exige la normativa, aunque no existe la seguridad absoluta."
+	},
+	"5959c": {
+		"defaultMessage": "Destinatarios"
+	},
+	"ddbcb": {
+		"defaultMessage": "Finalidad del tratamiento de los datos personales"
+	},
+	"5ab8c": {
+		"defaultMessage": "Seguridad y actualización de sus datos personales"
+	},
+	"ea259": {
+		"defaultMessage": "Derecho de exclusión"
+	},
+	"6df64": {
+		"defaultMessage": "Modificaciones"
+	},
+	"99650": {
+		"defaultMessage": "{email} o {url}"
+	},
+	"816a1": {
+		"defaultMessage": "{city}, España"
+	}
+}

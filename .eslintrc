@@ -1,0 +1,27 @@
+{
+	"root": true,
+	"env": { "ES2020": true, "browser": true, "node": true },
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"plugin:react/recommended",
+		"plugin:prettier/recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"parserOptions": { "ecmaFeatures": { "jsx": true }, "sourceType": "module" },
+	"plugins": ["react", "formatjs", "prettier", "@typescript-eslint"],
+	"rules": {
+		"no-var": "error",
+		"prefer-const": "error",
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off",
+		"formatjs/no-offset": "error",
+		"formatjs/enforce-default-message": ["error", "literal"],
+		"formatjs/enforce-id": ["error", { "idInterpolationPattern": "[contenthash:5]" }],
+		"formatjs/no-multiple-whitespaces": ["error"]
+	},
+	"settings": {
+		"react": { "version": "detect" },
+		"import/resolver": { "node": { "extensions": [".ts", ".tsx"] } }
+	}
+}
