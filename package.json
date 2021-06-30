@@ -40,7 +40,7 @@
 		"react-transition-group": "4.4.2"
 	},
 	"devDependencies": {
-		"@axe-core/react": "4.2.1",
+		"@axe-core/react": "4.2.2",
 		"@formatjs/cli": "4.2.18",
 		"@formatjs/ts-transformer": "3.4.2",
 		"@types/body-parser": "1.19.0",
