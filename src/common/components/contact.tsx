@@ -1,4 +1,4 @@
-import { ChangeEvent, ChangeEventHandler, FC, FormEvent, ReactElement, useState } from "react";
+import { ChangeEvent, FC, FormEvent, ReactElement, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 import { IEmail } from "../utils/interfaces";
