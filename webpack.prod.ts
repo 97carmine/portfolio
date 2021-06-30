@@ -98,7 +98,7 @@ const clientConfig: Configuration = {
 		}),
 		(compiler: Compiler) => {
 			const WebpackAssetsManifest = require("webpack-assets-manifest");
-			new WebpackAssetsManifest({ publicPath: true }).apply(compiler);
+			new WebpackAssetsManifest({ output: "asset-manifest.json", publicPath: true }).apply(compiler);
 		},
 	],
 };
