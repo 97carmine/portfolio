@@ -795,11 +795,6 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.48.tgz#18dc8091b285df90db2f25aa7d906cfc394b7f74"
   integrity sha512-LfZwXoGUDo0C3me81HXgkBg5CTQYb6xzEl+fNmbO4JdRiSKQ8A0GD1OBBvKAIsbCUgoyAty7m99GqqMQe784ew==
 
-"@types/estree@^0.0.47":
-  version "0.0.47"
-  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.47.tgz#d7a51db20f0650efec24cd04994f523d93172ed4"
-  integrity sha512-c5ciR06jK8u9BstrmJyO97m+klJrrhCf9u3rLu3DEAJBirxRqSCvDQoYKmxuYwQI5SZChAWu+tq9oVlGRuzPAg==
-
 "@types/express-serve-static-core@^4.17.18":
   version "4.17.22"
   resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.22.tgz#e011c55de3f17ddf1161f790042a15c5a218744d"
@@ -984,6 +979,14 @@
   dependencies:
     "@types/mime" "^1"
     "@types/node" "*"
+
+"@types/stylelint@^13.13.0":
+  version "13.13.0"
+  resolved "https://registry.yarnpkg.com/@types/stylelint/-/stylelint-13.13.0.tgz#8e0d99f1133b235f6ac629a8e6162e61e6854e34"
+  integrity sha512-/PxG8arC6lNjOGQ2QkWr60v9yQ6vnyOdDmyoM8ysU1UCdTm71+IztrHm5jCTJob9/HTqGNcemwsCDo0mjdjSzA==
+  dependencies:
+    globby "11.x.x"
+    postcss "7.x.x"
 
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2":
   version "2.0.3"
@@ -1280,19 +1283,19 @@
     "@webassemblyjs/ast" "1.11.0"
     "@xtuc/long" "4.2.2"
 
-"@webpack-cli/configtest@^1.0.3":
+"@webpack-cli/configtest@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@webpack-cli/configtest/-/configtest-1.0.4.tgz#f03ce6311c0883a83d04569e2c03c6238316d2aa"
   integrity sha512-cs3XLy+UcxiP6bj0A6u7MLLuwdXJ1c3Dtc0RkKg+wiI1g/Ti1om8+/2hc2A2B60NbBNAbMgyBMHvyymWm/j4wQ==
 
-"@webpack-cli/info@^1.2.4":
+"@webpack-cli/info@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@webpack-cli/info/-/info-1.3.0.tgz#9d78a31101a960997a4acd41ffd9b9300627fe2b"
   integrity sha512-ASiVB3t9LOKHs5DyVUcxpraBXDOKubYu/ihHhU+t1UPpxsivg6Od2E2qU4gJCekfEddzRBzHhzA/Acyw/mlK/w==
   dependencies:
     envinfo "^7.7.3"
 
-"@webpack-cli/serve@^1.4.0":
+"@webpack-cli/serve@^1.5.1":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.5.1.tgz#b5fde2f0f79c1e120307c415a4c1d5eb15a6f278"
   integrity sha512-4vSVUiOPJLmr45S8rMGy7WDvpWxfFxfP/Qx/cxZFCfvoypTYpPPL1X8VIZMe0WTA+Jr7blUxwUSEZNkjoMTgSw==
@@ -2151,17 +2154,17 @@ css-loader@5.2.6:
     schema-utils "^3.0.0"
     semver "^7.3.5"
 
-css-minimizer-webpack-plugin@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/css-minimizer-webpack-plugin/-/css-minimizer-webpack-plugin-3.0.1.tgz#2f866079411d42309a485512642c0cb08b5468ae"
-  integrity sha512-RGFIv6iZWUPO2T1vE5+5pNCSs2H2xtHYRdfZPiiNH8Of6QOn9BeFnZSoHiQMkmsxOO/JkPe4BpKfs7slFIWcTA==
+css-minimizer-webpack-plugin@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/css-minimizer-webpack-plugin/-/css-minimizer-webpack-plugin-3.0.2.tgz#8fadbdf10128cb40227bff275a4bb47412534245"
+  integrity sha512-B3I5e17RwvKPJwsxjjWcdgpU/zqylzK1bPVghcmpFHRL48DXiBgrtqz1BJsn68+t/zzaLp9kYAaEDvQ7GyanFQ==
   dependencies:
-    cssnano "^5.0.0"
+    cssnano "^5.0.6"
     jest-worker "^27.0.2"
     p-limit "^3.0.2"
-    postcss "^8.2.9"
+    postcss "^8.3.5"
     schema-utils "^3.0.0"
-    serialize-javascript "^5.0.1"
+    serialize-javascript "^6.0.0"
     source-map "^0.6.1"
 
 css-select@^4.1.3:
@@ -2233,7 +2236,7 @@ cssnano-utils@^2.0.1:
   resolved "https://registry.yarnpkg.com/cssnano-utils/-/cssnano-utils-2.0.1.tgz#8660aa2b37ed869d2e2f22918196a9a8b6498ce2"
   integrity sha512-i8vLRZTnEH9ubIyfdZCAdIdgnHAUeQeByEeQ2I7oTilvP9oHO6RScpeq3GsFUVqeB8uZgOQ9pw8utofNn32hhQ==
 
-cssnano@^5.0.0:
+cssnano@^5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-5.0.6.tgz#2a91ad34c6521ae31eab3da9c90108ea3093535d"
   integrity sha512-NiaLH/7yqGksFGsFNvSRe2IV/qmEBAeDE64dYeD8OBrgp6lE8YoMeQJMtsv5ijo6MPyhuoOvFhI94reahBRDkw==
@@ -2605,11 +2608,6 @@ es-abstract@^1.18.0-next.1, es-abstract@^1.18.0-next.2, es-abstract@^1.18.2:
     string.prototype.trimend "^1.0.4"
     string.prototype.trimstart "^1.0.4"
     unbox-primitive "^1.0.1"
-
-es-module-lexer@^0.4.0:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-0.4.1.tgz#dda8c6a14d8f340a24e34331e0fab0cb50438e0e"
-  integrity sha512-ooYciCUtfw6/d2w56UVeqHPcoCFAiJdz5XOkYpv/Txl1HMUozpXjz/2RIQgqwKdXNDPSF1W7mJCFse3G+HDyAA==
 
 es-module-lexer@^0.6.0:
   version "0.6.0"
@@ -3290,7 +3288,7 @@ globals@^13.6.0, globals@^13.9.0:
   dependencies:
     type-fest "^0.20.2"
 
-globby@^11.0.3:
+globby@11.x.x, globby@^11.0.3, globby@^11.0.4:
   version "11.0.4"
   resolved "https://registry.yarnpkg.com/globby/-/globby-11.0.4.tgz#2cbaff77c2f2a62e71e9b2813a67b97a3a3001a5"
   integrity sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==
@@ -4531,10 +4529,10 @@ mini-create-react-context@^0.4.0:
     "@babel/runtime" "^7.12.1"
     tiny-warning "^1.0.3"
 
-mini-css-extract-plugin@1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-1.6.0.tgz#b4db2525af2624899ed64a23b0016e0036411893"
-  integrity sha512-nPFKI7NSy6uONUo9yn2hIfb9vyYvkFu95qki0e21DQ9uaqNKDP15DGpK0KnV6wDroWxPHtExrdEwx/yDQ8nVRw==
+mini-css-extract-plugin@1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-1.6.2.tgz#83172b4fd812f8fc4a09d6f6d16f924f53990ca8"
+  integrity sha512-WhDvO3SjGm40oV5y26GjMJYjd2UMqrLAGKy5YS2/3QKJy2F7jgynuHTir/tgUUOiNQu5saXHdc8reo7YuhhT4Q==
   dependencies:
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
@@ -5393,7 +5391,7 @@ postcss-value-parser@^4.0.2, postcss-value-parser@^4.1.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
   integrity sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==
 
-"postcss@5 - 7", postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.35, postcss@^7.0.6:
+"postcss@5 - 7", postcss@7.x.x, postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.35, postcss@^7.0.6:
   version "7.0.36"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.36.tgz#056f8cffa939662a8f5905950c07d5285644dfcb"
   integrity sha512-BebJSIUMwJHRH0HAQoxN4u1CN86glsrwsW0q7T+/m44eXOUAxSNdHRkNZPYz5vVUbg17hFgOQDE7fZk7li3pZw==
@@ -5402,7 +5400,7 @@ postcss-value-parser@^4.0.2, postcss-value-parser@^4.1.0:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^8.1.10, postcss@^8.2.15, postcss@^8.2.9:
+postcss@^8.1.10, postcss@^8.2.15, postcss@^8.2.9, postcss@^8.3.5:
   version "8.3.5"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.3.5.tgz#982216b113412bc20a86289e91eb994952a5b709"
   integrity sha512-NxTuJocUhYGsMiMFHDUkmjSKT3EdH4/WbGF6GCi1NDGk+vbcUTun4fpbOqaPtD8IIsztA2ilZm2DhYCuyN58gA==
@@ -5447,10 +5445,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
-  integrity sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
+prettier@2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
+  integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
 
 pretty-error@^3.0.4:
   version "3.0.4"
@@ -6033,13 +6031,6 @@ send@0.17.1:
     range-parser "~1.2.1"
     statuses "~1.5.0"
 
-serialize-javascript@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-5.0.1.tgz#7886ec848049a462467a97d3d918ebb2aaf934f4"
-  integrity sha512-SaaNal9imEO737H2c05Og0/8LUXG7EnsZyMa8MzkmuHoELfT6txuj0cMqRj6zfPKnmQ1yasR4PCJc8x+M4JSPA==
-  dependencies:
-    randombytes "^2.1.0"
-
 serialize-javascript@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-6.0.0.tgz#efae5d88f45d7924141da8b5c3a7a7e663fefeb8"
@@ -6419,13 +6410,17 @@ stylelint-prettier@1.2.0:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-stylelint-webpack-plugin@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/stylelint-webpack-plugin/-/stylelint-webpack-plugin-2.1.1.tgz#1c8ae72a4e5818f7e5925e3fff10502ad34a52a5"
-  integrity sha512-WHdaWCp4NANcTcltuRjZCjM7jVhdaSg7ag/sQLE22Bf84g5nQC4nBBK8FBdHAssJsho0fDRiwyrzGsIPO+b94A==
+stylelint-webpack-plugin@2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/stylelint-webpack-plugin/-/stylelint-webpack-plugin-2.2.2.tgz#ecd241fb689346ee471c125fb0ef149488bd1980"
+  integrity sha512-zfIsAF13xe6xuhwxZDFWQEmuVcxnRk9JFovyRL/23CWjPK1HLRw4QZdvo0Bz1bQZaDQA+6ha7cU0NO+LXaw4Mw==
   dependencies:
+    "@types/stylelint" "^13.13.0"
     arrify "^2.0.1"
-    micromatch "^4.0.2"
+    globby "^11.0.4"
+    jest-worker "^27.0.2"
+    micromatch "^4.0.4"
+    normalize-path "^3.0.0"
     schema-utils "^3.0.0"
 
 stylelint@13.13.1:
@@ -6578,7 +6573,7 @@ term-size@^2.1.0:
   resolved "https://registry.yarnpkg.com/term-size/-/term-size-2.2.1.tgz#2a6a54840432c2fb6320fea0f415531e90189f54"
   integrity sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==
 
-terser-webpack-plugin@^5.1.1, terser-webpack-plugin@^5.1.3:
+terser-webpack-plugin@^5.1.3:
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-5.1.4.tgz#c369cf8a47aa9922bd0d8a94fe3d3da11a7678a1"
   integrity sha512-C2WkFwstHDhVEmsmlCxrXUtVklS+Ir1A7twrYzrDrQQOIMOaVAYykaoo/Aq1K0QRkMoY2hhvDQY1cm4jnIMFwA==
@@ -7035,15 +7030,15 @@ webpack-assets-manifest@5.0.6:
     schema-utils "^3.0"
     tapable "^2.0"
 
-webpack-cli@4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-4.7.0.tgz#3195a777f1f802ecda732f6c95d24c0004bc5a35"
-  integrity sha512-7bKr9182/sGfjFm+xdZSwgQuFjgEcy0iCTIBxRUeteJ2Kr8/Wz0qNJX+jw60LU36jApt4nmMkep6+W5AKhok6g==
+webpack-cli@4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-4.7.2.tgz#a718db600de6d3906a4357e059ae584a89f4c1a5"
+  integrity sha512-mEoLmnmOIZQNiRl0ebnjzQ74Hk0iKS5SiEEnpq3dRezoyR3yPaeQZCMCe+db4524pj1Pd5ghZXjT41KLzIhSLw==
   dependencies:
     "@discoveryjs/json-ext" "^0.5.0"
-    "@webpack-cli/configtest" "^1.0.3"
-    "@webpack-cli/info" "^1.2.4"
-    "@webpack-cli/serve" "^1.4.0"
+    "@webpack-cli/configtest" "^1.0.4"
+    "@webpack-cli/info" "^1.3.0"
+    "@webpack-cli/serve" "^1.5.1"
     colorette "^1.2.1"
     commander "^7.0.0"
     execa "^5.0.0"
@@ -7078,36 +7073,7 @@ webpack-sources@^2.3.0:
     source-list-map "^2.0.1"
     source-map "^0.6.1"
 
-webpack@5.38.1:
-  version "5.38.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.38.1.tgz#5224c7f24c18e729268d3e3bc97240d6e880258e"
-  integrity sha512-OqRmYD1OJbHZph6RUMD93GcCZy4Z4wC0ele4FXyYF0J6AxO1vOSuIlU1hkS/lDlR9CDYBz64MZRmdbdnFFoT2g==
-  dependencies:
-    "@types/eslint-scope" "^3.7.0"
-    "@types/estree" "^0.0.47"
-    "@webassemblyjs/ast" "1.11.0"
-    "@webassemblyjs/wasm-edit" "1.11.0"
-    "@webassemblyjs/wasm-parser" "1.11.0"
-    acorn "^8.2.1"
-    browserslist "^4.14.5"
-    chrome-trace-event "^1.0.2"
-    enhanced-resolve "^5.8.0"
-    es-module-lexer "^0.4.0"
-    eslint-scope "5.1.1"
-    events "^3.2.0"
-    glob-to-regexp "^0.4.1"
-    graceful-fs "^4.2.4"
-    json-parse-better-errors "^1.0.2"
-    loader-runner "^4.2.0"
-    mime-types "^2.1.27"
-    neo-async "^2.6.2"
-    schema-utils "^3.0.0"
-    tapable "^2.1.1"
-    terser-webpack-plugin "^5.1.1"
-    watchpack "^2.2.0"
-    webpack-sources "^2.3.0"
-
-webpack@^5, webpack@^5.1.0, webpack@^5.37.0:
+webpack@5.41.1, webpack@^5, webpack@^5.1.0, webpack@^5.37.0:
   version "5.41.1"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.41.1.tgz#23fa1d82c95c222d3fc3163806b9a833fe52b253"
   integrity sha512-AJZIIsqJ/MVTmegEq9Tlw5mk5EHdGiJbDdz9qP15vmUH+oxI1FdWcL0E9EO8K/zKaRPWqEs7G/OPxq1P61u5Ug==
