@@ -1,9 +1,11 @@
 import { resolve } from "path";
-import { Compiler, Configuration, WebpackPluginInstance } from "webpack";
+import { Configuration, WebpackPluginInstance } from "webpack";
 import ESLintPlugin from "eslint-webpack-plugin";
 import StylelintPlugin from "stylelint-webpack-plugin";
 import FaviconsWebpackPlugin from "favicons-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import WebpackAssetsManifest from "webpack-assets-manifest";
+import CopyPlugin from "copy-webpack-plugin";
 import { transform } from "@formatjs/ts-transformer";
 
 const commonRules = (client: boolean) => [
@@ -36,13 +38,10 @@ const commonRules = (client: boolean) => [
 const commonPlugins = (client: boolean): WebpackPluginInstance[] => [
 	new ESLintPlugin({ fix: true }),
 	new StylelintPlugin({ fix: true }),
-	(compiler: Compiler) => {
-		const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-		new MiniCssExtractPlugin({
-			filename: client ? "css/[name].css" : "static/css/[name].css",
-			chunkFilename: client ? "css/[chunkhash].chunk.css" : "static/css/[chunkhash].chunk.css",
-		}).apply(compiler);
-	},
+	new MiniCssExtractPlugin({
+		filename: client ? "css/[name].css" : "static/css/[name].css",
+		chunkFilename: client ? "css/[chunkhash].chunk.css" : "static/css/[chunkhash].chunk.css",
+	}),
 ];
 
 const commonConfig: Configuration = {
@@ -68,12 +67,9 @@ const serverConfig: Configuration = {
 	module: { rules: [...commonRules(false)] },
 	plugins: [
 		...commonPlugins(false),
-		(compiler: Compiler) => {
-			const CopyPlugin = require("copy-webpack-plugin");
-			new CopyPlugin({
-				patterns: [{ from: "src/server/web/views", to: "views" }],
-			}).apply(compiler);
-		},
+		new CopyPlugin({
+			patterns: [{ from: "src/server/web/views", to: "views" }],
+		}),
 	],
 	externals: { express: 'require("express")' },
 };
@@ -97,10 +93,7 @@ const clientConfig: Configuration = {
 			cache: true,
 			outputPath: resolve(__dirname, "build/static"),
 		}),
-		(compiler: Compiler) => {
-			const WebpackAssetsManifest = require("webpack-assets-manifest");
-			new WebpackAssetsManifest({ output: "asset-manifest.json", publicPath: true }).apply(compiler);
-		},
+		new WebpackAssetsManifest({ output: "asset-manifest.json", publicPath: true }),
 	],
 };
 
