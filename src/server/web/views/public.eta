@@ -5,7 +5,7 @@
 		<meta name="description" content="<%= it.description %>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Axel Gabriel Calle Granda</title>
-		<link rel="canonical" content="<%= it.canonical_URL %>" />
+		<link rel="canonical" href="<%= it.canonical_URL %>" />
 		<link rel="shortcut icon" href="<%= it.assets["favicon.png"] %>">
 		<link type="text/plain" rel="author" href="<%= it.humans_URL %>" />
 		<link type="text/css" rel="stylesheet" href="<%= it.assets["client.css"] %>" />
