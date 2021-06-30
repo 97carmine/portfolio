@@ -42,7 +42,7 @@ const commonPlugins = (client: boolean): WebpackPluginInstance[] => [
 			filename: client ? "css/[name].css" : "static/css/[name].css",
 			chunkFilename: client ? "css/[chunkhash].chunk.css" : "static/css/[chunkhash].chunk.css",
 		}).apply(compiler);
-	}
+	},
 ];
 
 const commonConfig: Configuration = {
@@ -98,7 +98,7 @@ const clientConfig: Configuration = {
 			outputPath: resolve(__dirname, "build/static"),
 		}),
 		(compiler: Compiler) => {
-			const WebpackAssetsManifest = require('webpack-assets-manifest');
+			const WebpackAssetsManifest = require("webpack-assets-manifest");
 			new WebpackAssetsManifest({ publicPath: true }).apply(compiler);
 		},
 	],
