@@ -1,8 +1,7 @@
 import { resolve } from "path";
-import { Configuration, WebpackPluginInstance } from "webpack";
+import { Compiler, Configuration, WebpackPluginInstance } from "webpack";
 import FaviconsWebpackPlugin from "favicons-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import WebpackAssetsManifest from "webpack-assets-manifest";
 import { transform } from "@formatjs/ts-transformer";
 
 const commonRules = (client: boolean) => [
@@ -33,10 +32,13 @@ const commonRules = (client: boolean) => [
 ];
 
 const commonPlugins = (client: boolean): WebpackPluginInstance[] => [
-	new MiniCssExtractPlugin({
-		filename: client ? "css/[name].[contenthash].css" : "static/css/[name].[contenthash].css",
-		chunkFilename: client ? "css/[chunkhash].chunk.css" : "static/css/[chunkhash].chunk.css",
-	}),
+	(compiler: Compiler) => {
+		const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+		new MiniCssExtractPlugin({
+			filename: client ? "css/[name].[contenthash].css" : "static/css/[name].[contenthash].css",
+			chunkFilename: client ? "css/[chunkhash].chunk.css" : "static/css/[chunkhash].chunk.css",
+		}).apply(compiler);
+	},
 ];
 
 const commonConfig: Configuration = {
@@ -88,13 +90,16 @@ const clientConfig: Configuration = {
 	module: { rules: [...commonRules(true)] },
 	plugins: [
 		...commonPlugins(true),
-		new WebpackAssetsManifest({ publicPath: true }),
 		new FaviconsWebpackPlugin({
 			logo: "src/common/assets/images/logo.png",
 			mode: "light",
 			cache: true,
 			outputPath: resolve(__dirname, "build/static"),
 		}),
+		(compiler: Compiler) => {
+			const WebpackAssetsManifest = require("webpack-assets-manifest");
+			new WebpackAssetsManifest({ publicPath: true }).apply(compiler);
+		},
 	],
 };
 

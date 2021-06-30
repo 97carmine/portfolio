@@ -1,10 +1,9 @@
 import { resolve } from "path";
-import { Configuration, WebpackPluginInstance } from "webpack";
+import { Compiler, Configuration, WebpackPluginInstance } from "webpack";
 import ESLintPlugin from "eslint-webpack-plugin";
 import StylelintPlugin from "stylelint-webpack-plugin";
 import FaviconsWebpackPlugin from "favicons-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import WebpackAssetsManifest from "webpack-assets-manifest";
 import { transform } from "@formatjs/ts-transformer";
 
 const commonRules = (client: boolean) => [
@@ -37,10 +36,13 @@ const commonRules = (client: boolean) => [
 const commonPlugins = (client: boolean): WebpackPluginInstance[] => [
 	new ESLintPlugin({ fix: true }),
 	new StylelintPlugin({ fix: true }),
-	new MiniCssExtractPlugin({
-		filename: client ? "css/[name].css" : "static/css/[name].css",
-		chunkFilename: client ? "css/[chunkhash].chunk.css" : "static/css/[chunkhash].chunk.css",
-	}),
+	(compiler: Compiler) => {
+		const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+		new MiniCssExtractPlugin({
+			filename: client ? "css/[name].css" : "static/css/[name].css",
+			chunkFilename: client ? "css/[chunkhash].chunk.css" : "static/css/[chunkhash].chunk.css",
+		}).apply(compiler);
+	}
 ];
 
 const commonConfig: Configuration = {
@@ -66,7 +68,7 @@ const serverConfig: Configuration = {
 	module: { rules: [...commonRules(false)] },
 	plugins: [
 		...commonPlugins(false),
-		(compiler) => {
+		(compiler: Compiler) => {
 			const CopyPlugin = require("copy-webpack-plugin");
 			new CopyPlugin({
 				patterns: [{ from: "src/server/web/views", to: "views" }],
@@ -90,12 +92,15 @@ const clientConfig: Configuration = {
 	},
 	plugins: [
 		...commonPlugins(true),
-		new WebpackAssetsManifest({ publicPath: true }),
 		new FaviconsWebpackPlugin({
 			logo: "src/common/assets/images/logo.png",
 			cache: true,
 			outputPath: resolve(__dirname, "build/static"),
 		}),
+		(compiler: Compiler) => {
+			const WebpackAssetsManifest = require('webpack-assets-manifest');
+			new WebpackAssetsManifest({ publicPath: true }).apply(compiler);
+		},
 	],
 };
 
