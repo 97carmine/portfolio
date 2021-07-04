@@ -2,7 +2,6 @@ import { ReactElement, ReactNode } from "react";
 import { IntlShape } from "react-intl";
 import { RawIntlProvider, IntlProvider } from "react-intl";
 import languages from "../languages/messages";
-import { isRunningOnClientSide } from "../utils/checkClientServer";
 
 interface IProps {
 	intl: IntlShape | undefined;
@@ -10,7 +9,7 @@ interface IProps {
 }
 
 const LanguageProvider = ({ intl, children }: IProps): ReactElement => {
-	const language: string = (isRunningOnClientSide && document.documentElement.lang) || `en`;
+	const language: string = (__IS_CLIENT__ && document.documentElement.lang) || `en`;
 
 	return intl === undefined ? (
 		<IntlProvider locale={language} key={language} messages={languages[language].messages}>

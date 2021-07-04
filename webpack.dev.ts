@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import { Configuration, WebpackPluginInstance } from "webpack";
+import { Configuration, DefinePlugin, WebpackPluginInstance } from "webpack";
 import ESLintPlugin from "eslint-webpack-plugin";
 import StylelintPlugin from "stylelint-webpack-plugin";
 import FaviconsWebpackPlugin from "favicons-webpack-plugin";
@@ -36,6 +36,7 @@ const commonRules = (client: boolean) => [
 ];
 
 const commonPlugins = (client: boolean): WebpackPluginInstance[] => [
+	new DefinePlugin({ __IS_CLIENT__: client }),
 	new ESLintPlugin({ fix: true }),
 	new StylelintPlugin({ fix: true }),
 	new MiniCssExtractPlugin({

@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import { Configuration, WebpackPluginInstance } from "webpack";
+import { Configuration, DefinePlugin, WebpackPluginInstance } from "webpack";
 import FaviconsWebpackPlugin from "favicons-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
@@ -35,6 +35,7 @@ const commonRules = (client: boolean) => [
 ];
 
 const commonPlugins = (client: boolean): WebpackPluginInstance[] => [
+	new DefinePlugin({ __IS_CLIENT__: client }),
 	new MiniCssExtractPlugin({
 		filename: client ? "css/[name].css" : "static/css/[name].css",
 		chunkFilename: client ? "css/[chunkhash].chunk.css" : "static/css/[chunkhash].chunk.css",
