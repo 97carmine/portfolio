@@ -30,7 +30,7 @@ After=network.target
 Type=simple
 User=$USER
 WorkingDirectory=$FOLDER_PATH
-ExecStart=yarn start:prod
+ExecStart=NODE_OPTIONS="--require $(pwd)/.pnp.js" node build/server.js
 Restart=on-failure
 
 [Install]
