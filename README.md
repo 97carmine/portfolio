@@ -2,6 +2,10 @@
 
 Personal portfolio
 
+## Package manager
+
+This project uses Yarn 2 provided by corepack, more info [here](https://github.com/nodejs/corepack).
+
 ## Develop
 
 A file called **.web.env** is used where the following keys are stored.
