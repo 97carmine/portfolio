@@ -68,7 +68,7 @@
 		"eslint-plugin-prettier": "3.4.0",
 		"eslint-plugin-react": "7.24.0",
 		"eslint-webpack-plugin": "2.5.4",
-		"eta": "1.12.2",
+		"eta": "1.12.3",
 		"favicons": "6.2.2",
 		"favicons-webpack-plugin": "5.0.2",
 		"html-minifier-terser": "5.1.1",
