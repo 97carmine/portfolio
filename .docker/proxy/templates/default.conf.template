@@ -19,6 +19,7 @@ server {
         server_name ${NGINX_HOSTNAME};
         ssl_certificate /etc/letsencrypt/live/${NGINX_HOSTNAME}/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/${NGINX_HOSTNAME}/privkey.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/${NGINX_HOSTNAME}/chain.pem;
 
         modsecurity on;
         modsecurity_rules_file /etc/nginx/modsec/main.conf;
@@ -38,6 +39,7 @@ server {
         server_name www.${NGINX_HOSTNAME};
         ssl_certificate /etc/letsencrypt/live/${NGINX_HOSTNAME}/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/${NGINX_HOSTNAME}/privkey.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/${NGINX_HOSTNAME}/chain.pem;
 
         modsecurity on;
         modsecurity_rules_file /etc/nginx/modsec/main.conf;
