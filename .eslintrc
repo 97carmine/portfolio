@@ -1,6 +1,6 @@
 {
 	"root": true,
-	"env": { "ES2020": true, "browser": true, "node": true },
+	"env": { "es2020": true, "browser": true, "node": true },
 	"parser": "@typescript-eslint/parser",
 	"extends": [
 		"plugin:react/recommended",
