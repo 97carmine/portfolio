@@ -18,5 +18,5 @@ app.use("/", web);
 const server: Server = app.listen(3000, (): void => {
 	const { address, family, port } = server.address() as AddressInfo;
 
-	console.log(`Listening in the URL ${`http://${family === `IPv6` ? `[${address}]` : address}:${port}`}`);
+	console.log(`Listening in the URL http://${family === `IPv6` ? `[${address}]` : address}:${port}`);
 });
