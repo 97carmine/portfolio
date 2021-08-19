@@ -1015,10 +1015,10 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
 
-"@types/webpack-assets-manifest@5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@types/webpack-assets-manifest/-/webpack-assets-manifest-5.0.1.tgz#b6053e34eaf1cb6e0bd28a5504a222d4e14a1ca6"
-  integrity sha512-Z0R3aEwiUWVDjU+8f/1fNYOa7wzF65R4wfkvo+Gm8w6yxVNFqqLSVneh4kmW7p2U4qtPBSBJVhROVLmC3ewKhA==
+"@types/webpack-assets-manifest@5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@types/webpack-assets-manifest/-/webpack-assets-manifest-5.0.2.tgz#6d4cacae594048589192c3c8cee45dff4d0096d6"
+  integrity sha512-nsngGEwuwg/zXnFgCDOQCdeLAVZHVcnxcu2PJgCp4XYj1z7F6XzesEaJi8d/JE1KmHAW1Uihv/aI0MX80Rr4ZA==
   dependencies:
     "@types/node" "*"
     tapable "^2.2.0"
