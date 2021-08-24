@@ -11,7 +11,7 @@ if [ -f $ssl_certificate && -f ${ssl_certificate_key} ]; then
 else
     echo "The certificates for the domain ${NGINX_HOSTNAME} doesn't exists, creating...";
     echo "Checking if certbot is installed";
-if [ $(apk list -I certbot | wc -c) -ne 0 ]; then
+    if [ $(apk list -I certbot | wc -c) -ne 0 ]; then
         echo "certbot is installed";
     else
         echo "certbot isn't installed, installing...";
