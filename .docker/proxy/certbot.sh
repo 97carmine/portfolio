@@ -5,13 +5,13 @@ ssl_certificate_key=/etc/letsencrypt/live/${NGINX_HOSTNAME}/privkey.pem
 
 echo "Checking if SSL exists"
 
-if [[ -f $ssl_certificate && -f ${ssl_certificate_key} ]]; then
+if [ -f $ssl_certificate && -f ${ssl_certificate_key} ]; then
     echo "The certificates for the domain ${NGINX_HOSTNAME} exists, exiting...";
     exit 1;
-else 
+else
     echo "The certificates for the domain ${NGINX_HOSTNAME} doesn't exists, creating...";
     echo "Checking if certbot is installed";
-    if [ -e "/usr/bin/certbot" ]; then
+if [ $(apk list -I certbot | wc -c) -ne 0 ]; then
         echo "certbot is installed";
     else
         echo "certbot isn't installed, installing...";
