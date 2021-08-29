@@ -3,12 +3,13 @@
 	"env": { "es2020": true, "browser": true, "node": true },
 	"parser": "@typescript-eslint/parser",
 	"extends": [
+		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:prettier/recommended",
-		"plugin:@typescript-eslint/eslint-recommended",
-		"plugin:@typescript-eslint/recommended"
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking"
 	],
-	"parserOptions": { "ecmaFeatures": { "jsx": true }, "sourceType": "module" },
+	"parserOptions": { "ecmaFeatures": { "jsx": true }, "sourceType": "module", "project": ["tsconfig.json"] },
 	"plugins": ["react", "formatjs", "prettier", "@typescript-eslint"],
 	"rules": {
 		"no-var": "error",
@@ -21,7 +22,6 @@
 		"formatjs/no-multiple-whitespaces": ["error"]
 	},
 	"settings": {
-		"react": { "version": "detect" },
-		"import/resolver": { "node": { "extensions": [".ts", ".tsx"] } }
+		"react": { "version": "detect" }
 	}
 }
