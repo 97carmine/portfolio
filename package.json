@@ -71,7 +71,7 @@
 		"eta": "1.12.3",
 		"favicons": "6.2.2",
 		"favicons-webpack-plugin": "5.0.2",
-		"html-minifier-terser": "5.1.1",
+		"html-minifier-terser": "6.0.0",
 		"mini-css-extract-plugin": "2.0.0",
 		"nodemon": "2.0.12",
 		"prettier": "2.3.2",
