@@ -30,7 +30,7 @@ After=network.target
 Type=simple
 User=$USER
 WorkingDirectory=$FOLDER_PATH
-ExecStart=NODE_OPTIONS="--require $(pwd)/.pnp.js" node build/server.js
+ExecStart=NODE_OPTIONS="--require $(pwd)/.pnp.cjs" node build/server.js
 Restart=on-failure
 
 [Install]

@@ -37,4 +37,4 @@ EXPOSE 3000
 HEALTHCHECK --interval=1m30s --timeout=10s --start-period=30s --retries=3 \
     CMD node healthcheck.mjs
 
-CMD NODE_OPTIONS="--require $(pwd)/.pnp.js" node build/server.js
+CMD NODE_OPTIONS="--require $(pwd)/.pnp.cjs" node build/server.js
