@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, FormEvent, ReactElement, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 import { IEmail } from "../utils/interfaces";
@@ -9,7 +9,7 @@ interface IEmailData extends IEmail {
 
 const initialState: IEmailData = { full_name: "", email: "", data: "", accepted: false };
 
-const Contact: FC = (): ReactElement => {
+const Contact = (): JSX.Element => {
 	const [{ full_name, email, data, accepted }, setEmailData] = useState<IEmailData>(initialState);
 	const [isLoading, setLoading] = useState<boolean>(false);
 	const [{ isShowing, alertStatus }, setShowAlert] = useState<{ isShowing: boolean; alertStatus: boolean }>({
@@ -17,20 +17,20 @@ const Contact: FC = (): ReactElement => {
 		alertStatus: false,
 	});
 
-	const handleInputChange = async (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): Promise<void> =>
+	const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
 		setEmailData((prevState) => ({ ...prevState, [event.target.id]: event.target.value }));
 
-	const submitRequest = async (event: FormEvent<HTMLFormElement> & { target: HTMLFormElement }): Promise<void> => {
+	const submitRequest = async (event: FormEvent<HTMLFormElement> & { target: HTMLFormElement }) => {
 		event.preventDefault();
 		setLoading(true);
 
-		const response: boolean = await fetch(`/api/v1/sendmail`, {
+		const response = await fetch(`/api/v1/sendmail`, {
 			method: "POST",
 			headers: { Accept: "application/json", "Content-Type": "application/json" },
 			body: JSON.stringify({ full_name, email, data }),
 		})
-			.then((response: Response): boolean => response.ok)
-			.catch((error: Error): boolean => {
+			.then((response) => response.ok)
+			.catch((error: Error) => {
 				console.log(`There has been a problem with your fetch operation: ${error.message}`);
 				return false;
 			});
@@ -40,13 +40,9 @@ const Contact: FC = (): ReactElement => {
 		if (response) event.target.reset();
 	};
 
-	const Alert: ReactElement = (
+	const Alert = (
 		<div className={`container notification ${alertStatus ? `is-success` : `is-danger`}`}>
-			<button
-				type="button"
-				className="delete"
-				onClick={(): void => setShowAlert({ isShowing: false, alertStatus: false })}
-			/>
+			<button type="button" className="delete" onClick={() => setShowAlert({ isShowing: false, alertStatus: false })} />
 			{alertStatus ? (
 				<FormattedMessage id="d8368" defaultMessage="E-mail send" />
 			) : (
@@ -65,9 +61,9 @@ const Contact: FC = (): ReactElement => {
 			</div>
 			<form
 				className="container content"
-				onInvalid={(event: FormEvent<HTMLFormElement>): void => event.currentTarget.classList.add("is-validated")}
+				onInvalid={(event) => event.currentTarget.classList.add("is-validated")}
 				onSubmit={isLoading === false ? submitRequest : undefined}
-				onReset={(event: FormEvent<HTMLFormElement>): void => {
+				onReset={(event) => {
 					setEmailData({ ...initialState });
 					event.currentTarget.classList.remove("is-validated");
 				}}
@@ -121,9 +117,7 @@ const Contact: FC = (): ReactElement => {
 							<input
 								type="checkbox"
 								checked={accepted}
-								onChange={(event: ChangeEvent<HTMLInputElement>) =>
-									setEmailData((prevState) => ({ ...prevState, accepted: event.target.checked }))
-								}
+								onChange={(event) => setEmailData((prevState) => ({ ...prevState, accepted: event.target.checked }))}
 							/>
 							{` `}
 							<FormattedMessage
@@ -131,7 +125,7 @@ const Contact: FC = (): ReactElement => {
 								defaultMessage="I have read and accept the <a>privacy policy</a>"
 								values={{
 									// eslint-disable-next-line react/display-name
-									a: (chunks: string): ReactElement => <Link to="/privacy_policy">{chunks}</Link>,
+									a: (chunks: string) => <Link to="/privacy_policy">{chunks}</Link>,
 								}}
 							/>
 						</label>
@@ -154,7 +148,7 @@ const Contact: FC = (): ReactElement => {
 					</div>
 				</div>
 			</form>
-			{isShowing && setTimeout((): void => setShowAlert({ isShowing: false, alertStatus: false }), 5000) && Alert}
+			{isShowing && setTimeout(() => setShowAlert({ isShowing: false, alertStatus: false }), 5000) && Alert}
 		</main>
 	);
 };

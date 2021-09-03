@@ -1,8 +1,8 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 
-const securityRoute: Router = Router();
+const securityRoute = Router();
 
-securityRoute.get("/security.txt", async (req: Request, res: Response): Promise<void> => {
+securityRoute.get("/security.txt", (req, res) => {
 	res.type("text/plain");
 
 	res.render("security", {

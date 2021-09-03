@@ -6,9 +6,9 @@ import languages from "./messages";
  * @returns The language found, otherwise, is returned "en"
  */
 const obtainLanguage = (acceptedLangs: string[]): string => {
-	const acceptedLangCodes: string[] = acceptedLangs.map((lang): string => lang.trim().replace(`_`, `-`).split(`-`)[0]);
-	const supportedLangCodes: string[] = Object.keys(languages);
-	const matchingLangCode: string = acceptedLangCodes.find((code): boolean => supportedLangCodes.includes(code)) || `en`;
+	const acceptedLangCodes = acceptedLangs.map((lang) => lang.trim().replace(`_`, `-`).split(`-`)[0]);
+	const supportedLangCodes = Object.keys(languages);
+	const matchingLangCode = acceptedLangCodes.find((code) => supportedLangCodes.includes(code)) || `en`;
 
 	return matchingLangCode;
 };
@@ -17,7 +17,7 @@ const generateIntlObject = (language: string): IntlShape =>
 	createIntl(
 		{
 			locale: language,
-			messages: languages[language].messages,
+			messages: languages[language],
 		},
 		createIntlCache()
 	);

@@ -1,8 +1,7 @@
-import { FC, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 
-const LegalWarning: FC = (): ReactElement => (
+const LegalWarning = (): JSX.Element => (
 	<main className="container is-fluid">
 		<div className="container">
 			<h1 className="title">
@@ -63,7 +62,7 @@ const LegalWarning: FC = (): ReactElement => (
 					defaultMessage="You can consult all the information related to the processing of personal data that the owner collects on the <a>Privacy Policy</a> page."
 					values={{
 						// eslint-disable-next-line react/display-name
-						a: (chunks: string): ReactElement => <Link to="/privacy_policy">{chunks}</Link>,
+						a: (chunks: string) => <Link to="/privacy_policy">{chunks}</Link>,
 					}}
 				/>
 			</div>
@@ -137,7 +136,7 @@ const LegalWarning: FC = (): ReactElement => (
 							</a>
 						),
 						// eslint-disable-next-line react/display-name
-						a: (chunks: string): ReactElement => (
+						a: (chunks: string) => (
 							<a href="https://github.com/97carmine/portfolio" target="blank">
 								{chunks}
 							</a>

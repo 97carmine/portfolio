@@ -1,7 +1,6 @@
-import { FC, ReactElement } from "react";
 import { FormattedMessage, FormattedDate } from "react-intl";
 
-const Resume: FC = (): ReactElement => (
+const Resume = (): JSX.Element => (
 	<main className="container is-fluid">
 		<div className="container">
 			<h1 className="title">
@@ -93,8 +92,9 @@ const Resume: FC = (): ReactElement => (
 					defaultMessage="PDF version available <a>here</a>."
 					values={{
 						// eslint-disable-next-line react/display-name
-						a: (chunks: string): ReactElement => (
-							<a href={require("../assets/documents/CV.pdf")} target="blank">
+						a: (chunks: string) => (
+							// eslint-disable-next-line @typescript-eslint/no-var-requires
+							<a href={require("../assets/documents/CV.pdf") as string} target="blank">
 								{chunks}
 							</a>
 						),

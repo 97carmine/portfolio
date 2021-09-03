@@ -1,11 +1,11 @@
-import express, { Application, NextFunction, Request, Response } from "express";
+import express from "express";
 import helmet from "helmet";
 import { join } from "path";
 import { renderFile } from "eta";
 import { obtainLanguage, generateIntlObject } from "../../common/languages/utils";
 import * as routes from "./routes";
 
-const web: Application = express();
+const web = express();
 
 // Templates
 web.engine("eta", renderFile);
@@ -37,12 +37,12 @@ if (process.env.NODE_ENV === "production") {
 	);
 }
 
-web.all("*", async (req: Request, _res: Response, next: NextFunction): Promise<void> => {
+web.all("*", (req, _res, next) => {
 	const langOpt1 = req.query.language as string | undefined;
-	const langOpt2: string[] = req.acceptsLanguages();
-	const language: string = langOpt1 === undefined ? obtainLanguage(langOpt2) : obtainLanguage([langOpt1]);
+	const langOpt2 = req.acceptsLanguages();
+	const language = langOpt1 === undefined ? obtainLanguage(langOpt2) : obtainLanguage([langOpt1]);
 
-	req.fullURL = new URL(req.originalUrl, `${req.protocol}://${req.get("host")}`);
+	req.fullURL = new URL(req.originalUrl, `${req.protocol}://${req.get("host") as string}`);
 	req.language = generateIntlObject(language);
 
 	next();

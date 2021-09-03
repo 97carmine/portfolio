@@ -1,7 +1,6 @@
-import { FC, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-const Home: FC = (): ReactElement => (
+const Home = (): JSX.Element => (
 	<main className="container is-fluid">
 		<div className="container block">
 			<div className="columns is-vcentered">
@@ -11,7 +10,8 @@ const Home: FC = (): ReactElement => (
 							width="600"
 							height="450"
 							loading="lazy"
-							src={require("../assets/images/personal.webp")}
+							// eslint-disable-next-line @typescript-eslint/no-var-requires
+							src={require("../assets/images/personal.webp") as string}
 							alt="Axel Gabriel Calle Granda"
 						/>
 					</figure>

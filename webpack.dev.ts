@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import { Configuration, DefinePlugin, WebpackPluginInstance } from "webpack";
+import { DefinePlugin } from "webpack";
 import ESLintPlugin from "eslint-webpack-plugin";
 import StylelintPlugin from "stylelint-webpack-plugin";
 import FaviconsWebpackPlugin from "favicons-webpack-plugin";
@@ -27,15 +27,11 @@ const commonRules = (client: boolean) => [
 	},
 	{
 		test: /\.(s[ac]|c)ss$/i,
-		use: [
-			{ loader: MiniCssExtractPlugin.loader },
-			{ loader: "css-loader" },
-			{ loader: "sass-loader", options: { implementation: require("sass") } },
-		],
+		use: [{ loader: MiniCssExtractPlugin.loader }, { loader: "css-loader" }, { loader: "sass-loader" }],
 	},
 ];
 
-const commonPlugins = (client: boolean): WebpackPluginInstance[] => [
+const commonPlugins = (client: boolean) => [
 	new DefinePlugin({ __IS_CLIENT__: client }),
 	new ESLintPlugin({ fix: true }),
 	new StylelintPlugin({ fix: true }),
@@ -45,7 +41,7 @@ const commonPlugins = (client: boolean): WebpackPluginInstance[] => [
 	}),
 ];
 
-const commonConfig: Configuration = {
+const commonConfig = {
 	mode: "development",
 	watch: true,
 	devtool: "inline-source-map",
@@ -55,7 +51,7 @@ const commonConfig: Configuration = {
 	},
 };
 
-const serverConfig: Configuration = {
+const serverConfig = {
 	...commonConfig,
 	target: "node",
 	entry: { server: resolve(__dirname, "src/server/index.ts") },
@@ -75,7 +71,7 @@ const serverConfig: Configuration = {
 	externals: { express: 'require("express")' },
 };
 
-const clientConfig: Configuration = {
+const clientConfig = {
 	...commonConfig,
 	entry: { client: resolve(__dirname, "src/client/index.tsx") },
 	output: {
@@ -98,6 +94,6 @@ const clientConfig: Configuration = {
 	],
 };
 
-const config: Configuration[] = [clientConfig, serverConfig];
+const config = [clientConfig, serverConfig];
 
 export default config;

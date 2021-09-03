@@ -1,12 +1,12 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 
-const robotsRoute: Router = Router();
+const robotsRoute = Router();
 
-robotsRoute.get("/", async (req: Request, res: Response): Promise<void> => {
+robotsRoute.get("/", (req, res) => {
 	res.type("text/plain");
 
 	res.render("robots", {
-		robots_URL: new URL(`sitemap.xml`, `${req.protocol}://${req.get("host")}`).toString(),
+		robots_URL: new URL(`sitemap.xml`, `${req.protocol}://${req.get("host") as string}`).toString(),
 	});
 });
 

@@ -1,9 +1,9 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 import routes from "../../../common/routes";
 
-const sitemapRoute: Router = Router();
+const sitemapRoute = Router();
 
-sitemapRoute.get("/", async (req: Request, res: Response): Promise<void> => {
+sitemapRoute.get("/", (req, res) => {
 	res.type("text/xml");
 
 	res.render("sitemap", {

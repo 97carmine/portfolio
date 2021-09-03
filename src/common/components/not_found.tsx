@@ -1,9 +1,8 @@
-import { FC, ReactElement } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 
-const NotFound: FC = (): ReactElement => {
-	const { goBack } = useHistory();
+const NotFound = (): JSX.Element => {
+	const history = useHistory();
 
 	return (
 		<main className="container is-fluid">
@@ -21,7 +20,7 @@ const NotFound: FC = (): ReactElement => {
 						<Link to="/" className="button is-danger is-light">
 							<FormattedMessage defaultMessage="Red pill: Go to homepage" id="137ac" />
 						</Link>
-						<button type="button" className="button is-info is-light" onClick={(): void => goBack()}>
+						<button type="button" className="button is-info is-light" onClick={() => history.goBack()}>
 							<FormattedMessage defaultMessage="Blue pill: Go back" id="6132b" />
 						</button>
 					</div>

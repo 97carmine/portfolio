@@ -1,7 +1,6 @@
-import { FC, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-const PrivacyPolicy: FC = (): ReactElement => (
+const PrivacyPolicy = (): JSX.Element => (
 	<main className="container is-fluid">
 		<div className="container">
 			<h1 className="title">

@@ -1,4 +1,5 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
 		"target": "ES2020",
 		"module": "commonjs",
@@ -7,13 +8,21 @@
 		"strict": true,
 		"alwaysStrict": true,
 		"strictNullChecks": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
 		"lib": ["ES2020", "DOM"],
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
+		"baseUrl": "src",
+		"allowJs": false,
 		"sourceMap": true,
 		"outDir": "build",
 		"jsx": "react-jsx",
 		"noImplicitAny": true
 	},
-	"include": ["src/"]
+	"include": ["src/**/*"],
+	"exclude": ["build"],
+	"files": ["webpack.dev.ts", "webpack.prod.ts"]
 }

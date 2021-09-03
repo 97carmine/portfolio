@@ -1,8 +1,7 @@
-import { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link, useLocation } from "react-router-dom";
 
-const Footer = (): ReactElement => {
+const Footer = (): JSX.Element => {
 	const { pathname } = useLocation();
 
 	return (

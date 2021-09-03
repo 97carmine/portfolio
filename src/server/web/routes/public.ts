@@ -1,4 +1,4 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 import { renderToString } from "react-dom/server";
 import { matchPath } from "react-router";
 import { minify } from "html-minifier-terser";
@@ -7,15 +7,15 @@ import { join } from "path";
 import app from "../components/app";
 import routes from "../../../common/routes";
 
-const publicRoute: Router = Router();
+const publicRoute = Router();
 
-publicRoute.get("/*", async (req: Request, res: Response): Promise<void> => {
+publicRoute.get("/*", (req, res) => {
 	const activeRoute = routes.find((route) => matchPath(req.path, route));
 
 	res.render(
 		"public",
 		{
-			assets: JSON.parse(readFileSync(join(__dirname, "static/asset-manifest.json"), "utf-8")),
+			assets: JSON.parse(readFileSync(join(__dirname, "static/asset-manifest.json"), "utf-8")) as JSON,
 			language: req.language.locale,
 			canonical_URL: req.fullURL.toString(),
 			component: renderToString(app(req.path, req.language)),
@@ -23,13 +23,13 @@ publicRoute.get("/*", async (req: Request, res: Response): Promise<void> => {
 				{ id: "1cf05", defaultMessage: "{name}'s portfolio" },
 				{ name: "Axel Gabriel Calle Granda" }
 			),
-			humans_URL: new URL(`humans.txt`, `${req.protocol}://${req.get("host")}`).toString(),
+			humans_URL: new URL(`humans.txt`, `${req.protocol}://${req.get("host") as string}`).toString(),
 			noJS: req.language.formatMessage({
 				id: "2ce4c",
 				defaultMessage: "You need to activate JavaScript for full functionality",
 			}),
 		},
-		(error: Error, html: string): void => {
+		(error, html) => {
 			if (error) {
 				res.status(500).render("500", {
 					language: req.language.locale,
@@ -39,22 +39,24 @@ publicRoute.get("/*", async (req: Request, res: Response): Promise<void> => {
 					}),
 				});
 			} else {
-				const minified_html: string = minify(html, {
-					collapseWhitespace: true,
-					removeRedundantAttributes: true,
-					removeScriptTypeAttributes: true,
-					removeStyleLinkTypeAttributes: true,
-					removeAttributeQuotes: true,
-					removeComments: true,
-					sortAttributes: true,
-					sortClassName: true,
-					useShortDoctype: true,
-					minifyJS: true,
-					minifyCSS: true,
-					minifyURLs: true,
-				});
-
-				activeRoute === undefined ? res.status(404).send(minified_html) : res.send(minified_html);
+				Promise.resolve(
+					minify(html, {
+						collapseWhitespace: true,
+						removeRedundantAttributes: true,
+						removeScriptTypeAttributes: true,
+						removeStyleLinkTypeAttributes: true,
+						removeAttributeQuotes: true,
+						removeComments: true,
+						sortAttributes: true,
+						sortClassName: true,
+						useShortDoctype: true,
+						minifyJS: true,
+						minifyCSS: true,
+						minifyURLs: true,
+					})
+				)
+					.then((data) => (activeRoute === undefined ? res.status(404).send(data) : res.send(data)))
+					.catch((error: Error) => console.log(error.message));
 			}
 		}
 	);

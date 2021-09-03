@@ -1,7 +1,6 @@
-import { FC, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-const Projects: FC = (): ReactElement => (
+const Projects = (): JSX.Element => (
 	<main className="container is-fluid">
 		<div className="container">
 			<h1 className="title">
@@ -27,7 +26,7 @@ const Projects: FC = (): ReactElement => (
 				defaultMessage="More information <a>here</a>."
 				values={{
 					// eslint-disable-next-line react/display-name
-					a: (chunks: string): ReactElement => (
+					a: (chunks: string) => (
 						<a href="https://github.com/97carmine/CV-AR" target="blank">
 							{chunks}
 						</a>

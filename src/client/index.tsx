@@ -4,7 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 import App from "../common/components/app";
 
 if (process.env.NODE_ENV !== "production") {
-	import("@axe-core/react").then((axe): Promise<void> => axe.default(React, hydrate, 1000));
+	import("@axe-core/react")
+		.then((axe) => axe.default(React, hydrate, 1000))
+		.catch((error: Error) => console.log(`Error importing module @axe-core/react: ${error.message}`));
 }
 
 hydrate(
