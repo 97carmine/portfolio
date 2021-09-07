@@ -3597,10 +3597,10 @@ hosted-git-info@^4.0.1:
   dependencies:
     lru-cache "^6.0.0"
 
-html-minifier-terser@6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/html-minifier-terser/-/html-minifier-terser-6.0.1.tgz#272ad5f94dd9aff90bc24fd49f8ccf89399fc9c4"
-  integrity sha512-Rr5pRkXEPPqx3QvkOYavOPXGsRJSNbiWabOeKHqIy85RC/Ij54UokP8l6xHZ4X1HNHU9eVIiWLPZiB5XYMiSnw==
+html-minifier-terser@6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/html-minifier-terser/-/html-minifier-terser-6.0.2.tgz#14059ad64b69bf9f8b8a33f25b53411d8321e75d"
+  integrity sha512-AgYO3UGhMYQx2S/FBJT3EM0ZYcKmH6m9XL9c1v77BeK/tYJxGPxT1/AtsdUi4FcP8kZGmqqnItCcjFPcX9hk6A==
   dependencies:
     camel-case "^4.1.2"
     clean-css "^5.1.5"
