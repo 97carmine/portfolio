@@ -33,8 +33,8 @@ const commonRules = (client: boolean) => [
 const commonPlugins = (client: boolean) => [
 	new DefinePlugin({ __IS_CLIENT__: client }),
 	new MiniCssExtractPlugin({
-		filename: client ? "css/[name].css" : "static/css/[name].css",
-		chunkFilename: client ? "css/[chunkhash].chunk.css" : "static/css/[chunkhash].chunk.css",
+		filename: client ? "css/[name].[contenthash].css" : "static/css/[name].[contenthash].css",
+		chunkFilename: client ? "css/[name].[chunkhash].chunk.css" : "static/css/[name].[chunkhash].chunk.css",
 	}),
 ];
 
@@ -90,7 +90,12 @@ const clientConfig = {
 			cache: true,
 			outputPath: resolve(__dirname, "build/static"),
 		}),
-		new WebpackAssetsManifest({ output: "asset-manifest.json", publicPath: true }),
+		new WebpackAssetsManifest({
+			output: "asset-manifest.json",
+			publicPath: true,
+			integrity: true,
+			integrityHashes: ["sha512"],
+		}),
 	],
 };
 

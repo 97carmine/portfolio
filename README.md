@@ -29,8 +29,9 @@ After=network.target
 [Service]
 Type=simple
 User=$USER
+Environment="NODE_ENV=production NODE_OPTIONS='--require $(pwd)/.pnp.cjs'"
 WorkingDirectory=$FOLDER_PATH
-ExecStart=NODE_OPTIONS="--require $(pwd)/.pnp.cjs" node build/server.js
+ExecStart=node build/server.js
 Restart=on-failure
 
 [Install]

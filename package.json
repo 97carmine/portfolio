@@ -21,7 +21,7 @@
 		"compile:en": "formatjs compile ./src/common/languages/templates/en.json --ast --out-file ./src/common/languages/messages/en.json",
 		"build:prod": "webpack --config webpack.prod.ts",
 		"build:dev": "webpack --config webpack.dev.ts",
-		"start:prod": "node build/server.js",
+		"start:prod": "NODE_ENV=production node build/server.js",
 		"start:dev": "nodemon build/server.js"
 	},
 	"dependencies": {
@@ -69,7 +69,6 @@
 		"eslint-plugin-react": "7.24.0",
 		"eslint-webpack-plugin": "2.5.4",
 		"eta": "1.12.3",
-		"favicons": "6.2.2",
 		"favicons-webpack-plugin": "5.0.2",
 		"html-minifier-terser": "6.0.2",
 		"mini-css-extract-plugin": "2.0.0",

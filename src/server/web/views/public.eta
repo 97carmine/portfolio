@@ -6,10 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<title>Axel Gabriel Calle Granda</title>
 		<link rel="canonical" href="<%= it.canonical_URL %>" />
-		<link rel="shortcut icon" href="<%= it.assets["favicon.png"] %>">
 		<link type="text/plain" rel="author" href="<%= it.humans_URL %>" />
-		<link type="text/css" rel="stylesheet" href="<%= it.assets["client.css"] %>" />
-		<script type="text/javascript" defer src="<%= it.assets["client.js"] %>"></script>
+		<% if (process.env.NODE_ENV === "production") { %>
+			<link type="image/png" rel="icon" href="<%= it.assets["favicon.png"].src %>" integrity="<%= it.assets["favicon.png"].integrity %>" crossorigin="anonymous">
+			<link type="text/css" rel="stylesheet" href="<%= it.assets["client.css"].src %>" integrity="<%= it.assets["client.css"].integrity %>" crossorigin="anonymous">
+			<script type="text/javascript" async src="<%= it.assets["client.js"].src %>" integrity="<%= it.assets["client.js"].integrity %>" crossorigin="anonymous"></script>
+		<% } else { %>
+			<link type="image/png" rel="icon" href="<%= it.assets["favicon.png"] %>">
+			<link type="text/css" rel="stylesheet" href="<%= it.assets["client.css"] %>" />
+			<script type="text/javascript" async src="<%= it.assets["client.js"] %>"></script>
+		<% } %>
 	</head>
 	<body>
 		<noscript><div class="noJS"><%= it.noJS %></div></noscript>
