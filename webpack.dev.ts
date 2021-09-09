@@ -33,7 +33,7 @@ const commonRules = (client: boolean) => [
 
 const commonPlugins = (client: boolean) => [
 	new DefinePlugin({ __IS_CLIENT__: client }),
-	new ESLintPlugin({ fix: true }),
+	new ESLintPlugin({ extensions: ["ts", "tsx"], fix: true }),
 	new StylelintPlugin({ fix: true }),
 	new MiniCssExtractPlugin({
 		filename: client ? "css/[name].css" : "static/css/[name].css",
