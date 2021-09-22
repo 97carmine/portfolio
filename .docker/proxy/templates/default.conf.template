@@ -1,12 +1,12 @@
 server {
         listen 80;
         listen [::]:80;
-        server_name ${NGINX_HOSTNAME} www.${NGINX_HOSTNAME};
+        server_name ^(www.)?${NGINX_HOSTNAME}$;
 
         modsecurity on;
         modsecurity_rules_file /etc/nginx/modsec/main.conf;
 
-        if ( $host !~ ^((|www.)${NGINX_HOSTNAME})$ ) {
+        if ( $host !~ ^(www.)?${NGINX_HOSTNAME}$ ) {
                 return 444;
         }
 
@@ -44,7 +44,6 @@ server {
         modsecurity on;
         modsecurity_rules_file /etc/nginx/modsec/main.conf;
 
-        add_header Access-Control-Allow-Origin * always;
         add_header Access-Control-Allow-Methods "GET, HEAD, POST" always;
         add_header Allow "GET, HEAD, POST" always;
 

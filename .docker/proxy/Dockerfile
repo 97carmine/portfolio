@@ -3,59 +3,31 @@ FROM nginx:mainline-alpine as builder
 ARG ENABLED_MODULES
 
 RUN set -ex \
-    && if [ "$ENABLED_MODULES" = "" ]; then \
-        echo "No additional modules enabled, exiting"; \
-        exit 1; \
-    fi
-
-COPY ./ /modules/
-
-RUN set -ex \
-    && apk update \
-    && apk add --no-cache --virtual build-deps abuild autoconf automake byacc curl-dev flex g++ gcc geoip-dev \
+    && apk add --update --no-cache --virtual build-deps abuild autoconf automake byacc curl-dev flex g++ gcc geoip-dev \
         git libc-dev libmaxminddb-dev libstdc++ libtool libxml2-dev libxml2-utils libxslt linux-headers lmdb-dev make \
         mercurial musl-dev openssl openssl-dev pcre-dev unzip xz yajl-dev zlib-dev \
     # allow abuild as a root user \
-    && printf "#!/bin/sh\\n/usr/bin/abuild -F \"\$@\"\\n" > /usr/local/bin/abuild \
+    && printf "#!/bin/sh\\nSETFATTR=true /usr/bin/abuild -F \"\$@\"\\n" > /usr/local/bin/abuild \
     && chmod +x /usr/local/bin/abuild \
     && hg clone -r ${NGINX_VERSION}-${PKG_RELEASE} https://hg.nginx.org/pkg-oss/ /opt/pkg-oss \
     && cd /opt/pkg-oss \
     && mkdir /tmp/packages \
     && for module in $ENABLED_MODULES; do \
         echo "Building $module for nginx-$NGINX_VERSION"; \
-        if [ -d /modules/$module ]; then \
-            echo "Building $module from user-supplied sources"; \
-            # check if module sources file is there and not empty
-            if [ ! -s /modules/$module/source ]; then \
-                echo "No source file for $module in modules/$module/source, exiting"; \
-                exit 1; \
-            fi; \
-            # some modules require build dependencies
-            if [ -f /modules/$module/build-deps ]; then \
-                echo "Installing $module build dependencies"; \
-                apk update && apk add $(cat /modules/$module/build-deps | xargs); \
-            fi; \
-            # if a module has a build dependency that is not in a distro, provide a
-            # shell script to fetch/build/install those
-            # note that shared libraries produced as a result of this script will
-            # not be copied from the builder image to the main one so build static
-            if [ -x /modules/$module/prebuild ]; then \
-                echo "Running prebuild script for $module"; \
-                /modules/$module/prebuild; \
-            fi; \
-            /opt/pkg-oss/build_module.sh -v $NGINX_VERSION -f -y -o /tmp/packages -n $module $(cat /modules/$module/source); \
-        elif make -C /opt/pkg-oss/alpine list | grep -E "^$module\s+\d+" > /dev/null; then \
+        if make -C /opt/pkg-oss/alpine list | grep -E "^$module\s+\d+" > /dev/null; then \
             echo "Building $module from pkg-oss sources"; \
             cd /opt/pkg-oss/alpine; \
             make abuild-module-$module BASE_VERSION=$NGINX_VERSION NGINX_VERSION=$NGINX_VERSION; \
             apk add $(. ./abuild-module-$module/APKBUILD; echo $makedepends;); \
             make module-$module BASE_VERSION=$NGINX_VERSION NGINX_VERSION=$NGINX_VERSION; \
             find ~/packages -type f -name "*.apk" -exec mv -v {} /tmp/packages/ \;; \
+            BUILT_MODULES="$BUILT_MODULES $module"; \
         else \
             echo "Don't know how to build $module module, exiting"; \
             exit 1; \
         fi; \
     done \
+    && echo "BUILT_MODULES=\"$BUILT_MODULES\"" > /tmp/packages/modules.env \
     && echo "Installing ModSecurity library" \
     && git clone --depth 1 -b v3/master --single-branch https://github.com/SpiderLabs/ModSecurity /opt/ModSecurity \
     && cd /opt/ModSecurity \
@@ -75,14 +47,15 @@ RUN set -ex \
 
 FROM nginx:mainline-alpine
 
-ARG ENABLED_MODULES
-
 COPY --from=builder /usr/local/modsecurity /usr/local/modsecurity
 
 COPY --from=builder /tmp/packages /tmp/packages
 
 RUN set -ex \
-    && for module in $ENABLED_MODULES; do \
+    && apk update \
+    && apk upgrade \
+    && . /tmp/packages/modules.env \
+    && for module in $BUILT_MODULES; do \
         apk add --no-cache --allow-untrusted /tmp/packages/nginx-module-${module}-${NGINX_VERSION}*.apk; \
     done \
     # the default rules return a 403 response code, they are changed to 444
@@ -99,6 +72,6 @@ RUN set -ex \
 COPY certbot.sh /opt
 
 HEALTHCHECK --interval=1m30s --timeout=10s --start-period=30s --retries=3 \
-    CMD if [ -e /var/run/nginx.pid ]; then echo "Nginx is running"; else echo "Nginx isn't running" && exit 1; fi
+    CMD if [ -e /var/run/nginx.pid ]; then echo "Nginx is running"; else echo "Nginx isn't running"; exit 1; fi
 
 EXPOSE 80 443
