@@ -8,8 +8,8 @@ securityRoute.get("/security.txt", (req, res) => {
 	res.render("security", {
 		email: `axel.c.granda@gmail.com`,
 		languages: `en, es`,
-		expireDate: req.language.formatDate(new Date("2021, 09, 21 03:30:00")),
-		expireHour: req.language.formatTime(new Date("2021, 09, 21 03:30:00")),
+		expireDate: req.language.formatDate(new Date("2022, 09, 21 03:30:00")),
+		expireHour: req.language.formatTime(new Date("2022, 09, 21 03:30:00")),
 	});
 });
 
