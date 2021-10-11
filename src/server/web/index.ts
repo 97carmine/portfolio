@@ -37,15 +37,19 @@ if (process.env.NODE_ENV === "production") {
 	);
 }
 
-web.all("*", (req, _res, next) => {
-	const langOpt1 = req.query.language as string | undefined;
+web.all("*", (req, res, next) => {
+	const langOpt1 = req.query.language;
 	const langOpt2 = req.acceptsLanguages();
-	const language = langOpt1 === undefined ? obtainLanguage(langOpt2) : obtainLanguage([langOpt1]);
+	const language = obtainLanguage(typeof langOpt1 === "string" ? [langOpt1] : langOpt2);
 
-	req.fullURL = new URL(req.originalUrl, `${req.protocol}://${req.get("host") as string}`);
-	req.language = generateIntlObject(language);
-
-	next();
+	try {
+		req.fullURL = new URL(req.originalUrl, `${req.protocol}://${req.get("host") as string}`);
+		req.language = generateIntlObject(language);
+		next();
+	} catch (error) {
+		console.log(error);
+		res.status(500).end();
+	}
 });
 
 web.use("/humans.txt", routes.humansRoute);

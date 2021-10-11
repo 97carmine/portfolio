@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Ajv, { DefinedError } from "ajv";
+import Ajv, { DefinedError, JSONSchemaType } from "ajv";
 import { createTransport } from "nodemailer";
 import { IEmail } from "../../../../common/utils/interfaces";
 
@@ -12,14 +12,12 @@ emailRoute.post(
 
 		ajv.addKeyword({
 			keyword: "isNotEmpty",
-			async: true,
 			type: "string",
-			validate: (_schema: JSON, data: string) => typeof data === "string" && data.trim() !== "",
+			validate: (_schema: JSONSchemaType<IEmail>, data: string) => data.trim().length !== 0,
 			errors: false,
 		});
 
-		const schema = {
-			$async: true,
+		const schema: JSONSchemaType<IEmail> = {
 			type: "object",
 			required: ["full_name", "email", "data"],
 			properties: {
@@ -36,16 +34,7 @@ emailRoute.post(
 			next();
 		} else {
 			for (const error of validate.errors as DefinedError[]) {
-				switch (error.keyword) {
-					case "type":
-						console.log(error.params.type);
-						break;
-					case "pattern":
-						console.log(error.params.pattern);
-						break;
-					case "required":
-						console.log(error.params.missingProperty);
-				}
+				console.log(`Error validating ${error.instancePath}: ${error.message ?? `Generic error`}`);
 			}
 			res.status(400).end();
 		}

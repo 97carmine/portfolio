@@ -39,23 +39,23 @@ publicRoute.get("/*", (req, res) => {
 					}),
 				});
 			} else {
-				Promise.resolve(
-					minify(html, {
-						collapseWhitespace: true,
-						removeRedundantAttributes: true,
-						removeScriptTypeAttributes: true,
-						removeStyleLinkTypeAttributes: true,
-						removeAttributeQuotes: true,
-						removeComments: true,
-						sortAttributes: true,
-						sortClassName: true,
-						useShortDoctype: true,
-						minifyJS: true,
-						minifyCSS: true,
-						minifyURLs: true,
+				minify(html, {
+					collapseWhitespace: true,
+					removeRedundantAttributes: true,
+					removeScriptTypeAttributes: true,
+					removeStyleLinkTypeAttributes: true,
+					removeAttributeQuotes: true,
+					removeComments: true,
+					sortAttributes: true,
+					sortClassName: true,
+					useShortDoctype: true,
+					minifyJS: true,
+					minifyCSS: true,
+					minifyURLs: true,
+				})
+					.then((data) => {
+						activeRoute === undefined ? res.status(404).send(data) : res.send(data);
 					})
-				)
-					.then((data) => (activeRoute === undefined ? res.status(404).send(data) : res.send(data)))
 					.catch((error: Error) => console.log(error.message));
 			}
 		}
