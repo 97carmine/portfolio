@@ -5,7 +5,7 @@ WORKDIR /opt/app
 COPY . .
 
 RUN rm /usr/local/bin/yarn /usr/local/bin/yarnpkg \
-    && rm -r /opt/yarn-v1.22.5 \
+    && rm -r /opt/yarn-v${YARN_VERSION} \
     && npm i -g corepack \
     && yarn config set enableMirror false \
     && yarn config set enableInlineBuilds true \
@@ -25,7 +25,7 @@ RUN apk update \
     && chown -R node:node /home/node/app \
     && npm i -g corepack \
     && find /usr/local/bin -type l -regex ".*\(np[mx]\|yarn\|pkg\)" -maxdepth 1 -delete \
-    && rm -r /opt/yarn-v1.22.5 /usr/local/lib/node_modules \
+    && rm -r /opt/yarn-v${YARN_VERSION} /usr/local/lib/node_modules \
     && unset YARN_VERSION
 
 USER node
