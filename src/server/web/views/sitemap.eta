@@ -3,7 +3,7 @@
 <% it.routes.map(({path}) => { %>
   <url>
     <loc>
-      <%= new URL(`${path}`, `${it.protocol}://${it.host}`).toString() %>
+      <%= `${new URL(path, it.origin).toString()}\n` %>
     </loc>
   </url>
 <% }) %>

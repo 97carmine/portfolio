@@ -1,8 +1,12 @@
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
+import { setHeader } from "../utils/hooks";
 
 const NotFound = (): JSX.Element => {
+	const { pathname } = useLocation();
 	const history = useHistory();
+
+	setHeader(pathname);
 
 	return (
 		<main className="container is-fluid">

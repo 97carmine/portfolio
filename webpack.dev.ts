@@ -1,5 +1,4 @@
 import { resolve } from "path";
-import { DefinePlugin } from "webpack";
 import ESLintPlugin from "eslint-webpack-plugin";
 import StylelintPlugin from "stylelint-webpack-plugin";
 import FaviconsWebpackPlugin from "favicons-webpack-plugin";
@@ -10,7 +9,7 @@ import { transform } from "@formatjs/ts-transformer";
 
 const commonRules = (client: boolean) => [
 	{
-		test: /\.ts(|x)$/i,
+		test: /\.tsx?$/i,
 		use: {
 			loader: "ts-loader",
 			options: {
@@ -32,7 +31,6 @@ const commonRules = (client: boolean) => [
 ];
 
 const commonPlugins = (client: boolean) => [
-	new DefinePlugin({ __IS_CLIENT__: client }),
 	new ESLintPlugin({ extensions: ["ts", "tsx"], fix: true }),
 	new StylelintPlugin({ fix: true }),
 	new MiniCssExtractPlugin({

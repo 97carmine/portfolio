@@ -1,5 +1,4 @@
 import { resolve } from "path";
-import { DefinePlugin } from "webpack";
 import FaviconsWebpackPlugin from "favicons-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
@@ -9,7 +8,7 @@ import { transform } from "@formatjs/ts-transformer";
 
 const commonRules = (client: boolean) => [
 	{
-		test: /\.ts(|x)$/i,
+		test: /\.tsx?$/i,
 		use: {
 			loader: "ts-loader",
 			options: {
@@ -31,7 +30,6 @@ const commonRules = (client: boolean) => [
 ];
 
 const commonPlugins = (client: boolean) => [
-	new DefinePlugin({ __IS_CLIENT__: client }),
 	new MiniCssExtractPlugin({
 		filename: client ? "css/[name].[contenthash].css" : "static/css/[name].[contenthash].css",
 		chunkFilename: client ? "css/[name].[chunkhash].chunk.css" : "static/css/[name].[chunkhash].chunk.css",

@@ -298,5 +298,8 @@
 	},
 	"816a1": {
 		"defaultMessage": "{city}, Spain"
+	},
+	"fad58": {
+		"defaultMessage": "Portfolio, {name}, Resume, Personal website"
 	}
 }

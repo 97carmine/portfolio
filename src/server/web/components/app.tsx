@@ -1,10 +1,13 @@
 import { IntlShape } from "react-intl";
 import { StaticRouter } from "react-router";
 import App from "../../../common/components/app";
+import LanguageProvider from "../../../common/providers/languageProvider";
 
 const app = (path: string, intl: IntlShape): JSX.Element => (
 	<StaticRouter location={path}>
-		<App intl={intl} />
+		<LanguageProvider intl={intl}>
+			<App />
+		</LanguageProvider>
 	</StaticRouter>
 );
 

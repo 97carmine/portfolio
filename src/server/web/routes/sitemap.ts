@@ -8,8 +8,7 @@ sitemapRoute.get("/", (req, res) => {
 
 	res.render("sitemap", {
 		routes: routes,
-		protocol: req.protocol,
-		host: req.get("host"),
+		origin: req.fullURL.origin,
 	});
 });
 

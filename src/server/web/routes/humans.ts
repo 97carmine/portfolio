@@ -11,7 +11,7 @@ humansRoute.get("/", (req, res) => {
 			{ id: "99650", defaultMessage: "{email} or {url}" },
 			{
 				email: "axel.c.granda@gmail.com",
-				url: new URL(`contact`, `${req.protocol}://${req.get("host") as string}`).toString(),
+				url: new URL(`contact`, req.fullURL.origin).toString(),
 			}
 		),
 		last_update: req.language.formatDate(new Date("2021/06/20")),

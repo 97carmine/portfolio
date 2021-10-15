@@ -1,8 +1,11 @@
 import express from "express";
 import helmet from "helmet";
-import { join } from "path";
+import { extname, resolve } from "path";
 import { renderFile } from "eta";
-import { obtainLanguage, generateIntlObject } from "../../common/languages/utils";
+import { obtainLanguage } from "../../common/languages/utils";
+import { createIntl, createIntlCache, MessageFormatElement } from "react-intl";
+import { obtainAssetManifest } from "../utils/file";
+import { asyncMiddleware } from "../utils/middleware";
 import * as routes from "./routes";
 
 const web = express();
@@ -10,7 +13,7 @@ const web = express();
 // Templates
 web.engine("eta", renderFile);
 web.set("view engine", "eta");
-web.set("views", join(__dirname, "views"));
+web.set("views", resolve(__dirname, "views"));
 
 // Static
 web.use(express.static("build/static", { index: false }));
@@ -23,11 +26,16 @@ if (process.env.NODE_ENV === "production") {
 					defaultSrc: ["'none'"],
 					baseUri: ["'none'"],
 					connectSrc: ["'self'"],
-					fontSrc: ["'self'"],
+					fontSrc: ["'none'"],
 					formAction: ["'none'"],
 					frameAncestors: ["'none'"],
 					imgSrc: ["'self'"],
-					scriptSrc: ["'self'"],
+					scriptSrc: [
+						"'strict-dynamic'",
+						obtainAssetManifest(([key]) => /^.js$/.test(extname(key)))
+							.map((data) => typeof data[1] !== "string" && `'${data[1].integrity}'`)
+							.join(" "),
+					],
 					styleSrc: ["'self'"],
 				},
 			},
@@ -37,20 +45,49 @@ if (process.env.NODE_ENV === "production") {
 	);
 }
 
-web.all("*", (req, res, next) => {
-	const langOpt1 = req.query.language;
-	const langOpt2 = req.acceptsLanguages();
-	const language = obtainLanguage(typeof langOpt1 === "string" ? [langOpt1] : langOpt2);
+web.all(
+	"*",
+	asyncMiddleware(async (req, res, next) => {
+		const loadMessages = (language: string): Promise<Record<string, MessageFormatElement[]>> => {
+			switch (language) {
+				case "es":
+					return import("../../common/languages/messages/es.json").then((data) => data.default);
+				default:
+					return import("../../common/languages/messages/en.json").then((data) => data.default);
+			}
+		};
 
-	try {
-		req.fullURL = new URL(req.originalUrl, `${req.protocol}://${req.get("host") as string}`);
-		req.language = generateIntlObject(language);
+		const langOpt1 = req.query.language;
+		const langOpt2 = req.acceptsLanguages();
+		const language = obtainLanguage(typeof langOpt1 === "string" ? [langOpt1] : langOpt2);
+		const host = req.headers.host;
+
+		// Create a custom req object that you will store a URL object
+		if (typeof host === "string") {
+			req.fullURL = new URL(req.originalUrl, `${req.protocol}://${host}`);
+		} else {
+			res.status(500).end();
+		}
+
+		// Create a custom req object that you will store a IntlShap object
+		await loadMessages(language)
+			.then((messages) => {
+				req.language = createIntl(
+					{
+						locale: language,
+						messages: messages,
+					},
+					createIntlCache()
+				);
+			})
+			.catch((error: Error) => {
+				console.log(`Error generating the intl object: ${error.message}`);
+				res.status(500).end();
+			});
+
 		next();
-	} catch (error) {
-		console.log(error);
-		res.status(500).end();
-	}
-});
+	})
+);
 
 web.use("/humans.txt", routes.humansRoute);
 web.use("/robots.txt", routes.robotsRoute);

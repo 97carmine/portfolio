@@ -1,23 +1,19 @@
 import { ReactNode } from "react";
-import { IntlShape } from "react-intl";
-import { RawIntlProvider, IntlProvider } from "react-intl";
-import languages from "../languages/messages";
+import { IntlProvider, IntlShape, MessageFormatElement, RawIntlProvider } from "react-intl";
 
 interface IProps {
-	intl: IntlShape | undefined;
+	intl: IntlShape | string;
+	messages?: Record<string, MessageFormatElement[]>;
 	children: ReactNode;
 }
 
-const LanguageProvider = ({ intl, children }: IProps): JSX.Element => {
-	const language: string = (__IS_CLIENT__ && document.documentElement.lang) || `en`;
-
-	return intl === undefined ? (
-		<IntlProvider locale={language} key={language} messages={languages[language]}>
+const LanguageProvider = ({ intl, messages, children }: IProps): JSX.Element =>
+	typeof intl === "string" ? (
+		<IntlProvider locale={intl} key={intl} messages={messages}>
 			{children}
 		</IntlProvider>
 	) : (
 		<RawIntlProvider value={intl}>{children}</RawIntlProvider>
 	);
-};
 
 export default LanguageProvider;

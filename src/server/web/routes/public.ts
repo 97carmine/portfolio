@@ -2,8 +2,8 @@ import { Router } from "express";
 import { renderToString } from "react-dom/server";
 import { matchPath } from "react-router";
 import { minify } from "html-minifier-terser";
-import { readFileSync } from "fs";
-import { join } from "path";
+import { extname } from "path";
+import { obtainAssetManifest } from "../../utils/file";
 import app from "../components/app";
 import routes from "../../../common/routes";
 
@@ -15,7 +15,7 @@ publicRoute.get("/*", (req, res) => {
 	res.render(
 		"public",
 		{
-			assets: JSON.parse(readFileSync(join(__dirname, "static/asset-manifest.json"), "utf-8")) as JSON,
+			assets: obtainAssetManifest(([key]) => /^.(js|css)$/.test(extname(key)) || key === "favicon.png"),
 			language: req.language.locale,
 			canonical_URL: req.fullURL.toString(),
 			component: renderToString(app(req.path, req.language)),
@@ -23,7 +23,12 @@ publicRoute.get("/*", (req, res) => {
 				{ id: "1cf05", defaultMessage: "{name}'s portfolio" },
 				{ name: "Axel Gabriel Calle Granda" }
 			),
-			humans_URL: new URL(`humans.txt`, `${req.protocol}://${req.get("host") as string}`).toString(),
+			extname: extname,
+			humans_URL: new URL(`humans.txt`, req.fullURL.origin).toString(),
+			keywords: req.language.formatMessage(
+				{ id: "fad58", defaultMessage: "Portfolio, {name}, Resume, Personal website" },
+				{ name: "Axel Gabriel Calle Granda" }
+			),
 			noJS: req.language.formatMessage({
 				id: "2ce4c",
 				defaultMessage: "You need to activate JavaScript for full functionality",
@@ -54,7 +59,7 @@ publicRoute.get("/*", (req, res) => {
 					minifyURLs: true,
 				})
 					.then((data) => {
-						activeRoute === undefined ? res.status(404).send(data) : res.send(data);
+						activeRoute ? res.send(data) : res.status(404).send(data);
 					})
 					.catch((error: Error) => console.log(error.message));
 			}

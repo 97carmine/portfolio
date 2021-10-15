@@ -6,7 +6,7 @@ robotsRoute.get("/", (req, res) => {
 	res.type("text/plain");
 
 	res.render("robots", {
-		robots_URL: new URL(`sitemap.xml`, `${req.protocol}://${req.get("host") as string}`).toString(),
+		robots_URL: new URL(`sitemap.xml`, req.fullURL.origin).toString(),
 	});
 });
 

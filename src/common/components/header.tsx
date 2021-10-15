@@ -10,7 +10,7 @@ const Header = (): JSX.Element => (
 					height="27"
 					loading="lazy"
 					//eslint-disable-next-line @typescript-eslint/no-var-requires
-					src={require("../assets/images/logo.png") as string}
+					src={String(require("../assets/images/logo.png"))}
 					alt="Logo"
 				/>
 			</Link>
