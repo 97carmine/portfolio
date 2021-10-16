@@ -15,9 +15,6 @@ web.engine("eta", renderFile);
 web.set("view engine", "eta");
 web.set("views", resolve(__dirname, "views"));
 
-// Static
-web.use(express.static("build/static", { index: false }));
-
 if (process.env.NODE_ENV === "production") {
 	web.use(
 		helmet({
@@ -45,6 +42,9 @@ if (process.env.NODE_ENV === "production") {
 		})
 	);
 }
+
+// Static
+web.use(express.static("build/static", { index: false }));
 
 web.all(
 	"*",
