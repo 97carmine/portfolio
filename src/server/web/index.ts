@@ -30,6 +30,7 @@ if (process.env.NODE_ENV === "production") {
 					formAction: ["'none'"],
 					frameAncestors: ["'none'"],
 					imgSrc: ["'self'"],
+					upgradeInsecureRequests: [],
 					scriptSrc: [
 						"'strict-dynamic'",
 						obtainAssetManifest(([key]) => /^.js$/.test(extname(key)))
