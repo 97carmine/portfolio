@@ -22,7 +22,9 @@ const loadMessages = (language: string): Promise<Record<string, MessageFormatEle
 };
 
 (async () => {
-	const language = obtainLanguage([document.documentElement.lang] || navigator.languages);
+	const langOpt1 = document.documentElement.lang;
+	const langOpt2 = navigator.languages;
+	const language = obtainLanguage(langOpt1 ? [langOpt1] : langOpt2);
 	const messages = await loadMessages(language);
 
 	hydrate(
