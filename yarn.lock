@@ -5246,10 +5246,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:6.7.0":
-  version: 6.7.0
-  resolution: "nodemailer@npm:6.7.0"
-  checksum: eebd6e5ac96bc77bd544eec939ef4a88dc60cbd5ef062995cb951141c41cf66db838cfbd7fe8ad2b1c8f8d23c839efb5519fa70e2be5d8e79c14b2459ebe4485
+"nodemailer@npm:6.7.2":
+  version: 6.7.2
+  resolution: "nodemailer@npm:6.7.2"
+  checksum: 3c37a40928448e2f5118a9f2f016c7a4f32228d0e6b7cc7d1834b8001374cc77280dc077a83239420f6daea4c898d9a1f336dfc2273bb7eddaf51a36bd126f72
   languageName: node
   linkType: hard
 
@@ -5771,7 +5771,7 @@ __metadata:
     helmet: 4.6.0
     html-minifier-terser: 6.0.2
     mini-css-extract-plugin: 2.0.0
-    nodemailer: 6.7.0
+    nodemailer: 6.7.2
     nodemon: 2.0.13
     prettier: 2.3.2
     react: 17.0.2
@@ -7790,7 +7790,7 @@ __metadata:
 
 "typescript@patch:typescript@4.4.4#~builtin<compat/typescript>":
   version: 4.4.4
-  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"
+  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -7800,11 +7800,11 @@ __metadata:
 
 "typescript@patch:typescript@^4.4#~builtin<compat/typescript>":
   version: 4.5.2
-  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=ddd1e8"
+  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 3a31d748b96e8757c39d6252a24d283137e76635f5d3c261876a440b43186b9148a435420e046f03c165dfd901737ce63e3a0ad22b54a8ddfa84d38434e35c57
+  checksum: 5b9dccf81e7191b10c931f61e24ccc24f456337c170650eeb644e94d406b443373159945d935bbdd739697c2011a3dff02cc590b7bd63c2f378a3c745abc6d5a
   languageName: node
   linkType: hard
 
