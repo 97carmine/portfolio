@@ -13,7 +13,7 @@
 	"browserslist": [
 		"defaults"
 	],
-	"packageManager": "yarn@3.1.0",
+	"packageManager": "yarn@3.1.1",
 	"scripts": {
 		"extract:es": "formatjs extract './src/**/*.{ts,tsx}' --ignore ./src/@types --id-interpolation-pattern '[contenthash:5]' --out-file ./src/common/languages/templates/es.json",
 		"extract:en": "formatjs extract './src/**/*.{ts,tsx}' --ignore ./src/@types --id-interpolation-pattern '[contenthash:5]' --out-file ./src/common/languages/templates/en.json",
