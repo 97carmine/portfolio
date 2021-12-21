@@ -1,5 +1,5 @@
 import { IntlShape } from "react-intl";
-import { StaticRouter } from "react-router";
+import { StaticRouter } from "react-router-dom/server";
 import App from "../../../common/components/app";
 import LanguageProvider from "../../../common/providers/languageProvider";
 

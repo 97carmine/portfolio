@@ -10,7 +10,7 @@ import routes from "../../../common/routes";
 const publicRoute = Router();
 
 publicRoute.get("/*", (req, res) => {
-	const activeRoute = routes.find((route) => matchPath(req.path, route));
+	const route = routes.find(({ path }) => typeof path !== "undefined" && path !== "*" && matchPath(path, req.path));
 
 	res.render(
 		"public",
@@ -59,7 +59,7 @@ publicRoute.get("/*", (req, res) => {
 					minifyURLs: true,
 				})
 					.then((data) => {
-						activeRoute ? res.send(data) : res.status(404).send(data);
+						route ? res.send(data) : res.status(404).send(data);
 					})
 					.catch((error: Error) => console.log(error.message));
 			}
