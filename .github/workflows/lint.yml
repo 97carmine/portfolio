@@ -25,7 +25,7 @@ jobs:
           LINTER_RULES_PATH: /
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc
-          JAVASCRIPT_DEFAULT_STYLE: prettier
           TYPESCRIPT_ES_CONFIG_FILE: .eslintrc
-          TYPESCRIPT_DEFAULT_STYLE: prettier
+          VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_TYPESCRIPT_STANDARD: false
           CSS_FILE_NAME: .stylelintrc
