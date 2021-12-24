@@ -1,12 +1,13 @@
-FROM node:current-alpine as builder
+FROM node:lts-alpine as builder
 
 WORKDIR /opt/app
 
 COPY . .
 
-RUN rm /usr/local/bin/yarn /usr/local/bin/yarnpkg \
+RUN npm rm -g npm \
+    && rm /usr/local/bin/yarn /usr/local/bin/yarnpkg \
     && rm -r /opt/yarn-v${YARN_VERSION} \
-    && npm i -g corepack \
+    && corepack enable \
     && yarn config set enableMirror false \
     && yarn config set enableInlineBuilds true \
     && yarn install \
@@ -15,18 +16,16 @@ RUN rm /usr/local/bin/yarn /usr/local/bin/yarnpkg \
 
 FROM node:lts-alpine
 
-ENV NPM_CONFIG_PREFIX="/home/node/.local"
-ENV PATH=$PATH:/home/node/.local/bin
 ENV NODE_ENV=production
 
-RUN apk update \
+RUN npm rm -g npm \
+    && rm /usr/local/bin/yarn /usr/local/bin/yarnpkg \
+    && rm -r /opt/yarn-v${YARN_VERSION} \
+    && corepack enable \
+    && apk update \
     && apk upgrade \
     && mkdir /home/node/app \
-    && chown -R node:node /home/node/app \
-    && npm i -g corepack \
-    && find /usr/local/bin -type l -regex ".*\(np[mx]\|yarn\|pkg\)" -maxdepth 1 -delete \
-    && rm -r /opt/yarn-v${YARN_VERSION} /usr/local/lib/node_modules \
-    && unset YARN_VERSION
+    && chown -R node:node /home/node/app
 
 USER node
 
@@ -39,7 +38,7 @@ COPY --chown=node:node --from=builder /opt/app/package.json \
 RUN yarn plugin import @yarnpkg/plugin-workspace-tools \
     && yarn workspaces focus --production \
     && rm .yarnrc.yml .yarn/install-state.gz \
-    && rm -r .yarn/plugins ../.local
+    && rm -r .yarn/plugins
 
 EXPOSE 3000
 
