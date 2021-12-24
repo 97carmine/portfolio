@@ -1,12 +1,18 @@
 import { ReactNode } from "react";
 import { useLocation } from "react-router-dom";
-import TransitionGroup from "react-transition-group/TransitionGroup";
-import CSSTransition from "react-transition-group/CSSTransition";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Header from "./header";
 import Footer from "./footer";
 
 const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
-	const { key } = useLocation();
+	const { key, pathname } = useLocation();
+
+	if (typeof document !== "undefined") {
+		const { host, protocol } = document.location;
+		const canonical = document.querySelector('link[rel="canonical"]');
+
+		canonical?.setAttribute("href", new URL(pathname, `${protocol}//${host}`).toString());
+	}
 
 	return (
 		<>

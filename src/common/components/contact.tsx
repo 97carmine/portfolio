@@ -1,7 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { FormattedMessage } from "react-intl";
-import { Link, useLocation } from "react-router-dom";
-import { setHeader } from "../utils/hooks";
+import { Link } from "react-router-dom";
 import { IEmail } from "../utils/interfaces";
 
 interface IEmailData extends IEmail {
@@ -11,15 +10,12 @@ interface IEmailData extends IEmail {
 const initialState: IEmailData = { full_name: "", email: "", data: "", accepted: false };
 
 const Contact = (): JSX.Element => {
-	const { pathname } = useLocation();
 	const [{ full_name, email, data, accepted }, setEmailData] = useState<IEmailData>(initialState);
 	const [isLoading, setLoading] = useState<boolean>(false);
 	const [{ isShowing, alertStatus }, setShowAlert] = useState<{ isShowing: boolean; alertStatus: boolean }>({
 		isShowing: false,
 		alertStatus: false,
 	});
-
-	setHeader(pathname);
 
 	const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
 		setEmailData((prevState) => ({ ...prevState, [event.target.id]: event.target.value }));
