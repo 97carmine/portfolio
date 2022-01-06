@@ -26,16 +26,21 @@ const commonRules = (client: boolean) => [
 	},
 	{
 		test: /\.(s[ac]|c)ss$/i,
-		use: [{ loader: MiniCssExtractPlugin.loader }, { loader: "css-loader" }, { loader: "sass-loader" }],
+		use: [
+			{ loader: MiniCssExtractPlugin.loader, options: { emit: client } },
+			{ loader: "css-loader" },
+			{ loader: "sass-loader" },
+		],
 	},
 ];
 
-const commonPlugins = (client: boolean) => [
+const commonPlugins = [
 	new ESLintPlugin({ extensions: ["ts", "tsx"], fix: true }),
 	new StylelintPlugin({ fix: true }),
+	// Keep only client CSS
 	new MiniCssExtractPlugin({
-		filename: client ? "css/[name].css" : "static/css/[name].css",
-		chunkFilename: client ? "css/[chunkhash].chunk.css" : "static/css/[chunkhash].chunk.css",
+		filename: "css/[name].css",
+		chunkFilename: "css/[chunkhash].chunk.css",
 	}),
 ];
 
@@ -61,7 +66,7 @@ const serverConfig = {
 	},
 	module: { rules: [...commonRules(false)] },
 	plugins: [
-		...commonPlugins(false),
+		...commonPlugins,
 		new CopyPlugin({
 			patterns: [{ from: "src/server/web/views", to: "views" }],
 		}),
@@ -82,7 +87,7 @@ const clientConfig = {
 		rules: [...commonRules(true)],
 	},
 	plugins: [
-		...commonPlugins(true),
+		...commonPlugins,
 		new FaviconsWebpackPlugin({
 			logo: "src/common/assets/images/logo.png",
 			cache: true,
