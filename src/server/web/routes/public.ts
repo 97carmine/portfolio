@@ -5,12 +5,12 @@ import { minify } from "html-minifier-terser";
 import { extname } from "path";
 import { obtainAssetManifest } from "../../utils/file";
 import app from "../components/app";
-import routes from "../../../common/routes";
+import { routesWithoutPath } from "../../../common/routes";
 
 const publicRoute = Router();
 
 publicRoute.get("/*", (req, res) => {
-	const route = routes.find(({ path }) => typeof path !== "undefined" && path !== "*" && matchPath(path, req.path));
+	const route = routesWithoutPath("*").find(({ path }) => typeof path !== "undefined" && matchPath(path, req.path));
 
 	res.render(
 		"public",

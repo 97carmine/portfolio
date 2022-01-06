@@ -17,4 +17,10 @@ const routes: RouteObject[] = [
 	{ path: "*", element: <NotFound /> },
 ];
 
-export default routes;
+/**
+ * @param deletePath Indicates the path to delete
+ * @returns Routes without the indicated route
+ */
+const routesWithoutPath = (deletePath: string) => routes.filter(({ path }) => path !== deletePath);
+
+export { routes, routesWithoutPath };

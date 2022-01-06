@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
-import Layout from "./layout";
-import "../assets/styles/app.scss";
-import routes from "../routes";
 import { useRoutes } from "react-router";
+import Layout from "./layout";
+import { routes } from "../routes";
+import "../assets/styles/app.scss";
 
 const App = (): JSX.Element => {
 	const Routes = () => useRoutes(routes);

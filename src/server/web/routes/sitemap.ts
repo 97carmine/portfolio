@@ -1,5 +1,5 @@
 import { Router } from "express";
-import routes from "../../../common/routes";
+import { routesWithoutPath } from "../../../common/routes";
 
 const sitemapRoute = Router();
 
@@ -7,7 +7,7 @@ sitemapRoute.get("/", (req, res) => {
 	res.type("text/xml");
 
 	res.render("sitemap", {
-		routes: routes,
+		routes: routesWithoutPath("*"),
 		origin: req.fullURL.origin,
 	});
 });
