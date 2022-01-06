@@ -20,21 +20,34 @@ if (process.env.NODE_ENV === "production") {
 		helmet({
 			contentSecurityPolicy: {
 				directives: {
-					defaultSrc: ["'none'"],
-					baseUri: ["'none'"],
-					connectSrc: ["'self'"],
-					fontSrc: ["'none'"],
-					formAction: ["'none'"],
-					frameAncestors: ["'none'"],
-					imgSrc: ["'self'"],
-					upgradeInsecureRequests: [],
-					scriptSrc: [
-						"'strict-dynamic'",
+					"default-src": ["'none'"],
+					"base-uri": ["'none'"],
+					"connect-src": ["'self'"],
+					"font-src": ["'none'"],
+					"form-action": ["'none'"],
+					"frame-ancestors": ["'none'"],
+					"img-src": ["'self'"],
+					"upgrade-insecure-requests": [],
+					"object-src": ["'none'"],
+					"script-src": [
 						obtainAssetManifest(([key]) => /^.js$/.test(extname(key)))
 							.map((data) => typeof data[1] !== "string" && `'${data[1].integrity}'`)
 							.join(" "),
+						"'unsafe-inline'",
+						"'strict-dynamic'",
+						"https:",
+						"http:",
 					],
-					styleSrc: ["'self'"],
+					"style-src": [
+						obtainAssetManifest(([key]) => /^.css$/.test(extname(key)))
+							.map((data) => typeof data[1] !== "string" && `'${data[1].integrity}'`)
+							.join(" "),
+						"'unsafe-inline'",
+						"'strict-dynamic'",
+						"https:",
+						"http:",
+					],
+					"require-trusted-types-for": ["'script'"],
 				},
 			},
 			hsts: { maxAge: 63072000, preload: true },
@@ -49,7 +62,7 @@ web.use(express.static("build/static", { index: false }));
 web.all(
 	"*",
 	asyncMiddleware(async (req, res, next) => {
-		const loadMessages = (language: string): Promise<Record<string, MessageFormatElement[]>> => {
+		const loadMessages = async (language: string): Promise<Record<string, MessageFormatElement[]>> => {
 			switch (language) {
 				case "es":
 					return import("../../common/languages/messages/es.json").then((data) => data.default);
@@ -73,13 +86,7 @@ web.all(
 		// Create a custom req object that you will store a IntlShap object
 		await loadMessages(language)
 			.then((messages) => {
-				req.language = createIntl(
-					{
-						locale: language,
-						messages: messages,
-					},
-					createIntlCache()
-				);
+				req.language = createIntl({ locale: language, messages: messages }, createIntlCache());
 			})
 			.catch((error: Error) => {
 				console.log(`Error generating the intl object: ${error.message}`);
