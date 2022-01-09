@@ -1,17 +1,18 @@
 import { request } from "http";
+import { exit } from "process";
 
 const options = {
 	host: "localhost",
-	port: "3000",
-	method: "GET",
+	port: 3000,
+	method: "HEAD",
 };
 
 request(options, ({ statusCode }) => {
 	console.log(`STATUS: ${statusCode}`);
-	statusCode === 200 ? process.exit(0) : process.exit(1);
+	statusCode === 200 ? exit(0) : exit(1);
 })
-	.on("error", (error) => {
-		console.log(`ERROR: ${error}`);
-		process.exit(1);
+	.on("error", ({ message }) => {
+		console.log(`ERROR: ${message}`);
+		exit(1);
 	})
 	.end();
