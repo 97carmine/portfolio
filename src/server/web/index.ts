@@ -1,6 +1,6 @@
 import express from "express";
 import helmet from "helmet";
-import { extname, resolve } from "path";
+import { resolve } from "path";
 import { renderFile } from "eta";
 import { obtainLanguage } from "../../common/languages/utils";
 import { createIntl, createIntlCache, MessageFormatElement } from "react-intl";
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === "production") {
 					"upgrade-insecure-requests": [],
 					"object-src": ["'none'"],
 					"script-src": [
-						obtainAssetManifest(([key]) => /^.js$/.test(extname(key)))
+						obtainAssetManifest(([key]) => /^([a-zA-Z0-9./])+(js)$/.test(key))
 							.map((data) => typeof data[1] !== "string" && `'${data[1].integrity}'`)
 							.join(" "),
 						"'unsafe-inline'",
@@ -39,7 +39,7 @@ if (process.env.NODE_ENV === "production") {
 						"http:",
 					],
 					"style-src": [
-						obtainAssetManifest(([key]) => /^.css$/.test(extname(key)))
+						obtainAssetManifest(([key]) => /^([a-zA-Z0-9./])+(css)$/.test(key))
 							.map((data) => typeof data[1] !== "string" && `'${data[1].integrity}'`)
 							.join(" "),
 						"'unsafe-inline'",

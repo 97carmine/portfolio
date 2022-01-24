@@ -2,7 +2,6 @@ import { Router } from "express";
 import { renderToString } from "react-dom/server";
 import { matchPath } from "react-router";
 import { minify } from "html-minifier-terser";
-import { extname } from "path";
 import { obtainAssetManifest } from "../../utils/file";
 import app from "../components/app";
 import { routesWithoutPath } from "../../../common/routes";
@@ -15,7 +14,7 @@ publicRoute.get("/*", (req, res) => {
 	res.render(
 		"public",
 		{
-			assets: obtainAssetManifest(([key]) => /^.(js|css)$/.test(extname(key)) || key === "favicon.png"),
+			assets: obtainAssetManifest(([key]) => /^([a-zA-Z0-9./])+(css|js)$/.test(key) || key === "favicon.png"),
 			language: req.language.locale,
 			canonical_URL: req.fullURL.toString(),
 			component: renderToString(app(req.path, req.language)),
@@ -23,7 +22,6 @@ publicRoute.get("/*", (req, res) => {
 				{ id: "1cf05", defaultMessage: "{name}'s portfolio" },
 				{ name: "Axel Gabriel Calle Granda" }
 			),
-			extname: extname,
 			humans_URL: new URL(`humans.txt`, req.fullURL.origin).toString(),
 			keywords: req.language.formatMessage(
 				{ id: "fad58", defaultMessage: "Portfolio, {name}, Resume, Personal website" },

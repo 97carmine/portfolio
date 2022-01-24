@@ -17,7 +17,7 @@
 			<% }) %>
 		<!-- CSS -->
 		<% it.assets
-			.filter(([key]) => /^.css$/.test(it.extname(key)))
+			.filter(([key]) => /^([a-zA-Z0-9./])+(css)$/.test(key))
 			.map((data) => {
 				if (process.env.NODE_ENV === "production") { %>
 					<link type="text/css" rel="stylesheet" href="<%= data[1].src %>" integrity="<%= data[1].integrity %>" crossorigin="anonymous">
@@ -26,7 +26,7 @@
 			<% }}) %>
 		<!-- JS -->
 		<% it.assets
-			.filter(([key]) => /^.js$/.test(it.extname(key)))
+			.filter(([key]) => /^([a-zA-Z0-9./])+(js)$/.test(key))
 			.map((data) => {
 				if (process.env.NODE_ENV === "production") { %>
 					<script type="text/javascript" async src="<%= data[1].src %>" integrity="<%= data[1].integrity %>" crossorigin="anonymous"></script>
