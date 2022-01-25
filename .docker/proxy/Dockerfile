@@ -6,7 +6,7 @@ RUN set -ex \
     && apk add --update --no-cache --virtual build-deps abuild autoconf automake byacc curl-dev flex g++ gcc geoip-dev \
         git libc-dev libmaxminddb-dev libstdc++ libtool libxml2-dev libxml2-utils libxslt linux-headers lmdb-dev make \
         mercurial musl-dev openssl openssl-dev pcre-dev unzip xz yajl-dev zlib-dev \
-    # allow abuild as a root user \
+    # allow abuild as a root user
     && printf "#!/bin/sh\\nSETFATTR=true /usr/bin/abuild -F \"\$@\"\\n" > /usr/local/bin/abuild \
     && chmod +x /usr/local/bin/abuild \
     && hg clone -r ${NGINX_VERSION}-${PKG_RELEASE} https://hg.nginx.org/pkg-oss/ /opt/pkg-oss \
@@ -47,6 +47,7 @@ FROM nginx:mainline-alpine
 
 COPY --from=builder /usr/local/modsecurity /usr/local/modsecurity
 COPY --from=builder /tmp/packages /tmp/packages
+COPY 40-check-log-files.sh /docker-entrypoint.d
 
 RUN set -ex \
     && apk add --update --no-cache --allow-untrusted /tmp/packages/nginx-module-*.apk \
@@ -71,6 +72,8 @@ RUN set -ex \
     && chmod -R g+w /var/cache/nginx \
     && chown -R nginx:nginx /etc/nginx \
     && chmod -R g+w /etc/nginx \
+    && chown -R nginx:nginx /var/log/nginx \
+    && chmod -R g+w /var/log/nginx \
     # cleaning
     && rm -rf /tmp/packages /usr/share/nginx
 
