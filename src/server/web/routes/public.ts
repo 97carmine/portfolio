@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { renderToString } from "react-dom/server";
-import { matchPath } from "react-router";
+import { matchPath } from "react-router-dom";
 import { minify } from "html-minifier-terser";
 import { obtainAssetManifest } from "../../utils/file";
 import app from "../components/app";

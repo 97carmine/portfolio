@@ -1,5 +1,5 @@
 import { StrictMode } from "react";
-import { useRoutes } from "react-router";
+import { useRoutes } from "react-router-dom";
 import Layout from "./layout";
 import { routes } from "../routes";
 import "../assets/styles/app.scss";
