@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 5
+  version: 6
   cacheKey: 8c9
 
 "@axe-core/react@npm:4.3.1":
@@ -51,16 +51,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
-  version: 7.16.3
-  resolution: "@babel/runtime@npm:7.16.3"
-  dependencies:
-    regenerator-runtime: ^0.13.4
-  checksum: 07bf8db943401b10acf29dfd0ca2ee9a1b02f3e601daaa35e2412e7b8a5e70b11063f0f47e074cd5cbabac7f78808d54c4d303bd33c3eb3fa147db7a6314637c
-  languageName: node
-  linkType: hard
-
-"@babel/runtime@npm:^7.7.6":
+"@babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.7":
   version: 7.16.5
   resolution: "@babel/runtime@npm:7.16.5"
   dependencies:
@@ -433,17 +424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:*":
-  version: 8.2.0
-  resolution: "@types/eslint@npm:8.2.0"
-  dependencies:
-    "@types/estree": "*"
-    "@types/json-schema": "*"
-  checksum: 18f37790afc57412c74c9a0ef9a8cc44c1237a3f3d70e3e4e3daad38ed501f1a70395ff3955d3e4b481a5d04e6819ad2c377cd287c7315b3b633f0f1bda7b4a2
-  languageName: node
-  linkType: hard
-
-"@types/eslint@npm:8":
+"@types/eslint@npm:*, @types/eslint@npm:8":
   version: 8.2.1
   resolution: "@types/eslint@npm:8.2.1"
   dependencies:
@@ -1232,12 +1213,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:*, acorn@npm:^8.4.1, acorn@npm:^8.6.0":
-  version: 8.6.0
-  resolution: "acorn@npm:8.6.0"
+"acorn@npm:^8.4.1, acorn@npm:^8.5.0, acorn@npm:^8.6.0":
+  version: 8.7.0
+  resolution: "acorn@npm:8.7.0"
   bin:
     acorn: bin/acorn
-  checksum: 95cc4df7f4c8af96c26872dde208049c9b4909f41bc8d2b3109a18277dfca7671b78114b4a3f55c557f2d1aa0a53184da4b65914cfb8d85c8d60c6feb96fe443
+  checksum: 668378ae5284528ef6e7537ed80591a5ed7f801e82e1fe284b6fbba9e8263b1db45102275ffa5764f933232243456627a978b9016f1dd6539c99d0d852d193ba
   languageName: node
   linkType: hard
 
@@ -5624,17 +5605,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4, postcss-selector-parser@npm:^6.0.5":
-  version: 6.0.6
-  resolution: "postcss-selector-parser@npm:6.0.6"
-  dependencies:
-    cssesc: ^3.0.0
-    util-deprecate: ^1.0.2
-  checksum: 3602758798048bffbd6a97d6f009b32a993d6fd2cc70775bb59593e803d7fa8738822ecffb2fafc745edf7fad297dad53c30d2cfe78446a7d3f4a4a258cb15b2
-  languageName: node
-  linkType: hard
-
-"postcss-selector-parser@npm:^6.0.6":
+"postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4, postcss-selector-parser@npm:^6.0.5, postcss-selector-parser@npm:^6.0.6":
   version: 6.0.7
   resolution: "postcss-selector-parser@npm:6.0.7"
   dependencies:
@@ -5685,18 +5656,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.1.10, postcss@npm:^8.2.15, postcss@npm:^8.3.5":
-  version: 8.4.4
-  resolution: "postcss@npm:8.4.4"
-  dependencies:
-    nanoid: ^3.1.30
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.1
-  checksum: 6cf3fe0ecdf5a0d2aeb5e8404938c7eab968704e2e29dc5421e90b4014eb1975c1c0ad828425f2428807ef6e3fcfadd71f988ab55cb06c28ac2866f22403255b
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.3.11":
+"postcss@npm:^8.1.10, postcss@npm:^8.2.15, postcss@npm:^8.3.11, postcss@npm:^8.3.5":
   version: 8.4.5
   resolution: "postcss@npm:8.4.5"
   dependencies:
@@ -7145,21 +7105,21 @@ __metadata:
 
 "typescript@patch:typescript@4.5.2#~builtin<compat/typescript>":
   version: 4.5.2
-  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"
+  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 5b9dccf81e7191b10c931f61e24ccc24f456337c170650eeb644e94d406b443373159945d935bbdd739697c2011a3dff02cc590b7bd63c2f378a3c745abc6d5a
+  checksum: 787a5f25dfd4cde4f0a0c46aa32d3e8f7ffb5767d85eb60abe6e11bf3f926c8d458393d20386f000d58146ea3a03b2fc7d620b1e2a6ca0afd1a44f9a3e419dbb
   languageName: node
   linkType: hard
 
 "typescript@patch:typescript@^4.5#~builtin<compat/typescript>":
   version: 4.5.4
-  resolution: "typescript@patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"
+  resolution: "typescript@patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 72d10f4345b5a1f4d6e1c875e5edd4ff0788d6771a558008e0b10bfe328f2e7d0e0197a54ce35188574d339c5583b3df9fe599a052c4a20e37a066a01f24129b
+  checksum: cbf0ac9ebe819c9a40c8e397bcbd7d744254246f39f8a0c0eb12eb4b87e0c2c8eb53246eaecafa4b942d2b9523ea5dc2195f2f037b8e03ca491420432eb3dc69
   languageName: node
   linkType: hard
 
