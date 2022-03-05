@@ -5,7 +5,7 @@ import Header from "./header";
 import Footer from "./footer";
 
 const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
-	const { key, pathname } = useLocation();
+	const { pathname } = useLocation();
 
 	if (typeof document !== "undefined") {
 		const { host, protocol } = document.location;
@@ -18,7 +18,7 @@ const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
 		<>
 			<Header />
 			<TransitionGroup component={null}>
-				<CSSTransition key={key} classNames="fade" timeout={300}>
+				<CSSTransition key={pathname} classNames="fade" timeout={300}>
 					{children}
 				</CSSTransition>
 			</TransitionGroup>
