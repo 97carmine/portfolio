@@ -5,13 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8c9
 
-"@axe-core/react@npm:4.3.1":
-  version: 4.3.1
-  resolution: "@axe-core/react@npm:4.3.1"
+"@axe-core/react@npm:4.4.0":
+  version: 4.4.0
+  resolution: "@axe-core/react@npm:4.4.0"
   dependencies:
-    axe-core: ^4.3.3
+    axe-core: ^4.4.1
     requestidlecallback: ^0.3.0
-  checksum: aabd88572db1a67f99c8ef8577b9d517eeca22845b1be56c3ffde3d9de41f071a670ddecc0db946cad8e79c5f1c0c876b4e4126c9f99d334266c1cb952641a29
+  checksum: df8350716790947d7d1842643e303955be0f181de16d9036415afa3475460e0d6c396b86e8df400749c6e53325046510784b04484756a7051bb044382c877bf5
   languageName: node
   linkType: hard
 
@@ -499,6 +499,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/history@npm:^4.7.11":
+  version: 4.7.11
+  resolution: "@types/history@npm:4.7.11"
+  checksum: e1d64e5168cb9d9f4f7fdb6b25bc25b4066d19611af15cc057f48f270c45cd0adcff744d844d58b3bc5923c1f37c4b2f6fe52236a7b7d84a0a7fb94c486faaff
+  languageName: node
+  linkType: hard
+
 "@types/hoist-non-react-statics@npm:^3.3.1":
   version: 3.3.1
   resolution: "@types/hoist-non-react-statics@npm:3.3.1"
@@ -627,18 +634,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-router-dom@npm:5.3.2":
-  version: 5.3.2
-  resolution: "@types/react-router-dom@npm:5.3.2"
+"@types/react-router-dom@npm:5.3.3":
+  version: 5.3.3
+  resolution: "@types/react-router-dom@npm:5.3.3"
   dependencies:
-    "@types/history": "*"
+    "@types/history": ^4.7.11
     "@types/react": "*"
     "@types/react-router": "*"
-  checksum: 90f052dc5a43a77edaf41d2afa781c8ed2164cd7922b3cdf5daae446b02a2f279382425e6efc338260782c0a24d25a6101e3658acb41c8a053695968a351ea96
+  checksum: 28c4ea48909803c414bf5a08502acbb8ba414669b4b43bb51297c05fe5addc4df0b8fd00e0a9d1e3535ec4073ef38aaafac2c4a2b95b787167d113bc059beff3
   languageName: node
   linkType: hard
 
-"@types/react-router@npm:*, @types/react-router@npm:5.1.17":
+"@types/react-router@npm:*":
   version: 5.1.17
   resolution: "@types/react-router@npm:5.1.17"
   dependencies:
@@ -1465,10 +1472,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axe-core@npm:^4.3.3":
-  version: 4.3.5
-  resolution: "axe-core@npm:4.3.5"
-  checksum: 973c6a80f0aaa663820b209d4202de7a0c240a2dea2f3cff168b09c0f221b27179b1f0988f00ad11ed63cbc50535920f8ca779de1c60dc82090ab2d275f71fdd
+"axe-core@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "axe-core@npm:4.4.1"
+  checksum: ad14c5b71059dc3d24ef2519b8cd96e98b4a572379396201ce449d1c4262181821d6ca9550df65b22371faf06d28bbe94d391fe5675f2a08e6550f7b5da8416d
   languageName: node
   linkType: hard
 
@@ -1722,7 +1729,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:>=3.0.0 <4.0.0, chokidar@npm:^3.2.2":
+"chokidar@npm:>=3.0.0 <4.0.0":
   version: 3.5.2
   resolution: "chokidar@npm:3.5.2"
   dependencies:
@@ -1738,6 +1745,25 @@ __metadata:
     fsevents:
       optional: true
   checksum: d1fda32fcd67d9f6170a8468ad2630a3c6194949c9db3f6a91b16478c328b2800f433fb5d2592511b6cb145a47c013ea1cce60b432b1a001ae3ee978a8bffc2d
+  languageName: node
+  linkType: hard
+
+"chokidar@npm:^3.5.2":
+  version: 3.5.3
+  resolution: "chokidar@npm:3.5.3"
+  dependencies:
+    anymatch: ~3.1.2
+    braces: ~3.0.2
+    fsevents: ~2.3.2
+    glob-parent: ~5.1.2
+    is-binary-path: ~2.1.0
+    is-glob: ~4.0.1
+    normalize-path: ~3.0.0
+    readdirp: ~3.6.0
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  checksum: b49fcde40176ba007ff361b198a2d35df60d9bb2a5aab228279eb810feae9294a6b4649ab15981304447afe1e6ffbf4788ad5db77235dc770ab777c6e771980c
   languageName: node
   linkType: hard
 
@@ -2209,7 +2235,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^3.2.6":
+"debug@npm:^3.2.7":
   version: 3.2.7
   resolution: "debug@npm:3.2.7"
   dependencies:
@@ -2412,10 +2438,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:10.0.0":
-  version: 10.0.0
-  resolution: "dotenv@npm:10.0.0"
-  checksum: f412c5fe8c24fbe313d302d2500e247ba8a1946492db405a4de4d30dd0eb186a88a43f13c958c5a7de303938949c4231c56994f97d05c4bc1f22478d631b4005
+"dotenv@npm:16.0.0":
+  version: 16.0.0
+  resolution: "dotenv@npm:16.0.0"
+  checksum: f48e7b374c1a3d4528c9131cbcf767179bceb4756bcdf56bc72a7d80e829e07a4ff6e6d02e623201768bed16195422651c384156b49514a89583897de9b392dd
   languageName: node
   linkType: hard
 
@@ -4757,23 +4783,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemon@npm:2.0.13":
-  version: 2.0.13
-  resolution: "nodemon@npm:2.0.13"
+"nodemon@npm:2.0.15":
+  version: 2.0.15
+  resolution: "nodemon@npm:2.0.15"
   dependencies:
-    chokidar: ^3.2.2
-    debug: ^3.2.6
+    chokidar: ^3.5.2
+    debug: ^3.2.7
     ignore-by-default: ^1.0.1
     minimatch: ^3.0.4
-    pstree.remy: ^1.1.7
+    pstree.remy: ^1.1.8
     semver: ^5.7.1
     supports-color: ^5.5.0
     touch: ^3.1.0
-    undefsafe: ^2.0.3
+    undefsafe: ^2.0.5
     update-notifier: ^5.1.0
   bin:
     nodemon: bin/nodemon.js
-  checksum: 0751c557ac2d12a9de094b2a3105d26c4c057d16e084d0911e874f3975e9e9e643d183017e835254f0a8355d9ae818c9ed9a4ca7231951f2ab399fce50108b89
+  checksum: f2441102132af5b3bfd81aa3672c193afe82eb075f9abf7e3b9ecc521e0c0c75a5b0d979dd1fb00916cb9b42ce83b0740f3e04a4901029b9c2092241192a1134
   languageName: node
   linkType: hard
 
@@ -5191,7 +5217,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio@workspace:."
   dependencies:
-    "@axe-core/react": 4.3.1
+    "@axe-core/react": 4.4.0
     "@formatjs/cli": 4.7.0
     "@formatjs/ts-transformer": 3.8.1
     "@types/body-parser": 1.19.2
@@ -5202,8 +5228,7 @@ __metadata:
     "@types/nodemailer": 6.4.4
     "@types/react": 17.0.36
     "@types/react-dom": 17.0.11
-    "@types/react-router": 5.1.17
-    "@types/react-router-dom": 5.3.2
+    "@types/react-router-dom": 5.3.3
     "@types/react-transition-group": 4.4.4
     "@types/webpack-assets-manifest": 5.0.2
     "@typescript-eslint/eslint-plugin": 5.4.0
@@ -5214,7 +5239,7 @@ __metadata:
     copy-webpack-plugin: 9.1.0
     css-loader: 6.3.0
     css-minimizer-webpack-plugin: 3.2.0
-    dotenv: 10.0.0
+    dotenv: 16.0.0
     eslint: 8.2.0
     eslint-config-prettier: 8.3.0
     eslint-plugin-formatjs: 2.20.1
@@ -5228,7 +5253,7 @@ __metadata:
     html-minifier-terser: 6.1.0
     mini-css-extract-plugin: 2.5.2
     nodemailer: 6.7.2
-    nodemon: 2.0.13
+    nodemon: 2.0.15
     prettier: 2.3.2
     react: 17.0.2
     react-dom: 17.0.2
@@ -5754,7 +5779,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pstree.remy@npm:^1.1.7":
+"pstree.remy@npm:^1.1.8":
   version: 1.1.8
   resolution: "pstree.remy@npm:1.1.8"
   checksum: 5cb53698d6bb34dfb278c8a26957964aecfff3e161af5fbf7cee00bbe9d8547c7aced4bd9cb193bce15fb56e9e4220fc02a5bf9c14345ffb13a36b858701ec2d
@@ -7135,7 +7160,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undefsafe@npm:^2.0.3":
+"undefsafe@npm:^2.0.5":
   version: 2.0.5
   resolution: "undefsafe@npm:2.0.5"
   checksum: f42ab3b5770fedd4ada175fc1b2eb775b78f609156f7c389106aafd231bfc210813ee49f54483d7191d7b76e483bc7f537b5d92d19ded27156baf57592eb02cc
