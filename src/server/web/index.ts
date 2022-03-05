@@ -4,7 +4,6 @@ import { resolve } from "path";
 import { renderFile } from "eta";
 import { obtainLanguage } from "../../common/languages/utils";
 import { createIntl, createIntlCache, MessageFormatElement } from "react-intl";
-import { obtainAssetManifest } from "../utils/file";
 import { asyncMiddleware } from "../utils/middleware";
 import * as routes from "./routes";
 
@@ -29,24 +28,8 @@ if (process.env.NODE_ENV === "production") {
 					"img-src": ["'self'"],
 					"upgrade-insecure-requests": [],
 					"object-src": ["'none'"],
-					"script-src": [
-						obtainAssetManifest(([key]) => /^([a-zA-Z0-9./])+(js)$/.test(key))
-							.map((data) => typeof data[1] !== "string" && `'${data[1].integrity}'`)
-							.join(" "),
-						"'unsafe-inline'",
-						"'strict-dynamic'",
-						"https:",
-						"http:",
-					],
-					"style-src": [
-						obtainAssetManifest(([key]) => /^([a-zA-Z0-9./])+(css)$/.test(key))
-							.map((data) => typeof data[1] !== "string" && `'${data[1].integrity}'`)
-							.join(" "),
-						"'unsafe-inline'",
-						"'strict-dynamic'",
-						"https:",
-						"http:",
-					],
+					"script-src": ["'self'"],
+					"style-src": ["'self'"],
 					"require-trusted-types-for": ["'script'"],
 				},
 			},
