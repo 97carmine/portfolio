@@ -51,6 +51,8 @@ COPY 40-check-log-files.sh /docker-entrypoint.d
 
 RUN set -ex \
     && apk add --update --no-cache --allow-untrusted /tmp/packages/nginx-module-*.apk \
+    # set permissions to files added to entrypoint folder
+    && chmod 775 /docker-entrypoint.d/40-check-log-files.sh \
     # the default rules return a 403 response code, they are changed to 444
     && sed -i 's/phase:1,log,auditlog,pass/phase:1,log,auditlog,pass,status:444/' /usr/local/modsecurity/crs-setup.conf \
     && sed -i 's/phase:2,log,auditlog,pass/phase:2,log,auditlog,pass,status:444/' /usr/local/modsecurity/crs-setup.conf \
@@ -78,7 +80,7 @@ RUN set -ex \
     && rm -rf /tmp/packages /usr/share/nginx
 
 HEALTHCHECK --interval=1m30s --timeout=10s --start-period=30s --retries=3 \
-    CMD if [ -e /tmp/nginx.pid ]; then echo "Nginx is running"; else echo "Nginx isn't running"; exit 1; fi
+    CMD pgrep "nginx" > /dev/null || exit 1
 
 VOLUME /etc/nginx/ssl
 

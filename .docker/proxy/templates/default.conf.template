@@ -3,7 +3,7 @@ server {
         listen [::]:8080 default_server;
         server_name _;
 
-        return 301 https://${NGINX_HOSTNAME}$request_uri;
+        return 301 https://${SERVER_NAME}$request_uri;
 }
 
 server {
@@ -15,19 +15,19 @@ server {
         ssl_certificate_key /etc/nginx/ssl/privkey.pem;
         ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
 
-        return 301 $scheme://${NGINX_HOSTNAME}$request_uri;
+        return 301 $scheme://${SERVER_NAME}$request_uri;
 }
 
 server {
         listen 8443 ssl http2;
         listen [::]:8443 ssl http2;
-        server_name ${NGINX_HOSTNAME};
+        server_name ${SERVER_NAME};
 
         ssl_certificate /etc/nginx/ssl/fullchain.pem;
         ssl_certificate_key /etc/nginx/ssl/privkey.pem;
         ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
 
-        return 301 $scheme://www.${NGINX_HOSTNAME}$request_uri;
+        return 301 $scheme://www.${SERVER_NAME}$request_uri;
 
         add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
 }
@@ -35,7 +35,7 @@ server {
 server {
         listen 8443 ssl http2;
         listen [::]:8443 ssl http2;
-        server_name www.${NGINX_HOSTNAME};
+        server_name www.${SERVER_NAME};
 
         ssl_certificate /etc/nginx/ssl/fullchain.pem;
         ssl_certificate_key /etc/nginx/ssl/privkey.pem;
@@ -44,17 +44,17 @@ server {
         add_header Access-Control-Allow-Methods "GET, HEAD, POST" always;
         add_header Allow "GET, HEAD, POST" always;
 
-        if ( $host != www.${NGINX_HOSTNAME} ) {
+        if ( $host != www.${SERVER_NAME} ) {
                 return 444;
         }
 
-        if ($request_method !~ ^(GET|HEAD|POST)$ ) {
+        if ( $request_method !~ ^(GET|HEAD|POST)$ ) {
                 return 444;
         }
 
         location / {
                 autoindex off;
-                proxy_pass http://web:3000/;
+                proxy_pass http://${PROXIED_SERVER}:3000/;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
                 proxy_set_header Host $http_host;
