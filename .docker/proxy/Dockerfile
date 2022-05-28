@@ -1,4 +1,4 @@
-FROM nginx:mainline-alpine as builder
+FROM nginx:stable-alpine as builder
 
 ARG ENABLED_MODULES
 
@@ -43,7 +43,7 @@ RUN set -ex \
     && apk del build-deps \
     && rm -rf /opt/*
 
-FROM nginx:mainline-alpine
+FROM nginx:stable-alpine
 
 COPY --from=builder /usr/local/modsecurity /usr/local/modsecurity
 COPY --from=builder /tmp/packages /tmp/packages
