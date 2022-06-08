@@ -53,9 +53,10 @@ RUN set -ex \
     && apk add --update --no-cache --allow-untrusted /tmp/packages/nginx-module-*.apk \
     # set permissions to files added to entrypoint folder
     && chmod 775 /docker-entrypoint.d/40-check-log-files.sh \
-    # the default rules return a 403 response code, they are changed to 444
+    # change default response code to 444
     && sed -i 's/phase:1,log,auditlog,pass/phase:1,log,auditlog,pass,status:444/' /usr/local/modsecurity/crs-setup.conf \
     && sed -i 's/phase:2,log,auditlog,pass/phase:2,log,auditlog,pass,status:444/' /usr/local/modsecurity/crs-setup.conf \
+    && sed -i 's/status:400/status:444/g' /etc/nginx/modsec/modsecurity.conf \
     # enable ModSecurity
     && sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /etc/nginx/modsec/modsecurity.conf \
     # disable ModSecurity logging
