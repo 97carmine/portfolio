@@ -67,7 +67,7 @@
 		"favicons-webpack-plugin": "5.0.2",
 		"html-minifier-terser": "6.1.0",
 		"mini-css-extract-plugin": "2.6.0",
-		"nodemon": "2.0.15",
+		"nodemon": "2.0.19",
 		"prettier": "2.6.2",
 		"sass": "1.50.1",
 		"sass-loader": "12.6.0",
