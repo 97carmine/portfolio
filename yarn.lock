@@ -5,13 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8c9
 
-"@axe-core/react@npm:4.4.2":
-  version: 4.4.2
-  resolution: "@axe-core/react@npm:4.4.2"
+"@axe-core/react@npm:4.4.3":
+  version: 4.4.3
+  resolution: "@axe-core/react@npm:4.4.3"
   dependencies:
     axe-core: ^4.4.1
     requestidlecallback: ^0.3.0
-  checksum: 9ef3a30c3ef6ef1e3cd0f760a163ef5e79f7ea7ec8fe2d19f78afbb23042328975696927481dc362ee39e5f288fbbd86f857e95b191ad211624950524ca2c606
+  checksum: acc78f83552b6c4cc40eb112457d8fd325e04288bf3f638a1fe327974f6ffc802d66fdf2132df5692eda4c1bbccf7a75c3df8c2e2f1c2876d3417618db43b340
   languageName: node
   linkType: hard
 
@@ -5358,7 +5358,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio@workspace:."
   dependencies:
-    "@axe-core/react": 4.4.2
+    "@axe-core/react": 4.4.3
     "@formatjs/cli": 4.8.3
     "@formatjs/ts-transformer": 3.9.3
     "@types/body-parser": 1.19.2
