@@ -709,12 +709,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-transition-group@npm:4.4.4":
-  version: 4.4.4
-  resolution: "@types/react-transition-group@npm:4.4.4"
+"@types/react-transition-group@npm:4.4.5":
+  version: 4.4.5
+  resolution: "@types/react-transition-group@npm:4.4.5"
   dependencies:
     "@types/react": "*"
-  checksum: 86e9ff9731798e12bc2afe0304678918769633b531dcf6397f86af81718fb7930ef8648e894eeb3718fc6eab6eb885cfb9b82a44d1d74e10951ee11ebc4643ae
+  checksum: 265f1c74061556708ffe8d15559e35c60d6c11478c9950d3735575d2c116ca69f461d85effa06d73a613eb8b73c84fd32682feb57cf7c5f9e4284021dbca25b0
   languageName: node
   linkType: hard
 
@@ -5369,7 +5369,7 @@ __metadata:
     "@types/react": 17.0.44
     "@types/react-dom": 17.0.16
     "@types/react-router-dom": 5.3.3
-    "@types/react-transition-group": 4.4.4
+    "@types/react-transition-group": 4.4.5
     "@types/webpack-assets-manifest": 5.1.0
     "@typescript-eslint/eslint-plugin": 5.20.0
     "@typescript-eslint/parser": 5.20.0
@@ -5399,7 +5399,7 @@ __metadata:
     react-dom: 17.0.2
     react-intl: 5.25.0
     react-router-dom: 6.3.0
-    react-transition-group: 4.4.2
+    react-transition-group: 4.4.5
     sass: 1.50.1
     sass-loader: 12.6.0
     stylelint: 14.7.1
@@ -6080,9 +6080,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-transition-group@npm:4.4.2":
-  version: 4.4.2
-  resolution: "react-transition-group@npm:4.4.2"
+"react-transition-group@npm:4.4.5":
+  version: 4.4.5
+  resolution: "react-transition-group@npm:4.4.5"
   dependencies:
     "@babel/runtime": ^7.5.5
     dom-helpers: ^5.0.1
@@ -6091,7 +6091,7 @@ __metadata:
   peerDependencies:
     react: ">=16.6.0"
     react-dom: ">=16.6.0"
-  checksum: 4ef27e527db54d8d058bf19236418b0355c1fc93b6d70e48fa62a40217cc5b7f1b8c1ce2cc1b4da5995a3ed9f98a2c3b58afeddb20d833dda4181c4ae445174e
+  checksum: 5171ff24be6cb813db2d9376a12f086cb09baad7cdbf39464e053848570ef9af9eb32b1dcfbb6cb4becdd7f14bdfc89bd40ea24bacf5a16ea6ce62fb041ecd4b
   languageName: node
   linkType: hard
 
