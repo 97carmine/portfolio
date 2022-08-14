@@ -1676,10 +1676,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bulma@npm:0.9.3":
-  version: 0.9.3
-  resolution: "bulma@npm:0.9.3"
-  checksum: 5fd37d8c1a6ddce546969572d8e41c401bf034a78149d66401ce8d17fe8474b714ce2adc4201c8aaf35b696a618d5e1f4fe4332fd7bcd9ff01fb3e781dd9f114
+"bulma@npm:0.9.4":
+  version: 0.9.4
+  resolution: "bulma@npm:0.9.4"
+  checksum: f2011cf8440f3db174c9ac900433d7918e33661854dc5ce33aace115821d3a7d58ee403c211fc393a267f012ec3f13fadb759e236c2991882ea338cb232dfa11
   languageName: node
   linkType: hard
 
@@ -5375,7 +5375,7 @@ __metadata:
     "@typescript-eslint/parser": 5.20.0
     ajv: 8.11.0
     body-parser: 1.20.0
-    bulma: 0.9.3
+    bulma: 0.9.4
     copy-webpack-plugin: 10.2.4
     css-loader: 6.7.1
     css-minimizer-webpack-plugin: 3.4.1
