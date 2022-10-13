@@ -241,6 +241,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jest/schemas@npm:^29.0.0":
+  version: 29.0.0
+  resolution: "@jest/schemas@npm:29.0.0"
+  dependencies:
+    "@sinclair/typebox": ^0.24.1
+  checksum: 41355c78f09eb1097e57a3c5d0ca11c9099e235e01ea5fa4e3953562a79a6a9296c1d300f1ba50ca75236048829e056b00685cd2f1ff8285e56fd2ce01249acb
+  languageName: node
+  linkType: hard
+
+"@jest/types@npm:^29.1.2":
+  version: 29.1.2
+  resolution: "@jest/types@npm:29.1.2"
+  dependencies:
+    "@jest/schemas": ^29.0.0
+    "@types/istanbul-lib-coverage": ^2.0.0
+    "@types/istanbul-reports": ^3.0.0
+    "@types/node": "*"
+    "@types/yargs": ^17.0.8
+    chalk: ^4.0.0
+  checksum: 15a97318ee6392c60f663fb1aae3efc943aa53705d699ad92960d008d63b3b86ffe83b271442d07363a57293e7be3bc2896351139544e94836d5dfb56afa5c0f
+  languageName: node
+  linkType: hard
+
 "@jridgewell/gen-mapping@npm:^0.3.0":
   version: 0.3.2
   resolution: "@jridgewell/gen-mapping@npm:0.3.2"
@@ -337,6 +360,13 @@ __metadata:
     mkdirp: ^1.0.4
     rimraf: ^3.0.2
   checksum: 1388777b507b0c592d53f41b9d182e1a8de7763bc625fc07999b8edbc22325f074e5b3ec90af79c89d6987fdb2325bc66d59f483258543c14a43661621f841b0
+  languageName: node
+  linkType: hard
+
+"@sinclair/typebox@npm:^0.24.1":
+  version: 0.24.46
+  resolution: "@sinclair/typebox@npm:0.24.46"
+  checksum: e2c356758569bff0b1532ca8a7c18d4b34928b964362638744101ea3fc7aa41ec4e50dc3749e60e2b2af5fbfca57d9d965448bf23b78e013c875ad181a853b6f
   languageName: node
   linkType: hard
 
@@ -505,6 +535,31 @@ __metadata:
   version: 6.1.0
   resolution: "@types/html-minifier-terser@npm:6.1.0"
   checksum: eb843f6a8d662d44fb18ec61041117734c6aae77aa38df1be3b4712e8e50ffaa35f1e1c92fdd0fde14a5675fecf457abcd0d15a01fae7506c91926176967f452
+  languageName: node
+  linkType: hard
+
+"@types/istanbul-lib-coverage@npm:*, @types/istanbul-lib-coverage@npm:^2.0.0":
+  version: 2.0.4
+  resolution: "@types/istanbul-lib-coverage@npm:2.0.4"
+  checksum: a25d7589ee65c94d31464c16b72a9dc81dfa0bea9d3e105ae03882d616e2a0712a9c101a599ec482d297c3591e16336962878cb3eb1a0a62d5b76d277a890ce7
+  languageName: node
+  linkType: hard
+
+"@types/istanbul-lib-report@npm:*":
+  version: 3.0.0
+  resolution: "@types/istanbul-lib-report@npm:3.0.0"
+  dependencies:
+    "@types/istanbul-lib-coverage": "*"
+  checksum: 656398b62dc288e1b5226f8880af98087233cdb90100655c989a09f3052b5775bf98ba58a16c5ae642fb66c61aba402e07a9f2bff1d1569e3b306026c59f3f36
+  languageName: node
+  linkType: hard
+
+"@types/istanbul-reports@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "@types/istanbul-reports@npm:3.0.1"
+  dependencies:
+    "@types/istanbul-lib-report": "*"
+  checksum: f1ad54bc68f37f60b30c7915886b92f86b847033e597f9b34f2415acdbe5ed742fa559a0a40050d74cdba3b6a63c342cac1f3a64dba5b68b66a6941f4abd7903
   languageName: node
   linkType: hard
 
@@ -683,6 +738,22 @@ __metadata:
     tapable: ^2.2.0
     webpack: ^5
   checksum: 8332cfc371366b918f1ff7ca1c90c988be437e3cc572ef68cfffc755eb0556aceeb3c5f2d0bdd5f61bed49764174a56199303c65d502d62f1ca1578140872621
+  languageName: node
+  linkType: hard
+
+"@types/yargs-parser@npm:*":
+  version: 21.0.0
+  resolution: "@types/yargs-parser@npm:21.0.0"
+  checksum: b2f4c8d12ac18a567440379909127cf2cec393daffb73f246d0a25df36ea983b93b7e9e824251f959e9f928cbc7c1aab6728d0a0ff15d6145f66cec2be67d9a2
+  languageName: node
+  linkType: hard
+
+"@types/yargs@npm:^17.0.8":
+  version: 17.0.13
+  resolution: "@types/yargs@npm:17.0.13"
+  dependencies:
+    "@types/yargs-parser": "*"
+  checksum: 09c2b9e8f4b05f84110fee60410a4496bafaff44fe954be3b0ee33d2dc828b1c5b9a72b37a4cfc3079a2886ea66476ede7ef93d2e5e37452ae86c14d09234973
   languageName: node
   linkType: hard
 
@@ -1588,6 +1659,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ci-info@npm:^3.2.0":
+  version: 3.5.0
+  resolution: "ci-info@npm:3.5.0"
+  checksum: 7def3789706ec18db3dc371dc699bd0df12057d54b796201f50ba87200e0849d3d83c68da00ab2ab8cdd738d91b25ab9e31620588f8d7e64ffaa1f760fd121cf
+  languageName: node
+  linkType: hard
+
 "clean-css@npm:5.2.0":
   version: 5.2.0
   resolution: "clean-css@npm:5.2.0"
@@ -1841,13 +1919,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-minimizer-webpack-plugin@npm:3.4.1":
-  version: 3.4.1
-  resolution: "css-minimizer-webpack-plugin@npm:3.4.1"
+"css-minimizer-webpack-plugin@npm:4.2.2":
+  version: 4.2.2
+  resolution: "css-minimizer-webpack-plugin@npm:4.2.2"
   dependencies:
-    cssnano: ^5.0.6
-    jest-worker: ^27.0.2
-    postcss: ^8.3.5
+    cssnano: ^5.1.8
+    jest-worker: ^29.1.2
+    postcss: ^8.4.17
     schema-utils: ^4.0.0
     serialize-javascript: ^6.0.0
     source-map: ^0.6.1
@@ -1856,13 +1934,17 @@ __metadata:
   peerDependenciesMeta:
     "@parcel/css":
       optional: true
+    "@swc/css":
+      optional: true
     clean-css:
       optional: true
     csso:
       optional: true
     esbuild:
       optional: true
-  checksum: 065c6c1eadb7c99267db5d04d6f3909e9968b73c4cb79ab9e4502a5fbf1a3d564cfe6f8e0bff8e4ab00d4ed233e9c3c76a4ebe0ee89150b3d9ecb064ddf1e5e9
+    lightningcss:
+      optional: true
+  checksum: 5417e76a445f35832aa96807c835b8e92834a6cd285b1b788dfe3ca0fa90fec7eb2dd6efa9d3649f9d8244b99b7da2d065951603b94918e8f6a366a5049cacdd
   languageName: node
   linkType: hard
 
@@ -1953,7 +2035,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano@npm:^5.0.6":
+"cssnano@npm:^5.1.8":
   version: 5.1.13
   resolution: "cssnano@npm:5.1.13"
   dependencies:
@@ -3724,7 +3806,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-worker@npm:^27.0.2, jest-worker@npm:^27.3.1, jest-worker@npm:^27.4.5, jest-worker@npm:^27.5.1":
+"jest-util@npm:^29.1.2":
+  version: 29.1.2
+  resolution: "jest-util@npm:29.1.2"
+  dependencies:
+    "@jest/types": ^29.1.2
+    "@types/node": "*"
+    chalk: ^4.0.0
+    ci-info: ^3.2.0
+    graceful-fs: ^4.2.9
+    picomatch: ^2.2.3
+  checksum: 6c55464e2028032692c4801b339bc1f7418826072d75981b8f29ded6ccba8cb8e1f164eb3d12d859cb63c24a8e9be90204f0d3c4d33e530375f1e5935755b5a9
+  languageName: node
+  linkType: hard
+
+"jest-worker@npm:^27.3.1, jest-worker@npm:^27.4.5, jest-worker@npm:^27.5.1":
   version: 27.5.1
   resolution: "jest-worker@npm:27.5.1"
   dependencies:
@@ -3732,6 +3828,18 @@ __metadata:
     merge-stream: ^2.0.0
     supports-color: ^8.0.0
   checksum: 98cd68b696781caed61c983a3ee30bf880b5bd021c01d98f47b143d4362b85d0737f8523761e2713d45e18b4f9a2b98af1eaee77afade4111bb65c77d6f7c980
+  languageName: node
+  linkType: hard
+
+"jest-worker@npm:^29.1.2":
+  version: 29.1.2
+  resolution: "jest-worker@npm:29.1.2"
+  dependencies:
+    "@types/node": "*"
+    jest-util: ^29.1.2
+    merge-stream: ^2.0.0
+    supports-color: ^8.0.0
+  checksum: 788d14b2a051bf548a316dd177175c0e46127e63d794677fb0ba67e9b0b9f579cbc6a602a72671c80a020bf4d3f502b0a2dff7bf380986e5f30d30ec0f69168b
   languageName: node
   linkType: hard
 
@@ -4736,7 +4844,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.3.1":
+"picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.3, picomatch@npm:^2.3.1":
   version: 2.3.1
   resolution: "picomatch@npm:2.3.1"
   checksum: 359a7b491b9a43c873de9d92b3fa18e0e8d2d095dd55ba5a99c6db1097377ffa7af6214bfd2356dc54a81ef8ebc43ca2385905609a9901bee2291262eb4037a2
@@ -4776,7 +4884,7 @@ __metadata:
     bulma: 0.9.4
     copy-webpack-plugin: 10.2.4
     css-loader: 6.7.1
-    css-minimizer-webpack-plugin: 3.4.1
+    css-minimizer-webpack-plugin: 4.2.2
     dotenv: 16.0.1
     eslint: 8.13.0
     eslint-config-prettier: 8.5.0
@@ -5202,14 +5310,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.3.5, postcss@npm:^8.4.12, postcss@npm:^8.4.7":
-  version: 8.4.16
-  resolution: "postcss@npm:8.4.16"
+"postcss@npm:^8.4.12, postcss@npm:^8.4.17, postcss@npm:^8.4.7":
+  version: 8.4.18
+  resolution: "postcss@npm:8.4.18"
   dependencies:
     nanoid: ^3.3.4
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 10eee25efd77868036403858577da0cefaf2e0905feeaba5770d5438ccdddba3d01cba8063e96b8aac4c6daa0ed413dd5ae0554a433a3c4db38df1d134cffc1f
+  checksum: 9349fd99849b2e3d2e134ff949b7770ecb12375f352723ce2bcc06167eba3850ea7844c1b191a85cd915d6a396b4e8ee9a5267e6cc5d8d003d0cbc7a97555d39
   languageName: node
   linkType: hard
 
