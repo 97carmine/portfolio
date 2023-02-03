@@ -6,7 +6,7 @@ ERROR_LOG=/var/log/nginx/error.log;
 check_file() {
     if [ -f "$1" ] || [ -L "$1" ]; then
         echo "$1 exists, skipping";
-    else 
+    else
         echo "$1 does not exist, creating";
         if touch "$1"; then
             echo "Changing user and group owner to nginx";

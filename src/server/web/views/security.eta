@@ -1,3 +1,0 @@
-Contact: mailto:<%= `${it.email}\n` %>
-Preferred-Languages: <%= `${it.languages}\n` %>
-Expires: <%= it.expireDate %> <%= it.expireHour %>

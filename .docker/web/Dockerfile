@@ -1,48 +1,21 @@
-FROM node:lts-alpine as builder
+FROM denoland/deno:alpine
 
-WORKDIR /opt/app
+RUN apk update --no-cache \
+    && sh -l -c 'echo export DENO_DEPLOYMENT_ID="$(echo $RANDOM | md5sum | head -c 20)" > /etc/profile.d/docker_init.sh'
 
-COPY . .
+USER deno
 
-RUN npm rm -g npm \
-    && rm /usr/local/bin/yarn /usr/local/bin/yarnpkg \
-    && rm -r /opt/yarn-v${YARN_VERSION} \
-    && corepack enable \
-    && yarn config set enableMirror false \
-    && yarn config set enableInlineBuilds true \
-    && yarn install \
-    && yarn build:prod \
-    && yarn cache clean
+WORKDIR /home/deno/app/
 
-FROM node:lts-alpine
+COPY --chown=deno:deno ./web .
+COPY --chown=deno:deno .docker/web/healthcheck.ts .
 
-ENV NODE_ENV=production
+RUN sed -i 's/"healthcheck": "deno run --allow-net ..\/.docker\/web\/healthcheck.ts"/"healthcheck": "deno run --allow-net healthcheck.ts"/g' deno.json \
+    && deno cache main.ts
 
-RUN npm rm -g npm \
-    && rm /usr/local/bin/yarn /usr/local/bin/yarnpkg \
-    && rm -r /opt/yarn-v${YARN_VERSION} \
-    && corepack enable \
-    && apk update \
-    && apk upgrade \
-    && mkdir /home/node/app \
-    && chown -R node:node /home/node/app
-
-USER node
-
-WORKDIR /home/node/app/
-
-COPY --chown=node:node --from=builder /opt/app/build ./build
-COPY --chown=node:node --from=builder /opt/app/package.json \
-    /opt/app/.yarnrc.yml /opt/app/.docker/web/healthcheck.mjs ./
-
-RUN yarn plugin import @yarnpkg/plugin-workspace-tools \
-    && yarn workspaces focus --production \
-    && rm .yarnrc.yml .yarn/install-state.gz \
-    && rm -r .yarn/plugins
-
-EXPOSE 3000
+EXPOSE 8000
 
 HEALTHCHECK --interval=1m30s --timeout=10s --start-period=30s --retries=3 \
-    CMD node healthcheck.mjs
+    CMD deno task healthcheck
 
-CMD node --require=$(pwd)/.pnp.cjs build/server.js
+CMD run -A --allow-net --allow-read --allow-env --allow-write --allow-run main.ts

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* Bulma */
+.footer {
+    padding: 1.5rem;
+}
+
+.footer .icon {
+  fill: currentColor;
+}
+
+.footer a,
+.icon a {
+  color: inherit;
+}
+
+.icon-text {
+  align-items: center;
+}
