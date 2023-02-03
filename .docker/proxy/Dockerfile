@@ -36,7 +36,7 @@ RUN set -ex \
     && make \
     && make install \
     # adding OWASP rules in ModSecurity
-    && git clone --depth 1 -b v3.3/master --single-branch https://github.com/coreruleset/coreruleset /opt/coreruleset \
+    && git clone --depth 1 -b v4.0/main --single-branch https://github.com/coreruleset/coreruleset /opt/coreruleset \
     && mv /opt/coreruleset/crs-setup.conf.example /usr/local/modsecurity/crs-setup.conf \
     && mv /opt/coreruleset/rules /usr/local/modsecurity/rules \
     # cleaning
@@ -51,14 +51,12 @@ COPY --from=builder /tmp/packages /tmp/packages
 RUN set -ex \
     && apk add --update --no-cache --allow-untrusted /tmp/packages/nginx-module-*.apk \
     # create check logs file script
-    && cat > /docker-entrypoint.d/40-check-log-files.sh <<EOF
-        #! /bin/ash
-        ACCESS_LOG=/var/log/nginx/access.log;
-        ERROR_LOG=/var/log/nginx/error.log;
-        check_file() { [ ! -f "$1" ] || [ ! -L "$1" ]; touch "$1"; chown nginx:nginx "$1"; }
-        check_file $ACCESS_LOG
-        check_file $ERROR_LOG
-        EOF \
+    && printf '%s\n' '#! /bin/ash' \
+        'ACCESS_LOG=/var/log/nginx/access.log;' \
+        'ERROR_LOG=/var/log/nginx/error.log;' \
+        'check_file() { [ ! -f "$1" ] || [ ! -L "$1" ]; touch "$1"; chown nginx:nginx "$1"; }' \
+        'check_file $ACCESS_LOG' \
+        'check_file $ERROR_LOG' > /docker-entrypoint.d/40-check-log-files.sh \
     # set permissions to files added to entrypoint folder
     && chmod 775 /docker-entrypoint.d/40-check-log-files.sh \
     # rename the default exclusion rules files
