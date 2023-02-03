@@ -4806,7 +4806,7 @@ __metadata:
     stylelint-webpack-plugin: 3.2.0
     ts-loader: 9.2.8
     ts-node: 10.7.0
-    typescript: 4.6.3
+    typescript: 4.9.5
     webpack: 5.72.0
     webpack-assets-manifest: 5.1.0
     webpack-cli: 4.9.2
@@ -6575,43 +6575,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.6.3":
-  version: 4.6.3
-  resolution: "typescript@npm:4.6.3"
+"typescript@npm:4.9.5, typescript@npm:^4.5":
+  version: 4.9.5
+  resolution: "typescript@npm:4.9.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 4a3104d35dcf046d0079fa327554aa1dd333bb307cc56dcf1731fd6022527c9d8c4a8c83d1230000c899cf19b646cdfeb1e8a3f35150b9fbe539523fa9c40c10
+  checksum: 73642308e93a7d7912683a219db657156775cc1a20a3df487ac08424dc762e3f4ae4163ff961ab49be703a0d66b5037bf04e7362b42a37054ec1f7a3d8ae0969
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.5":
-  version: 4.7.4
-  resolution: "typescript@npm:4.7.4"
+"typescript@patch:typescript@4.9.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.5#~builtin<compat/typescript>":
+  version: 4.9.5
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 8050ca54ab1b3433799c3e629a9e25b66ba765fc10af77ddf5b91d6bfaaa2908d3bb450ba73e2b3ae93575557e37b953af49ee8ba62cf75d9877b8e4b64bb1db
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@4.6.3#~builtin<compat/typescript>":
-  version: 4.6.3
-  resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=f456af"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 2684ae9a41688d575922831daaf1751559db01b8bfa7023f1d56c502fa0a820c5aa535e83d31d463e6e810a3d62daa25dcd4400e76b306411d7bb84646bc7972
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@^4.5#~builtin<compat/typescript>":
-  version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: a65368d655639fcc777e91ae375f8484d590eff52dfe747cd750c07e1f8398c1a55bd8d281e7f60adaa769ae0feeab763c4803d00a070f04db1b8de2e0a02e97
+  checksum: 322e8098e5338344d499d74a04d43686e38b838a50437c5ed8b685ec36437473edf47a73ffde7a76e835486e510cd2487bbb062810a19edfb8433a361f8e6a11
   languageName: node
   linkType: hard
 
