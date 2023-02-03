@@ -1,3 +1,9 @@
+FROM alpine/git:latest as repo
+
+WORKDIR /opt
+
+RUN git clone https://github.com/97carmine/portfolio.git
+
 FROM denoland/deno:alpine
 
 RUN apk update --no-cache \
@@ -7,8 +13,8 @@ USER deno
 
 WORKDIR /home/deno/app/
 
-COPY --chown=deno:deno ./web .
-COPY --chown=deno:deno .docker/web/healthcheck.ts .
+COPY --from=repo --chown=deno:deno /opt/web .
+COPY --from=repo --chown=deno:deno /opt/.docker/web/healthcheck.ts .
 
 RUN sed -i 's/"healthcheck": "deno run --allow-net ..\/.docker\/web\/healthcheck.ts"/"healthcheck": "deno run --allow-net healthcheck.ts"/g' deno.json \
     && deno cache main.ts
