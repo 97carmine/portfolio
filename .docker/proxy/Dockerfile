@@ -47,10 +47,18 @@ FROM nginx:stable-alpine
 
 COPY --from=builder /usr/local/modsecurity /usr/local/modsecurity
 COPY --from=builder /tmp/packages /tmp/packages
-COPY 40-check-log-files.sh /docker-entrypoint.d
 
 RUN set -ex \
     && apk add --update --no-cache --allow-untrusted /tmp/packages/nginx-module-*.apk \
+    # create check logs file script
+    && cat > /docker-entrypoint.d/40-check-log-files.sh <<EOF
+        #! /bin/ash
+        ACCESS_LOG=/var/log/nginx/access.log;
+        ERROR_LOG=/var/log/nginx/error.log;
+        check_file() { [ ! -f "$1" ] || [ ! -L "$1" ]; touch "$1"; chown nginx:nginx "$1"; }
+        check_file $ACCESS_LOG
+        check_file $ERROR_LOG
+        EOF \
     # set permissions to files added to entrypoint folder
     && chmod 775 /docker-entrypoint.d/40-check-log-files.sh \
     # rename the default exclusion rules files
