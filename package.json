@@ -62,7 +62,7 @@
 		"eslint-plugin-formatjs": "4.1.0",
 		"eslint-plugin-prettier": "4.0.0",
 		"eslint-plugin-react": "7.29.4",
-		"eslint-webpack-plugin": "3.1.1",
+		"eslint-webpack-plugin": "3.2.0",
 		"eta": "1.12.3",
 		"favicons-webpack-plugin": "5.0.2",
 		"html-minifier-terser": "7.0.0",
