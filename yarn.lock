@@ -3821,13 +3821,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"klona@npm:^2.0.4":
-  version: 2.0.5
-  resolution: "klona@npm:2.0.5"
-  checksum: a042a65aad70bc652c4fdc1646429f99ae0847ac9482ff9ece9e27c1f6b8f5d8419e7df6ecf007800b3b6f867a59855f76112d5521db7c6a6300aba310eb38df
-  languageName: node
-  linkType: hard
-
 "known-css-properties@npm:^0.24.0":
   version: 0.24.0
   resolution: "known-css-properties@npm:0.24.0"
@@ -4799,7 +4792,7 @@ __metadata:
     react-router-dom: 6.3.0
     react-transition-group: 4.4.5
     sass: 1.50.1
-    sass-loader: 12.6.0
+    sass-loader: 13.3.2
     stylelint: 14.7.1
     stylelint-config-prettier: 9.0.3
     stylelint-prettier: 2.0.0
@@ -5705,15 +5698,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:12.6.0":
-  version: 12.6.0
-  resolution: "sass-loader@npm:12.6.0"
+"sass-loader@npm:13.3.2":
+  version: 13.3.2
+  resolution: "sass-loader@npm:13.3.2"
   dependencies:
-    klona: ^2.0.4
     neo-async: ^2.6.2
   peerDependencies:
     fibers: ">= 3.1.0"
-    node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+    node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
     sass: ^1.3.0
     sass-embedded: "*"
     webpack: ^5.0.0
@@ -5726,7 +5718,7 @@ __metadata:
       optional: true
     sass-embedded:
       optional: true
-  checksum: 5d73a428588150f704016aa27397941bb9246cecd2ee083b573e95d969fc080ac6a16f2fe1cc64aca08f6e70da6f3c586ee68f0efc9f527fecc360e5f1c299ec
+  checksum: 7394a8d1b818a289b9caabd979543c907b83e28ae08bc80ccb836e0ccabc4ae574c077ab2fa520ba5fb8abb2ec3e7c9822a1cbd8c58a28ff30018be9d1dc6c27
   languageName: node
   linkType: hard
 
