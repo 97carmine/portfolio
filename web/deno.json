@@ -33,7 +33,8 @@
     }
   },
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/ dev.ts",
+    "start:dev": "deno run -A --watch=static/,routes/ dev.ts",
+    "start:prod":"DENO_DEPLOYMENT_ID=true deno run -A --watch=static/,routes/ dev.ts",
     "healthcheck": "deno run --allow-net ../.docker/web/healthcheck.ts"
   }
 }
