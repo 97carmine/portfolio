@@ -70,9 +70,9 @@ RUN set -ex \
     # disable ModSecurity logging
     && sed -i 's/SecAuditEngine RelevantOnly/SecAuditEngine Off/' /etc/nginx/modsec/modsecurity.conf \
     # generate main file that include the default rules and OWASP rules
-    && printf '%s\n' 'Include "/etc/nginx/modsec/modsecurity.conf"' \
-        'Include "/usr/local/modsecurity/crs-setup.conf"' \
-        'Include "/usr/local/modsecurity/rules/*.conf"' > /etc/nginx/modsec/main.conf \
+    && printf '%s\n' 'Include /etc/nginx/modsec/modsecurity.conf' \
+        'Include /usr/local/modsecurity/crs-setup.conf' \
+        'Include /usr/local/modsecurity/rules/*.conf' > /etc/nginx/modsec/main.conf \
     # implement changes required to run Nginx as an unprivileged user
     && sed -i 's,listen       80;,listen       8080;,' /etc/nginx/conf.d/default.conf \
     && sed -i '/user  nginx;/d' /etc/nginx/nginx.conf \
