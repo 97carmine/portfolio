@@ -4798,7 +4798,7 @@ __metadata:
     react-intl: 6.0.5
     react-router-dom: 6.3.0
     react-transition-group: 4.4.5
-    sass: 1.50.1
+    sass: 1.69.5
     sass-loader: 12.6.0
     stylelint: 14.7.1
     stylelint-config-prettier: 9.0.3
@@ -5730,16 +5730,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:1.50.1":
-  version: 1.50.1
-  resolution: "sass@npm:1.50.1"
+"sass@npm:1.69.5":
+  version: 1.69.5
+  resolution: "sass@npm:1.69.5"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: c06334dbf8eddd508d90ca529c6ffb88cb5861d18cec285480d212b9dbe0a46441cbfd8aa10565780551c71372617465e6c77298e734180e2da2628ce6c46545
+  checksum: c66f4f02882e7aa7aa49703824dadbb5a174dcd05e3cd96f17f73687889aab6027d078b518e2c04b594dfd89b2f574824bf935c7aee46c770aa6be9aafcc49f2
   languageName: node
   linkType: hard
 
