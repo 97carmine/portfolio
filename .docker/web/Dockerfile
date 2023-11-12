@@ -1,13 +1,14 @@
 FROM alpine/git:latest as repo
 
+ENV DENO_DEPLOYMENT_ID=true
+
 WORKDIR /opt
 
-RUN git clone --depth 1 -b fresh --single-branch https://github.com/97carmine/portfolio.git
+RUN git clone --depth 1 -b fresh --single-branch https://github.com/97carmine/portfolio
 
 FROM denoland/deno:alpine
 
-RUN apk update --no-cache \
-    && sh -l -c 'echo export DENO_DEPLOYMENT_ID="$(echo $RANDOM | md5sum | head -c 20)" > /etc/profile.d/docker_init.sh'
+RUN apk update --no-cache
 
 USER deno
 
