@@ -1,0 +1,47 @@
+{
+  "$id": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "compilerOptions": {
+    "allowJs": false,
+    "strict": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable",
+      "deno.ns",
+      "deno.unstable"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "fmt": { "exclude": [".vscode"] },
+  "lint": {
+    "exclude": [".vscode", "dev.ts", "fresh.gen.ts"],
+    "rules": { "tags": ["fresh", "recommended"] }
+  },
+  "tasks": {
+    "start:dev": "deno run -A --watch=static/,routes/ dev.ts",
+    "start:prod": "DENO_DEPLOYMENT_ID=true deno run -A --watch=static/,routes/ dev.ts",
+    "healthcheck": "deno run --allow-net ../.docker/web/healthcheck.ts",
+    "build": "deno run -A dev.ts build",
+    "preview": "deno run -A main.ts"
+  },
+  "imports": {
+    "~/": "./",
+    "$fresh/": "https://deno.land/x/fresh@1.5.4/",
+    "ajv": "https://esm.sh/ajv@8.12.0",
+    "preact": "https://esm.sh/preact@10.18.1",
+    "preact/": "https://esm.sh/preact@10.18.1/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0"
+  },
+  "exclude": ["**/_fresh/*"]
+}

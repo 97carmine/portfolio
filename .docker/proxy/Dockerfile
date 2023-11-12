@@ -36,7 +36,7 @@ RUN set -ex \
     && make \
     && make install \
     # adding OWASP rules in ModSecurity
-    && git clone --depth 1 -b v3.3/master --single-branch https://github.com/coreruleset/coreruleset /opt/coreruleset \
+    && git clone --depth 1 -b v4.0/main --single-branch https://github.com/coreruleset/coreruleset /opt/coreruleset \
     && mv /opt/coreruleset/crs-setup.conf.example /usr/local/modsecurity/crs-setup.conf \
     && mv /opt/coreruleset/rules /usr/local/modsecurity/rules \
     # cleaning
@@ -47,12 +47,20 @@ FROM nginx:stable-alpine
 
 COPY --from=builder /usr/local/modsecurity /usr/local/modsecurity
 COPY --from=builder /tmp/packages /tmp/packages
-COPY 40-check-log-files.sh /docker-entrypoint.d
 
 RUN set -ex \
     && apk add --update --no-cache --allow-untrusted /tmp/packages/nginx-module-*.apk \
+    # create check logs file script
+    && printf '%s\n' '#! /bin/ash' \
+        'ACCESS_LOG=/var/log/nginx/access.log;' \
+        'ERROR_LOG=/var/log/nginx/error.log;' \
+        'check_file() { [ ! -f "$1" ] || [ ! -L "$1" ]; touch "$1"; chown nginx:nginx "$1"; }' \
+        'check_file $ACCESS_LOG' \
+        'check_file $ERROR_LOG' > /docker-entrypoint.d/40-check-log-files.sh \
     # set permissions to files added to entrypoint folder
     && chmod 775 /docker-entrypoint.d/40-check-log-files.sh \
+    # rename the default exclusion rules files
+    && for f in /usr/local/modsecurity/rules/*.example; do mv -n -- "$f" "${f%.example}"; done \
     # change default response code to 444
     && sed -i 's/phase:1,log,auditlog,pass/phase:1,log,auditlog,pass,status:444/' /usr/local/modsecurity/crs-setup.conf \
     && sed -i 's/phase:2,log,auditlog,pass/phase:2,log,auditlog,pass,status:444/' /usr/local/modsecurity/crs-setup.conf \
@@ -62,9 +70,9 @@ RUN set -ex \
     # disable ModSecurity logging
     && sed -i 's/SecAuditEngine RelevantOnly/SecAuditEngine Off/' /etc/nginx/modsec/modsecurity.conf \
     # generate main file that include the default rules and OWASP rules
-    && printf '%s\n' 'Include "/etc/nginx/modsec/modsecurity.conf"' \
-        'Include "/usr/local/modsecurity/crs-setup.conf"' \
-        'Include "/usr/local/modsecurity/rules/*.conf"' > /etc/nginx/modsec/main.conf \
+    && printf '%s\n' 'Include /etc/nginx/modsec/modsecurity.conf' \
+        'Include /usr/local/modsecurity/crs-setup.conf' \
+        'Include /usr/local/modsecurity/rules/*.conf' > /etc/nginx/modsec/main.conf \
     # implement changes required to run Nginx as an unprivileged user
     && sed -i 's,listen       80;,listen       8080;,' /etc/nginx/conf.d/default.conf \
     && sed -i '/user  nginx;/d' /etc/nginx/nginx.conf \

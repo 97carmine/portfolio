@@ -1,11 +1,3 @@
-# Node
-.pnp.*
-.yarn
-
-# production
-build
-src/common/languages/messages/**.json
-
 # IDE
 .vscode
 
@@ -13,3 +5,4 @@ src/common/languages/messages/**.json
 .directory
 *.bak
 *.env
+*.ini

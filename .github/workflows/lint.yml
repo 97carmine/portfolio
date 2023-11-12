@@ -18,14 +18,8 @@ jobs:
           fetch-depth: 0
 
       - name: Lint code
-        uses: github/super-linter@v4
+        uses: github/super-linter/slim@v4
         env:
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: false
-          LINTER_RULES_PATH: /
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
-          TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.json
-          VALIDATE_JAVASCRIPT_STANDARD: false
-          VALIDATE_TYPESCRIPT_STANDARD: false
-          CSS_FILE_NAME: .stylelintrc.json

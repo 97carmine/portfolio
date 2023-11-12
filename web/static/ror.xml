@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://axelcalle.com/</title>
+  <link>https://axelcalle.com/</link>
+
+<item>
+     <link>https://www.axelcalle.com/</link>
+     <title>Index</title>
+     <description>I am Axel Gabriel Calle Granda, I am a web programmer and system administrator. I create things, repair and destroy things for hobby and for self-learning.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
