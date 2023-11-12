@@ -19,11 +19,14 @@ export default () => (
     </div>
     <div class="navbar-menu" id="menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="/projects" rel="nav">
-          Projects
+        <a class="navbar-item" href="#about_me" rel="nav">
+          About me
         </a>
-        <a class="navbar-item" href="/resume" rel="nav">
+        <a class="navbar-item" href="#resume" rel="nav">
           Resume
+        </a>
+        <a class="navbar-item" href="#contact" rel="nav">
+          Contact
         </a>
       </div>
     </div>

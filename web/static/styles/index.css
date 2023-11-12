@@ -4,3 +4,35 @@
 	margin: auto;
 	width: 50% !important;
 }
+
+.is-validated input:not([type="checkbox"]):invalid,
+.is-validated input:not([type="checkbox"]):out-of-range,
+.is-validated input:not([type="checkbox"]):required:invalid,
+.is-validated input[type="checkbox"]:not(:checked),
+.is-validated textarea:required:invalid {
+  border-color: #f14668;
+  box-shadow: 0 0 0 0.125em rgba(241, 70, 104, 0.25);
+}
+
+.is-validated input:not([type="checkbox"]):invalid ~ .help,
+.is-validated input:not([type="checkbox"]):out-of-range ~ .help,
+.is-validated input[type="checkbox"]:not(:checked) ~ .help,
+.is-validated textarea:required:invalid ~ .help {
+  color: #cc0f35;
+}
+
+.is-validated input:not([type="checkbox"]):in-range,
+.is-validated input:not([type="checkbox"]):required:valid,
+.is-validated input:not([type="checkbox"]):valid,
+.is-validated input[type="checkbox"]:checked,
+.is-validated textarea:required:valid {
+  border-color: #48c78e;
+  box-shadow: 0 0 0 0.125em rgba(72, 199, 142, 0.25);
+}
+
+.is-validated input:not([type="checkbox"]):in-range ~ .help,
+.is-validated input:not([type="checkbox"]):valid ~ .help,
+.is-validated input[type="checkbox"]:checked ~ .help,
+.is-validated textarea:required:valid ~ .help {
+  color: #257953;
+}

@@ -1,13 +1,10 @@
-import { IS_BROWSER } from "$fresh/runtime.ts";
-import { JSXInternal } from "https://esm.sh/v94/preact@10.11.0/src/jsx.d.ts";
+import { JSX } from "preact/jsx-runtime";
 
-export default (props: JSXInternal.HTMLAttributes<HTMLButtonElement>) => (
+export default (props: JSX.HTMLAttributes<HTMLButtonElement>) => (
   <button
     type="button"
-    onClick={() => {
-      IS_BROWSER && history.back();
-    }}
-    className={props.class}
+    onClick={() => history.back()}
+    class={props.class}
   >
     {props.children}
   </button>

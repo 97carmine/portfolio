@@ -6,7 +6,6 @@ type HeadMeta = {
   canonical?: string;
   description?: string;
   styles?: string[];
-  scripts?: string[];
 };
 
 export default (meta: HeadMeta) => (
@@ -98,13 +97,6 @@ export default (meta: HeadMeta) => (
     <link rel="stylesheet" href={asset("/styles/page.css")} />
     {meta.styles?.map((style) => (
       <link rel="stylesheet" href={asset("/styles/" + style)} />
-    ))}
-    {/* JS files */}
-    <script src={asset("/scripts/page.js")} />
-    {meta.scripts?.map((script) => (
-      <script
-        src={asset("/scripts/" + script)}
-      />
     ))}
   </Head>
 );

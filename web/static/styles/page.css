@@ -1,8 +1,27 @@
 @charset "UTF-8";
 
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+html {
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+  scroll-behavior: smooth;
+}
+
 /* Bulma */
+
 .footer {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .footer .icon {
