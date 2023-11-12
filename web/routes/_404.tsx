@@ -16,12 +16,12 @@ export default (props: PageProps) => {
         <div class="container">
           <article>
             <h1 class="title is-spaced">
-              The page you are looking for does not exist.
+              The page you are looking for does not exist, for now.
             </h1>
-            <p class="subtitle">
+            <h2 class="subtitle">
               Fortunately, it has an easy solution. This is your chance. After
               this, there is no going back.
-            </p>
+            </h2>
             <div class="content">
               <div class="buttons">
                 <a href="/" class="button is-danger is-light">
