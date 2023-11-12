@@ -21,37 +21,27 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
   },
-  "fmt": {
-    "exclude": [
-      ".vscode"
-    ]
-  },
+  "fmt": { "exclude": [".vscode"] },
   "lint": {
-    "exclude": [
-      ".vscode",
-      "dev.ts",
-      "fresh.gen.ts"
-    ],
-    "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
-    }
+    "exclude": [".vscode", "dev.ts", "fresh.gen.ts"],
+    "rules": { "tags": ["fresh", "recommended"] }
   },
   "tasks": {
     "start:dev": "deno run -A --watch=static/,routes/ dev.ts",
     "start:prod": "DENO_DEPLOYMENT_ID=true deno run -A --watch=static/,routes/ dev.ts",
-    "healthcheck": "deno run --allow-net ../.docker/web/healthcheck.ts"
+    "healthcheck": "deno run --allow-net ../.docker/web/healthcheck.ts",
+    "build": "deno run -A dev.ts build",
+    "preview": "deno run -A main.ts"
   },
   "imports": {
     "~/": "./",
-    "$fresh/": "https://deno.land/x/fresh@1.3.1/",
+    "$fresh/": "https://deno.land/x/fresh@1.5.4/",
     "ajv": "https://esm.sh/ajv@8.12.0",
-    "preact": "https://esm.sh/preact@10.15.1",
-    "preact/": "https://esm.sh/preact@10.15.1/",
-    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.0",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.1.3",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.2.3"
-  }
+    "preact": "https://esm.sh/preact@10.18.1",
+    "preact/": "https://esm.sh/preact@10.18.1/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0"
+  },
+  "exclude": ["**/_fresh/*"]
 }
