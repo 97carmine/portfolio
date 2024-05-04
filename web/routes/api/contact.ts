@@ -1,4 +1,4 @@
-import { Handlers, Status } from "$fresh/server.ts";
+import { Handlers, STATUS_CODE } from "$fresh/server.ts";
 import Ajv, { JSONSchemaType } from "ajv";
 
 type email_data = {
@@ -40,7 +40,7 @@ export const handler: Handlers = {
 
       return new Response(undefined, { status: response });
     } else {
-      return new Response(undefined, { status: Status.BadRequest });
+      return new Response(undefined, { status: STATUS_CODE.BadRequest });
     }
   },
 };
