@@ -1,20 +1,8 @@
 import { asset, Head } from "$fresh/runtime.ts";
 
-type HeadMeta = {
-  title?: string;
-  author?: string;
-  canonical?: string;
-  description?: string;
-  styles?: string[];
-};
-
-export default (meta: HeadMeta) => (
+export default () => (
   <Head>
     <meta name="author" content="Axel Gabriel Calle Granda" />
-    <meta name="description" content={meta.description} />
-    <title>{meta.title}</title>
-    <link rel="canonical" href={meta.canonical} />
-    <link rel="alternate" href={meta.canonical} lang="x-default" />
     <link rel="icon" href={asset("/favicon.ico")} />
     <link
       rel="apple-touch-icon"
@@ -95,8 +83,5 @@ export default (meta: HeadMeta) => (
     {/* CSS files */}
     <link rel="stylesheet" href={asset("/styles/bulma.min.css")} />
     <link rel="stylesheet" href={asset("/styles/page.css")} />
-    {meta.styles?.map((style) => (
-      <link rel="stylesheet" href={asset("/styles/" + style)} />
-    ))}
   </Head>
 );
