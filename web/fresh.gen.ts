@@ -11,7 +11,7 @@ import * as $index from "./routes/index.tsx";
 import * as $button from "./islands/button.tsx";
 import * as $contact_form from "./islands/contact_form.tsx";
 import * as $navbar_burger from "./islands/navbar_burger.tsx";
-import { type Manifest } from "$fresh/server.ts";
+import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
