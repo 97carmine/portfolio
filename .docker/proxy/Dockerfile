@@ -4,8 +4,8 @@ ARG ENABLED_MODULES="brotli headers-more"
 
 RUN set -ex \
     && apk add --update --no-cache --virtual build-deps abuild autoconf automake byacc curl-dev flex g++ gcc geoip-dev \
-        git libc-dev libmaxminddb-dev libstdc++ libtool libxml2-dev libxml2-utils libxslt linux-headers lmdb-dev make \
-        mercurial musl-dev openssl openssl-dev pcre-dev unzip xz yajl-dev zlib-dev \
+        git libc-dev libmaxminddb-dev libstdc++ libtool linux-headers make mercurial musl-dev openssl openssl-dev \
+        pcre-dev xz yajl-dev zlib-dev \
     # allow abuild as a root user
     && printf "#!/bin/sh\\nSETFATTR=true /usr/bin/abuild -F \"\$@\"\\n" > /usr/local/bin/abuild \
     && chmod +x /usr/local/bin/abuild \
@@ -26,26 +26,12 @@ RUN set -ex \
             exit 1; \
         fi; \
     done \
-    # installing ModSecurity library
-    && git clone --depth 1 -b v3/master --single-branch https://github.com/SpiderLabs/ModSecurity /opt/ModSecurity \
-    && cd /opt/ModSecurity \
-    && git submodule init \
-    && git submodule update \
-    && ./build.sh \
-    && ./configure \
-    && make \
-    && make install \
-    # adding OWASP rules in ModSecurity
-    && git clone --depth 1 -b v4.0/main --single-branch https://github.com/coreruleset/coreruleset /opt/coreruleset \
-    && mv /opt/coreruleset/crs-setup.conf.example /usr/local/modsecurity/crs-setup.conf \
-    && mv /opt/coreruleset/rules /usr/local/modsecurity/rules \
     # cleaning
     && apk del build-deps \
     && rm -rf /opt/*
 
 FROM nginx:stable-alpine
 
-COPY --from=builder /usr/local/modsecurity /usr/local/modsecurity
 COPY --from=builder /tmp/packages /tmp/packages
 
 RUN set -ex \
@@ -59,20 +45,6 @@ RUN set -ex \
         'check_file $ERROR_LOG' > /docker-entrypoint.d/40-check-log-files.sh \
     # set permissions to files added to entrypoint folder
     && chmod 775 /docker-entrypoint.d/40-check-log-files.sh \
-    # rename the default exclusion rules files
-    && for f in /usr/local/modsecurity/rules/*.example; do mv -n -- "$f" "${f%.example}"; done \
-    # change default response code to 444
-    && sed -i 's/phase:1,log,auditlog,pass/phase:1,log,auditlog,pass,status:444/' /usr/local/modsecurity/crs-setup.conf \
-    && sed -i 's/phase:2,log,auditlog,pass/phase:2,log,auditlog,pass,status:444/' /usr/local/modsecurity/crs-setup.conf \
-    && sed -i 's/status:400/status:444/g' /etc/nginx/modsec/modsecurity.conf \
-    # enable ModSecurity
-    && sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /etc/nginx/modsec/modsecurity.conf \
-    # disable ModSecurity logging
-    && sed -i 's/SecAuditEngine RelevantOnly/SecAuditEngine Off/' /etc/nginx/modsec/modsecurity.conf \
-    # generate main file that include the default rules and OWASP rules
-    && printf '%s\n' 'Include /etc/nginx/modsec/modsecurity.conf' \
-        'Include /usr/local/modsecurity/crs-setup.conf' \
-        'Include /usr/local/modsecurity/rules/*.conf' > /etc/nginx/modsec/main.conf \
     # implement changes required to run Nginx as an unprivileged user
     && sed -i 's,listen       80;,listen       8080;,' /etc/nginx/conf.d/default.conf \
     && sed -i '/user  nginx;/d' /etc/nginx/nginx.conf \
