@@ -4,7 +4,7 @@ ENV DENO_DEPLOYMENT_ID=true
 
 WORKDIR /opt
 
-RUN git clone --depth 1 -b fresh --single-branch https://github.com/97carmine/portfolio
+RUN git clone --depth 1 -b main --single-branch https://github.com/97carmine/portfolio
 
 FROM denoland/deno:alpine
 
