@@ -56,7 +56,7 @@ export default () => (
               </svg>
             </div>
             <a
-              href="https://t.me/b1ckb1rd"
+              href="https://t.me/b14ckb1rd"
               target="blank"
               aria-label="Telegram"
             >
