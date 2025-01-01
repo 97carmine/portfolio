@@ -1,6 +1,6 @@
 FROM nginx:stable-alpine as builder
 
-ARG ENABLED_MODULES
+ARG ENABLED_MODULES="brotli headers-more"
 
 RUN set -ex \
     && apk add --update --no-cache --virtual build-deps abuild autoconf automake byacc curl-dev flex g++ gcc geoip-dev \
