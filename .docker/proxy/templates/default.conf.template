@@ -7,52 +7,91 @@ server {
 }
 
 server {
-        listen 8443 default_server ssl http2;
-        listen [::]:8443 default_server ssl http2;
+        listen 8443 default_server ssl;
+        listen 8443 quic;
+        listen [::]:8443 default_server ssl;
+        listen [::]:8443 quic;
         server_name _;
+
+        http2 on;
+        http3 on;
+        quic_retry on;
+        ssl_early_data on;
+        quic_gso on;
 
         ssl_certificate /etc/nginx/ssl/fullchain.pem;
         ssl_certificate_key /etc/nginx/ssl/privkey.pem;
         ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
+        ssl_dhparam /etc/ssl/certs/dhparam-4096.pem;
 
         return 301 $scheme://${SERVER_NAME}$request_uri;
 }
 
 server {
-        listen 8443 ssl http2;
-        listen [::]:8443 ssl http2;
+        listen 8443 ssl;
+        listen 8443 quic;
+        listen [::]:8443 ssl;
+        listen [::]:8443 quic;
         server_name ${SERVER_NAME};
+
+        http2 on;
+        http3 on;
+        quic_retry on;
+        ssl_early_data on;
+        quic_gso on;
 
         ssl_certificate /etc/nginx/ssl/fullchain.pem;
         ssl_certificate_key /etc/nginx/ssl/privkey.pem;
         ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
+        ssl_dhparam /etc/ssl/certs/dhparam-4096.pem;
 
         return 301 $scheme://www.${SERVER_NAME}$request_uri;
 
         add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+        add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';" always;
+        add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header X-Frame-Options "SAMEORIGIN" always;
+        add_header Alt-Svc 'h3=":8443"; ma=86400' always;
 }
 
 server {
-        listen 8443 ssl http2;
-        listen [::]:8443 ssl http2;
+        listen 8443 ssl;
+        listen 8443 quic reuseport;
+        listen [::]:8443 ssl;
+        listen [::]:8443 quic reuseport;
         server_name www.${SERVER_NAME};
+
+        http2 on;
+        http3 on;
+        quic_retry on;
+        ssl_early_data on;
+        quic_gso on;
 
         ssl_certificate /etc/nginx/ssl/fullchain.pem;
         ssl_certificate_key /etc/nginx/ssl/privkey.pem;
         ssl_trusted_certificate /etc/nginx/ssl/chain.pem;
+        ssl_dhparam /etc/ssl/certs/dhparam-4096.pem;
 
         add_header Access-Control-Allow-Methods "GET, HEAD, POST" always;
         add_header Allow "GET, HEAD, POST" always;
+        add_header X-Frame-Options "SAMEORIGIN" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header X-XSS-Protection "1; mode=block" always;
+        add_header Referrer-Policy "no-referrer-when-downgrade" always;
+        add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" always;
+        add_header Alt-Svc 'h3=":8443"; ma=86400' always;
 
         if ( $host != www.${SERVER_NAME} ) {
                 return 444;
         }
 
         if ( $request_method !~ ^(GET|HEAD|POST)$ ) {
-                return 444;
+                return 405;
         }
 
         location / {
+                add_header Alt-Svc 'h3=":8443"; ma=86400' always;
                 autoindex off;
                 proxy_pass http://${PROXIED_SERVER}:${PROXIED_PORT};
                 proxy_set_header X-Real-IP $remote_addr;
