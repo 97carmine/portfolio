@@ -93,6 +93,7 @@ server {
         location / {
                 add_header Alt-Svc 'h3=":8443"; ma=86400' always;
                 autoindex off;
+                modsecurity off;
                 proxy_pass http://${PROXIED_SERVER}:${PROXIED_PORT};
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
