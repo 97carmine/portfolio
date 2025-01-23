@@ -1,47 +1,51 @@
 {
-  "$id": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
-  "$schema": "http://json-schema.org/draft-07/schema",
   "compilerOptions": {
-    "allowJs": false,
-    "strict": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
     "lib": [
       "dom",
-      "dom.iterable",
       "dom.asynciterable",
+      "dom.iterable",
       "deno.ns",
       "deno.unstable"
     ],
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "useUnknownInCatchVariables": true
   },
-  "fmt": { "exclude": [".vscode"] },
-  "lint": {
-    "exclude": [".vscode", "dev.ts", "fresh.gen.ts"],
-    "rules": { "tags": ["fresh", "recommended"] }
-  },
-  "tasks": {
-    "start:dev": "deno run -A --watch=static/,routes/ dev.ts",
-    "start:prod": "DENO_DEPLOYMENT_ID=true deno run -A --watch=static/,routes/ dev.ts",
-    "healthcheck": "deno run --allow-net ../.docker/web/healthcheck.ts",
-    "build": "deno run -A dev.ts build",
-    "preview": "deno run -A main.ts"
-  },
+  "exclude": ["**/_fresh/*"],
+  "fmt": { "exclude": ["static"] },
   "imports": {
-    "~/": "./",
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "ajv": "https://esm.sh/ajv@8.17.1",
     "preact": "https://esm.sh/preact@10.22.0",
     "preact/": "https://esm.sh/preact@10.22.0/",
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1"
+    "~/": "./"
   },
-  "exclude": ["**/_fresh/*"]
+  "lint": {
+    "exclude": ["fresh.gen.ts"],
+    "rules": { "tags": ["fresh", "recommended"] }
+  },
+  "tasks": {
+    "build": "deno run --allow-env --allow-read --allow-write --allow-run dev.ts build",
+    "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
+    "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
+    "healthcheck": "deno run --allow-env --allow-net ../.docker/web/healthcheck.ts",
+    "manifest": "deno task cli manifest $(pwd)",
+    "start:dev": "deno run --allow-env --allow-read --allow-write --allow-run --allow-net --watch=static/,routes/ dev.ts",
+    "start:prod": "deno run --allow-env --allow-read --allow-net --allow-run main.ts",
+    "update": "deno run --allow-env --allow-read --allow-write --allow-run -r https://fresh.deno.dev/update ."
+  }
 }
