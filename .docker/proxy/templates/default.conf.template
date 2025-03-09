@@ -87,7 +87,7 @@ server {
                 add_header Content-Security-Policy "base-uri 'none'; connect-src 'self'; default-src 'none'; form-action 'none'; frame-ancestors 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self';" always;
                 add_header X-Download-Options "noopen" always;
                 add_header X-Permitted-Cross-Domain-Policies "none" always;
-                modsecurity off;
+                modsecurity on;
                 autoindex off;
                 proxy_redirect off;
                 proxy_pass http://${PROXIED_SERVER}:${PROXIED_PORT};
